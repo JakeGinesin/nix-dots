@@ -44,3 +44,6 @@ popd
 
 # Notify all OK!
 notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
+
+echo ""
+echo "Full rebuild log in /tmp/nixos-switch.log"
