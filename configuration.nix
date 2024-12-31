@@ -108,7 +108,7 @@ in {
       polybar
       sxhkd
       bspwm
-      # librewolf
+      librewolf
       eza
       flameshot
       neofetch
@@ -121,6 +121,7 @@ in {
       xorg.xf86inputsynaptics
       libnotify # for notify-send
       alejandra
+      discord
       # procps # for pgrep
       # xorg.xrandr
       #  thunderbird
