@@ -36,7 +36,6 @@ current=$(nixos-rebuild list-generations | grep current)
 
 # Commit all changes witih the generation metadata
 git --git-dir /home/synchronous/nix-cfg/.git commit -am "$current"
-/home/synchronous/nix-cfg/home/scripts
 
 # Back to where you were
 popd
