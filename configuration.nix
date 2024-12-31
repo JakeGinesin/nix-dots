@@ -127,6 +127,21 @@ in {
     ];
   };
 
+  security.sudo = {
+    enable = true;
+    extraRules = [
+      {
+        commands = [
+          {
+            command = "/home/synchronous/nix-cfg/home/scripts/nixos-rebuild.sh";
+            options = ["NOPASSWD"];
+          }
+        ];
+        groups = ["wheel"];
+      }
+    ];
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
