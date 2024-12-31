@@ -1,0 +1,43 @@
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  home.packages = with pkgs; [zsh-powerlevel10k meslo-lgs-nf];
+  home.file.".p10k.zsh".source = ./p10k;
+
+  programs.zsh = {
+    enable = true;
+    # dotDir = "$HOME/.config/zsh";
+
+    plugins = [
+      {
+        name = "zsh-powerlevel10k";
+        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
+        file = "powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = lib.cleanSource ./p10k;
+        file = "p10k.zsh";
+      }
+    ];
+
+    oh-my-zsh = {
+      enable = true;
+      # theme = "af-magic";
+      # theme = "powerlevel10k/powerlevel10k";
+      plugins = ["git" "history-substring-search" "colored-man-pages"];
+    };
+
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    # zsh sheeee
+    initExtraFirst = ''
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    '';
+
+    initExtra = builtins.readFile ./zshrc;
+  };
+}

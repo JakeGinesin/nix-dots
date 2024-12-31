@@ -1,0 +1,257 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	alacritty
+
+# program launcher
+super + @space
+  rofi -show drun
+	#dmenu_run -b
+
+# make sxhkd reload its configuration files:
+super + Escape
+  pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+  bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+#super + m
+#	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node super + y
+# bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+# super + g
+#	bspc node -s biggest.window
+super + g 
+  librewolf www.google.com
+
+super + shift + g
+  librewolf --new-window "www.google.com"
+
+super + z
+  zotero
+
+#
+# state/flags
+#
+
+# set the window state
+# t -> tiled
+# shift + t -> smol tile
+# s -> floating
+# a -> fullscreen
+super + {t,shift + t,s,a}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags (commented out because I never use this >_>)
+# super + ctrl + {m,x,y,z}
+# 	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{j,k,i,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+# super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+#super + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+super + alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
+  bspc {desktop -f, node -d} '{11,12,13,14,15,16,17,18,19,20}'
+
+# swap between desktops
+
+XF86WakeUp + super; {1,2,3,4,5,6,7,8,9,0}
+  sh /home/synchronous/.scripts/bspwm/swap-desktop.sh '{1,2,3,4,5,6,7,8,9,10}'
+
+XF86WakeUp + super + alt; {1,2,3,4,5,6,7,8,9,0}
+  sh /home/synchronous/.scripts/bspwm/swap-desktop.sh '{11,12,13,14,15,16,17,18,19,20}'
+
+
+# preselect
+#
+
+# jake thinks preselecting is not very useful, gg
+
+# preselect the direction
+# super + ctrl + {j,k,i,l}
+#	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+#super + ctrl + {1-9}
+#	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+# super + ctrl + space
+#	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+#super + ctrl + shift + space
+#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+alt + {Left,Down,Up,Right}
+	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
+
+# contract a window by moving one of its side inward
+alt + shift + {Left,Down,Up,Right}
+	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
+
+alt + shift + w 
+  rfkill unblock all | iwctl station wlan0 scan | iwctl station wlan0 get-networks 
+
+# move a floating window
+alt + {w,s,a,d}
+	bspc node -v {-40 0,0 40,0 -40,40 0}
+
+# Alt tab window shifter
+alt + Tab
+	bspc node -f last
+
+# start firefox
+super + {f}
+    librewolf 
+
+super + {shift} + {f}
+    librewolf --private-window
+
+super + {Left,Right}
+    bspc desktop -f {prev,next}
+
+ctrl + super + {Left,Right}
+    sh /home/synchronous/.scripts/bspwm/fast-shift.sh {left,right}
+
+super + {shift} + {d}
+    pkill -f discord
+
+ctrl + super + bracket{left,right}
+    sh /home/synchronous/.scripts/bspwm/fast-shift.sh {left,right}
+
+
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+
+# super + {o}
+#    obsidian
+
+# alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo | autocmd VimResized * call GoyoWrapper()"
+# open my notes file in nvim w/ a new alacritty window, then jump to end of file
+super + {o}
+  sh /home/synchronous/.scripts/vimwiki/open_daily.sh
+
+# open my notes without goyo and with nvimteee
+super + {shift} + {o}
+  alacritty -e nvim /home/synchronous/journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/journal"
+
+# search my notes using rofi and open the right one
+super + {ctrl} + {o}
+  sh /home/synchronous/.scripts/vimwiki/search_notes.sh
+
+super + {ctrl} + {p} 
+  sh /home/synchronous/.scripts/papers/paper-search-cached.sh
+
+super + {ctrl} + {l} 
+  sh /home/synchronous/.scripts/papers/paper-search.sh
+
+#super + {ctrl} + {l} 
+#  sh /home/synchronous/.scripts/document-scripts/document-search-fast.sh
+
+super + {ctrl} + {k}
+  sh /home/synchronous/.scripts/vimwiki/search_people.sh
+
+# search for current semester area, then open terminal wherever it is
+super + {ctrl} + {c} 
+  find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem";
+
+super + {alt} + {c}
+  find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read rsem; yq ".url" "/home/synchronous/current-semester/$rsem/info.yaml" | xargs librewolf
+
+super + {p}
+  sh /home/synchronous/.scripts/vimwiki/open_todo.sh
+
+super + {m}
+  sh /home/synchronous/.scripts/vimwiki/open-learning.sh
+
+# super + {b}
+#   sh /home/synchronous/.budgeting/open_budget.sh
+
+
+# nnn
+super + {n}
+  sh /home/synchronous/.scripts/nnn/launch.sh
+
+# nnn + journal
+super + {ctrl} + {n}
+  sh /home/synchronous/.scripts/nnn/launch-journal.sh
+
+# screenshot stuff
+Print
+    flameshot full -c
+
+super + shift + s 
+    flameshot gui
+
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}
+
+# audio
+# XF86AudioRaiseVolume
+#     pactl set-sink-volume @DEFAULT_SINK@ +1000
+
+# XF86AudioLowerVolume
+#     pactl set-sink-volume @DEFAULT_SINK@ -1000
+
+# XF86AudioMute
+#     pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# XF86AudioMicMute
+#     pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# XF86MonBrightnessUp
+#    brightnessctl set 20+
+
+# XF86MonBrightnessDown
+#     brightnessctl set 20-

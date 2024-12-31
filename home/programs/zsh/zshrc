@@ -1,0 +1,232 @@
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt nomatch
+unsetopt autocd beep extendedglob notify
+bindkey -v
+zstyle :compinstall filename '/home/synchronous/.zshrc'
+
+export PATH=/home/synchronous/.local/bin:$PATH
+export PATH=/home/synchronous/.cargo/bin/:$PATH
+export NIX_PATH=/home/synchronous/nix-cfg
+
+# ==== binding keys ====
+
+bindkey '^ ' autosuggest-accept
+
+# ==== holy fuck aliases ====
+
+# make sure i get the right version of python
+alias python='python3'
+
+# ez lock
+alias lock="sudo systemctl restart lightdm"
+
+# restart wifi
+# alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all && iwctl station wlan0 scan'
+# alias nw='iwctl station wlan0 scan; iwctl station wlan0 get-networks'
+# alias iwc='iwctl station wlan0 connect'
+# alias iwcn='iwctl station wlan0 connect NUwave'
+# alias wt='sudo systemctl restart iwd.service && polybar-restart'
+# alias wtr='sudo systemctl restart iwd.service && polybar-restart; sudo iw dev wlan0 set power_save off'
+# alias wtdc='iwctl station wlan0 disconnect'
+# alias wtrc='sh /home/synchronous/.scripts/networking/wtrc.sh'
+
+# easy access to config files I access frequently
+# alias zshrc='nvim /home/synchronous/.zshrc'
+# alias nrc='nvim ~/.config/nvim/init.vim'
+# alias nvimrc='nvim ~/.config/nvim/init.vim'
+# alias picomrc="nvim /home/synchronous/.config/picom/picom.conf"
+
+# gcalcli stuff
+# (note: gcalcli is fucking awesome, but i have a google calendar synching issue with it.
+#   Google APIs are truly degenerate. I'm swtitching to vdirsyncer and khal for now.)
+# alias today='gcalcli agenda "$(date "+%b %d %Y %H:%m")" "$(date -d "$date +24 hour" "+%b %d %Y %H:%m")" --details location --color-date blue'
+# alias week='gcalcli calw --color-date blue --color-now-marker red'
+# alias weekl='gcalcli agenda "$(date "+%b %d %Y %H:%m")" "$(date -d "$date +168 hour" "+%b %d %Y %H:%m")" --details location --color-date blue'
+# alias weekc='gcalcli calw --color-date blue --color-now-marker red'
+# alias month='gcalcli calm --color-date blue --color-now-marker red'
+# alias gadd='gcalcli --calendar jakeginesin@gmail.com add --noprompt'
+# alias gaddhelp='echo "--title <title> --when <X:XX pm/am> --duration <mins>"'
+# alias gdel='gcalcli --calendar jakeginesin@gmail.com delete --color-date blue'
+# alias gdelhelp='echo "just type the name of the event"'
+
+# alias today='sh /home/synchronous/.scripts/calendar/run_khal.sh'
+# alias calendar='khal interactive'
+
+# pls
+alias pls='sudo'
+alias please='sudo'
+
+# fuck
+alias fuck="sudo !!"
+
+# neovim
+alias vi='nvim'
+alias vim='nvim'
+alias n="nvim"
+alias neovim='nvim'
+alias v='nvim'
+
+# duplicate current alacritty unit
+alias dupe='setsid alacritty --working-directory "$(pwd)" > /dev/null'
+
+# alias so i can copy stuff to my clipboard from my terminal
+# example:
+#$ pwd | clip
+alias clip='perl -p -e "chomp if eof" | xclip -in -sel clip'
+alias pwdc='pwd | clip | echo "directory clipped"'
+
+# intellij (bad IDE i'm forced to use for CS3500 until I can fully configure my nvim setup)
+# alias intellij="snap run intellij-idea-community"
+# alias intellij-idea-community="snap run intellij-idea-community"
+# alias intellishit="snap run intellij-idea-community"
+
+# dotfile alias
+# alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
+
+# stuff to for local webdev;
+# alias site="cd /home/synchronous/code/jake_dark_site"
+# alias website="cd /home/synchronous/code/jake_dark_site"
+# alias jakesite="cd /home/synchronous/code/jake_dark_site"
+# alias wiki='cd /home/synchronous/Programming/jake-wiki | npm start --prefix /home/synchronous/Programming/jake-wiki'
+# alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki add . | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki commit -am "pog" | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki push'
+
+# Ported from windows LLL bozo
+alias cls="clear"
+
+## Curl Aliases for easy info
+# note for jake: try to change this back when you go back to boston lmfao
+alias weather="curl https://wttr.in/Boston; echo"
+alias myip="curl https://ipecho.net/plain; echo"
+# alias crypto="curl https://usd.rate.sx"
+alias pq="ping google.com -c 5"
+
+## Arch aliases
+# alias search="pacman -Ss"
+# alias update="sudo pacman -Syu"
+# alias install="sudo pacman -S"
+
+## iwctl aliases
+# alias sl="iwctl station list"
+# alias sgn="iwctl station wlan0 scan; iwctl station wlan0 get-networks"
+# alias sc="iwctl station wlan0 connect"
+
+## directory control
+alias ..="cd .."
+alias ...="cd ../.."
+alias .4="cd ../../.."
+
+
+# replacing ls with exa & lsd
+# hrr drr why do you use lsd AND exa?
+# because lsd has icons but exa is better with everything else. smh.
+alias ls="exa --icons --sort type"
+
+alias l="exa -al --color=always --git --group-directories-first"
+alias l.="exa -a --colour=always --git -u | egrep '^\.'"
+alias l1="exa -a1h --sort=type"
+alias lll="exa -a --sort=type"
+# for whatever reason running exa -T | clip crashes whatever i paste the result into lmao
+# alias tree="exa -T"
+
+# Lolcats!!
+alias neofetch="neofetch | lolcat"
+
+# screenshot
+alias screenshot="flameshot"
+
+# tars
+alias untar="tar -zxvf"
+alias mktar="tar -cvzf"
+
+# by default, put zathura windows in new process
+# alias zathura="zathura --fork"
+alias zathura="sh /home/synchronous/.scripts/zathura/zathura_conditional.sh"
+alias exclude-zathura="pwd >> /home/synchronous/.scripts/zathura/excluded;echo 'done'"
+
+alias os='vim /home/synchronous/current-semester/computer-systems/notes/os.md'
+alias asm='echo "c->asm: gcc -S [file] \nc->asm w/o fluff: gcc -S -O2 -fno-asynchronous-unwind-tables [file]\nc->executable: gcc [file] -no-pie -o [filename]"'
+alias urls='sh /home/synchronous/.scripts/info.sh'
+alias favorites='vim /home/synchronous/Programming/jake_dark_site/build/resources.md'
+alias outlook='firefoxpwa site launch 01GQJNBVPHJHYHPYNG8FGS5TX4'
+
+# alias td='todo show -d -scd -sct'
+
+alias polybar-restart='pkill polybar; setsid polybar mybar > /dev/null 2> /dev/null &> /dev/null'
+
+# alias ytdl='alias ytdl="youtube-dl --extract-audio --audio-format mp3 --output "downloads/%(title)s.%(ext)s"'
+# alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output "
+# alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output '/home/synchronous/.music-not-tagged/%(title)s.%(ext)s'"
+alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
+alias ytdl-mp3="yt-dlp -x --audio-format mp3 --audio-quality 0 -o '/home/synchronous/music/%(title)s.%(ext)s' "
+
+alias phone-mount="sh /home/synchronous/.scripts/phone-mount/mount.sh"
+alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
+alias music-move="sh /home/synchronous/.scripts/music/music-move.sh"
+
+alias ntpsync="sudo ntpdate pool.ntp.org"
+alias fb="cd /home/synchronous/code/tob/fb"
+alias nuid="echo 002141542"
+alias gb="sh /home/synchronous/.scripts/bluetooth/gb.sh"
+alias gbdc="bluetoothctl disconnect"
+alias sxhkdrc="vim /home/synchronous/.config/sxhkd/sxhkdrc"
+alias bspwmrc="vim /home/synchronous/.config/bspwm/bspwmrc"
+
+# monitor stuff
+alias dupe-display="sh /home/synchronous/.scripts/bspwm/dupe-display.sh"
+alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
+
+# termbin
+alias termbin="sh /home/synchronous/.scripts/termbin/tb.sh"
+alias dlpaper="python /home/synchronous/.scripts/papers/dlpaper.py"
+alias backup_home="sh /home/synchronous/.scripts/backup/backup.sh"
+
+# ------------------- fzf configuration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fdfind --type f'
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
+
+# ------------------- Key Binding
+bindkey "\e[1~" beginning-of-line # Home
+bindkey "\e[4~" end-of-line # End
+bindkey "\e[3~" delete-char #Del
+bindkey "\e[2~" overwrite-mode # Ins
+bindkey "\e[6~" end-of-history # PageDown
+bindkey "\e[5~" beginning-of-history #PageUp
+
+# -------------------- control backspace deleting previous word entirely
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
+
+# ------------------- More Widgets
+#run_ranger () {
+##    echo
+#    ranger --choosedir=$HOME/.rangedir < $TTY
+#    LASTDIR='cat $HOME/.rangerdir'
+#    cd "$LASTDIR"
+#    zle reset-prompt
+#}
+#zle -N run_ranger
+
+# --------------------- REMOTES CONFIG
+# source /home/synchronous/.zshrc_remote
+
+
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# ------ NNN (not no not november)
+export PATH=/home/synchronous/.scripts/nnn:$PATH
+export VISUAL=wrapper.sh
+export EDITOR="$VISUAL"
+export NNN_PLUG='m:preview-tui;'
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_TERMINAL=alacritty
+
+bindkey -s '^o' 'nnn -e ^M'
