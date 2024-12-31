@@ -108,7 +108,7 @@ in {
       polybar
       sxhkd
       bspwm
-      librewolf
+      # librewolf
       eza
       flameshot
       neofetch
