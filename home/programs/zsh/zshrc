@@ -1,8 +1,9 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt nomatch
-unsetopt autocd beep extendedglob notify
+setopt nomatch autocd
+# unsetopt autocd beep extendedglob notify
+unsetopt beep extendedglob notify
 bindkey -v
 zstyle :compinstall filename '/home/synchronous/.zshrc'
 
