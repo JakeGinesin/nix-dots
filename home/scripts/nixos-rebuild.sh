@@ -10,7 +10,7 @@ set -e
 pushd /home/synchronous/nix-cfg
 
 # Early return if no changes were detected (thanks @singiamtel!)
-if git --git-dir /home/synchronous/nix-cfg/.git diff --quiet '*.nix'; then
+if git --git-dir /home/synchronous/nix-cfg/.git diff --quiet; then
     echo "No changes detected, exiting."
     popd
     exit 0
