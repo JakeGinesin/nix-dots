@@ -184,6 +184,7 @@ alias dlpaper="python /home/synchronous/.scripts/papers/dlpaper.py"
 alias backup_home="sh /home/synchronous/.scripts/backup/backup.sh"
 
 # ====== NIXOS ALIASES
+alias rebuild="sh /home/synchronous/.scripts/nixos-rebuild.sh"
 
 
 # ------------------- fzf configuration
