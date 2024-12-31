@@ -24,12 +24,12 @@ alejandra . &>/dev/null \
 git --git-dir /home/synchronous/nix-cfg/.git --no-pager diff -U0 
 # '*.nix'
 
-echo ""
-echo "NixOS Rebuilding..."
-
 # Rebuild, output simplified errors, log trackebacks
 sudo nixos-rebuild switch --flake /home/synchronous/nix-cfg/flake.nix &> /tmp/nixos-switch.log 
 cat /tmp/nixos-switch.log | grep --color error && exit 1
+
+echo ""
+echo "NixOS Rebuilding..."
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
