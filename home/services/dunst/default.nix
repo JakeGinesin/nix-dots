@@ -59,6 +59,28 @@
         mouse_middle_click = "do_action, close_current";
         mouse_right_click = "close_all";
       };
+
+      experimental = {
+        per_monitor_dpi = false;
+      };
+
+      urgency_low = {
+        background = "#000000";
+        foreground = "#EBDBB2";
+        timeout = 3;
+      };
+
+      urgency_normal = {
+        background = "#000000";
+        foreground = "#EBDBB2";
+        timeout = 3;
+      };
+
+      urgency_critical = {
+        background = "#000000";
+        foreground = "#EBDBB2";
+        timeout = 3;
+      };
     };
   };
 }
