@@ -238,20 +238,20 @@ super + shift + {d,a}
     bspc node @/ -C {forward,backward}
 
 # audio
-# XF86AudioRaiseVolume
-#     pactl set-sink-volume @DEFAULT_SINK@ +1000
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +1000
 
-# XF86AudioLowerVolume
-#     pactl set-sink-volume @DEFAULT_SINK@ -1000
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -1000
 
-# XF86AudioMute
-#     pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# XF86AudioMicMute
-#     pactl set-source-mute @DEFAULT_SOURCE@ toggle
+XF86AudioMicMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# XF86MonBrightnessUp
-#    brightnessctl set 20+
+XF86MonBrightnessUp
+    brightnessctl set 20+
 
-# XF86MonBrightnessDown
-#     brightnessctl set 20-
+XF86MonBrightnessDown
+    brightnessctl set 20-
