@@ -136,6 +136,10 @@ in {
             command = "/home/synchronous/nix-cfg/home/scripts/nixos-rebuild.sh";
             options = ["NOPASSWD"];
           }
+          {
+            command = "/home/synchronous/.scripts/nixos-rebuild.sh";
+            options = ["NOPASSWD"];
+          }
         ];
         groups = ["wheel"];
       }
