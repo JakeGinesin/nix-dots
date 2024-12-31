@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # blatently adapted from: https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5
 
-set -e
+# set -e
 
 # Edit your config
 # $EDITOR configuration.nix
