@@ -113,7 +113,8 @@ alias pq="ping google.com -c 5"
 # alias sc="iwctl station wlan0 connect"
 
 ## directory control
-alias ..="cd .."
+alias ..="cd ../"
+alias ../="cd ../"
 alias ...="cd ../.."
 alias .4="cd ../../.."
 
@@ -181,6 +182,9 @@ alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
 alias termbin="sh /home/synchronous/.scripts/termbin/tb.sh"
 alias dlpaper="python /home/synchronous/.scripts/papers/dlpaper.py"
 alias backup_home="sh /home/synchronous/.scripts/backup/backup.sh"
+
+# ====== NIXOS ALIASES
+
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
