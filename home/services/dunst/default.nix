@@ -13,7 +13,7 @@
         width = 300;
         height = 45;
         origin = "top-right";
-        offset = "10x20";
+        offset = "10x50";
         scale = 0;
         notification_limit = 0;
         progress_bar = true;
