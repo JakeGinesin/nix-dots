@@ -41,7 +41,7 @@ git --git-dir /home/synchronous/nix-cfg/.git commit -am "$current"
 # Back to where you were
 popd
 
-rm /tmp/nixos-switch.log
+# rm /tmp/nixos-switch.log
 
 # Notify all OK!
 notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
