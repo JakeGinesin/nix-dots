@@ -139,7 +139,7 @@ in {
         ];
         groups = ["wheel"];
       }
-    ];;;
+    ];
   };
 
   # Install firefox.
