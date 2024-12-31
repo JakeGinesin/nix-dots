@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.xserver = {
     enable = true;
     xkb.layout = "us";
@@ -11,7 +13,7 @@
 
     windowManager.bspwm = {
       enable = true;
-      # extraConfig = builtins.readFile ./bspwmrc; 
+      # extraConfig = builtins.readFile ./bspwmrc;
       # configFile = ./bspwmrc; # relative import to preserve locality of config
       # package = "bspwm-unstable";
       # sxhkd.package = "sxhkd-unstable";
@@ -27,7 +29,6 @@
         greeters.gtk.enable = true;
       };
     };
-   
   };
 
   # xsession.windowManager.bspwm = {
@@ -43,7 +44,7 @@
   # services.displayManagrer.sddm.enable = true;
   # services.desktopManager.plasma6.enable = true;
 
-  # services.xserver.xkb = { 
+  # services.xserver.xkb = {
   #   layout = "us";
   #   variant = "";
   # }

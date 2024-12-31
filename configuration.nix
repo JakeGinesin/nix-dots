@@ -1,25 +1,24 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
-let
-    pkg_with_working_nitrogen = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/c0c50dfcb70d48e5b79c4ae9f1aa9d339af860b4.tar.gz";
-	sha256 = "17p3w4mgfr4yj2p0jz6kqgzhyr04h4fap5hnd837664xd1xhwdjb";
-    }) { inherit (pkgs) system; };
-
-    old-nitrogen = pkg_with_working_nitrogen.nitrogen;
-in
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./system/system.nix
-      # inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  ...
+}: let
+  pkg_with_working_nitrogen = import (builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/c0c50dfcb70d48e5b79c4ae9f1aa9d339af860b4.tar.gz";
+    sha256 = "17p3w4mgfr4yj2p0jz6kqgzhyr04h4fap5hnd837664xd1xhwdjb";
+  }) {inherit (pkgs) system;};
+
+  old-nitrogen = pkg_with_working_nitrogen.nitrogen;
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./system/system.nix
+    # inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -29,7 +28,7 @@ in
   networking.hostName = "thonkpad"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix = {
     nixPath = [
@@ -89,10 +88,9 @@ in
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.synchronous = {
-
     isNormalUser = true;
     description = "jake";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       kdePackages.kate
       firefox
@@ -113,8 +111,10 @@ in
       librewolf
       eza
       flameshot
-      neofetch lolcat
-      nnn xclip
+      neofetch
+      lolcat
+      nnn
+      xclip
       brightnessctl
       xbindkeys
       pulseaudio
@@ -123,10 +123,8 @@ in
       alejandra
       # procps # for pgrep
       # xorg.xrandr
-    #  thunderbird
+      #  thunderbird
     ];
-
-
   };
 
   # Install firefox.
@@ -138,21 +136,21 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim 
-     neovim
-     linux-manual
-     man-pages
-     man-pages-posix
-     fontconfig
-     python3
-     rofi
-     flameshot
-     tree
-     # nitrogen
-     polybar
-     sxhkd
-     bspwm
-     librewolf
+    vim
+    neovim
+    linux-manual
+    man-pages
+    man-pages-posix
+    fontconfig
+    python3
+    rofi
+    flameshot
+    tree
+    # nitrogen
+    polybar
+    sxhkd
+    bspwm
+    librewolf
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -181,5 +179,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

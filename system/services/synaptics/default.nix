@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.libinput = {
     enable = false;
     touchpad.naturalScrolling = true;
@@ -21,13 +25,13 @@
     palmMinWidth = 5;
     minSpeed = "0.6";
     maxSpeed = "1.0";
-    
+
     additionalOptions = ''
-Option "VertScrollDelta" "-111"
-Option "HorizScrollDelta" "-111"
-Option "FingerLow" "25"
-Option "FingerHigh" "30"
-Option "MaxTapTime" "0"
+      Option "VertScrollDelta" "-111"
+      Option "HorizScrollDelta" "-111"
+      Option "FingerLow" "25"
+      Option "FingerHigh" "30"
+      Option "MaxTapTime" "0"
     '';
   };
 }

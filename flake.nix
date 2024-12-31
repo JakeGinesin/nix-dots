@@ -11,7 +11,7 @@
     };
   };
 
- outputs = inputs @ {
+  outputs = inputs @ {
     flake-parts,
     self,
     ...
@@ -46,7 +46,7 @@
         # The usual flake attributes can be defined here, including system-
         # agnostic ones like nixosModule and system-enumerating ones, although
         # those are more easily expressed in perSystem.
-	# nixosConfigurations.myhostname = "thonkpad";
+        # nixosConfigurations.myhostname = "thonkpad";
         nixosConfigurations.thonkpad = inputs.nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           pkgs = import inputs.nixpkgs {
@@ -61,8 +61,8 @@
             overlays = [
               # inputs.emacs-overlay.overlay -- breaks doom on 30.??
             ];
-           
-            home.packages = with pkgs; [ xrandr procps bspwm sxhkd ];
+
+            home.packages = with pkgs; [xrandr procps bspwm sxhkd];
           };
           specialArgs = {inherit inputs;};
           # extraSpecialArgs = {inherit inputs;};
@@ -87,15 +87,15 @@
         };
       };
 
-  # outputs = { self, nixpkgs, ... }@inputs: {
-  #   nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-  #     specialArgs = {inherit inputs;};
-  #     modules = [
-  #       ./configuration.nix
-  #       # inputs.home-manager.nixosModules.default
-  #       { home-manager.users.synch = import ./home.nix; }
-  #     ];
-  #   };
-  # };
-  }; 
+      # outputs = { self, nixpkgs, ... }@inputs: {
+      #   nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      #     specialArgs = {inherit inputs;};
+      #     modules = [
+      #       ./configuration.nix
+      #       # inputs.home-manager.nixosModules.default
+      #       { home-manager.users.synch = import ./home.nix; }
+      #     ];
+      #   };
+      # };
+    };
 }

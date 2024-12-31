@@ -223,8 +223,9 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # ------ NNN (not no not november)
 export PATH=/home/synchronous/.scripts/nnn:$PATH
-export VISUAL=wrapper.sh
-export EDITOR="$VISUAL"
+# export VISUAL=wrapper.sh
+# export EDITOR="$VISUAL"
+export EDITOR="nvim"
 export NNN_PLUG='m:preview-tui;'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_TERMINAL=alacritty
