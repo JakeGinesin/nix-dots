@@ -171,8 +171,8 @@ alias fb="cd /home/synchronous/code/tob/fb"
 alias nuid="echo 002141542"
 alias gb="sh /home/synchronous/.scripts/bluetooth/gb.sh"
 alias gbdc="bluetoothctl disconnect"
-alias sxhkdrc="vim /home/synchronous/.config/sxhkd/sxhkdrc"
-alias bspwmrc="vim /home/synchronous/.config/bspwm/bspwmrc"
+# alias sxhkdrc="vim /home/synchronous/.config/sxhkd/sxhkdrc"
+# alias bspwmrc="vim /home/synchronous/.config/bspwm/bspwmrc"
 
 # monitor stuff
 alias dupe-display="sh /home/synchronous/.scripts/bspwm/dupe-display.sh"
