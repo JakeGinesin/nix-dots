@@ -21,7 +21,8 @@ alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
-git --git-dir /home/synchronous/nix-cfg/.git diff -U0 '*.nix'
+git --git-dir /home/synchronous/nix-cfg/.git diff -U0 
+# '*.nix'
 
 echo "NixOS Rebuilding..."
 
