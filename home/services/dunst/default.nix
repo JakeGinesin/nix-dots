@@ -36,7 +36,7 @@
         markup = "full";
         geometry = "300x2-30+20";
         shrink = "yes";
-        format = "<b>%s</b>%b";
+        format = "<b>%s</b> %b";
         alignment = "left";
         vertical_alignment = "center";
         show_age_threshold = 60;
