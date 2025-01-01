@@ -152,10 +152,10 @@ alt + Tab
 
 # start firefox
 super + {f}
-    firefox 
+    librewolf 
 
 super + {shift} + {f}
-    firefox --private-window
+    librewolf --private-window
 
 super + {Left,Right}
     bspc desktop -f {prev,next}
