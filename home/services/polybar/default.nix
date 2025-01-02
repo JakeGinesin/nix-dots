@@ -7,7 +7,7 @@
     enable = true;
     config = ./config.ini;
     script = ''
-      polybar mybar & disown
+      polybar mybar &
     '';
   };
 }
