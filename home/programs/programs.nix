@@ -12,6 +12,7 @@
     ./cmus/default.nix
     # ./nitrogen/defualt.nix
     ./rofi/default.nix
+    ./polybar/default.nix
 
     ./sxhkd/default.nix
     ./bspwm/default.nix
