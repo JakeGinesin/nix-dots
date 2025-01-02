@@ -5,7 +5,7 @@
 }: {
   services.polybar = {
     enable = true;
-    config = ./config.ini;
+    extraConfig = builtins.readFile ./config.ini;
     script = ''
       polybar mybar &
     '';
