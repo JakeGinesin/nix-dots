@@ -12,7 +12,7 @@
     '';
   };
 
-  home.activation.polybarStartup = lib.hm.dag.entryAfter ["linkGeneration"] ''
-    polybar -c /home/synchronous/.config/polybar/config.ini mybar > /tmp/polybar & disown
+  home.activation.polybarStartup = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    polybar -c /home/synchronous/.config/polybar/config.ini mybar & disown
   '';
 }
