@@ -3,9 +3,17 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  mypolybar = pkgs.polybar.override {
+    alsaSupport = true;
+    githubSupport = true;
+    mpdSupport = true;
+    pulseSupport = true;
+  };
+in {
   services.polybar = {
     enable = true;
+    package = mypolybar;
     extraConfig = builtins.readFile ./config.ini;
     script = ''
       polybar mybar & disown
