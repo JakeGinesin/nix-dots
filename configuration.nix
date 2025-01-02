@@ -122,6 +122,7 @@ in {
       libnotify # for notify-send
       alejandra
       discord
+      legcord
       # procps # for pgrep
       # xorg.xrandr
       #  thunderbird
