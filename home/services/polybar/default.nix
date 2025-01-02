@@ -7,7 +7,7 @@
     enable = true;
     extraConfig = builtins.readFile ./config.ini;
     script = ''
-      polybar mybar &
+      polybar -c /home/synchronous/.config/polybar/config.ini & disown
     '';
   };
 }
