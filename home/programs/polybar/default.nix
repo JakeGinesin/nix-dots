@@ -15,14 +15,18 @@ in {
     enable = true;
     package = mypolybar;
     extraConfig = builtins.readFile ./config.ini;
-    # unholy
+    # my savior: https://www.reddit.com/r/NixOS/comments/v8ikwq/polybar_doesnt_start_at_launch/
     script = ''
       # echo "none"
-      exec /etc/profiles/per-user/synchronous/bin/polybar mybar & disown
+      polybar mybar & disown
     '';
   };
 
   # home.activation.polybarStartup = lib.hm.dag.entryAfter ["writeBoundary"] ''
   #   exec /etc/profiles/per-user/synchronous/bin/polybar -c /home/synchronous/.config/polybar/config.ini mybar & disown
   # '';
+
+  systemd.user.services.polybar = {
+    Install.WantedBy = ["graphical-session.target"];
+  };
 }
