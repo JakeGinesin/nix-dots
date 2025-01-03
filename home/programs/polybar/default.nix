@@ -15,8 +15,9 @@ in {
     enable = true;
     package = mypolybar;
     extraConfig = builtins.readFile ./config.ini;
+    # unholy
     script = ''
-      polybar mybar & disown
+      exec /etc/profiles/per-user/synchronous/bin/polybar mybar & disown
     '';
   };
 
