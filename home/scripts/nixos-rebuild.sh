@@ -11,7 +11,7 @@ pushd /home/synchronous/nix-cfg
 
 # Early return if no changes were detected (thanks @singiamtel!)
 git --git-dir /home/synchronous/nix-cfg/.git add .
-if git --git-dir /home/synchronous/nix-cfg/.git diff --quiet; then
+if git --git-dir /home/synchronous/nix-cfg/.git diff-index --quiet HEAD; then
     echo "No changes detected, exiting."
     popd
     exit 0
