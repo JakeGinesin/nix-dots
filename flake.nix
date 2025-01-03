@@ -62,7 +62,7 @@
               # inputs.emacs-overlay.overlay -- breaks doom on 30.??
             ];
 
-            home.packages = with pkgs; [xrandr procps bspwm sxhkd];
+            home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd];
           };
           specialArgs = {inherit inputs;};
           # extraSpecialArgs = {inherit inputs;};
