@@ -3,13 +3,10 @@
 
 # set -e
 
-# Edit your config
-# $EDITOR configuration.nix
-
 # cd to your config dir
 pushd /home/synchronous/nix-cfg
 
-# Early return if no changes were detected (thanks @singiamtel!)
+# early return if no changes are given
 git --git-dir /home/synchronous/nix-cfg/.git add .
 if git --git-dir /home/synchronous/nix-cfg/.git diff-index --quiet HEAD; then
     echo "No changes detected, exiting."
@@ -21,11 +18,15 @@ fi
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
-# Shows your changes
+# shows changes between last commit and head
 
 # git --git-dir /home/synchronous/nix-cfg/.git add .
-git --git-dir /home/synchronous/nix-cfg/.git --no-pager diff -U0 
+# git --git-dir /home/synchronous/nix-cfg/.git --no-pager diff -U0 
+git --git-dir /home/synchronous/nix-cfg/.git --no-pager diff HEAD -U0 
 # '*.nix'
+
+echo "summary:"
+git status --porcelain
 
 echo ""
 echo "NixOS Rebuilding..."
