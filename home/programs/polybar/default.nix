@@ -29,4 +29,10 @@ in {
   systemd.user.services.polybar = {
     Install.WantedBy = ["graphical-session.target"];
   };
+
+  home.activation.copyPolybarScriptsDir = lib.mkAfter ''
+    mkdir -p ~/.config/polybar/scripts
+    cp -r ${./scripts}/* ~/.config/polybar/scripts
+    chmod -R u+w ~/.config/polybar/scripts
+  '';
 }
