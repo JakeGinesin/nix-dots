@@ -86,7 +86,6 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.synchronous = {
     isNormalUser = true;
     description = "jake";
@@ -123,6 +122,8 @@ in {
       alejandra
       discord
       legcord
+      polybar-pulseaudio-control
+      bluez # polybar
       # procps # for pgrep
       # xorg.xrandr
       #  thunderbird
