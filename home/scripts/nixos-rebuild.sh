@@ -25,7 +25,8 @@ alejandra . &>/dev/null \
 git --git-dir /home/synchronous/nix-cfg/.git --no-pager diff HEAD -U0 
 # '*.nix'
 
-echo "summary:"
+echo ""
+echo "Summary:"
 git status --porcelain
 
 echo ""
