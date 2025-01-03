@@ -10,8 +10,8 @@
 pushd /home/synchronous/nix-cfg
 
 # Early return if no changes were detected (thanks @singiamtel!)
-git --git-dir /home/synchronous/nix-cfg/.git add .
-if git --git-dir /home/synchronous/nix-cfg/.git diff --cached --quiet; then
+# git --git-dir /home/synchronous/nix-cfg/.git add .
+if git --git-dir /home/synchronous/nix-cfg/.git diff --quiet; then
     echo "No changes detected, exiting."
     popd
     exit 0
@@ -22,6 +22,8 @@ alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
+
+git --git-dir /home/synchronous/nix-cfg/.git add .
 git --git-dir /home/synchronous/nix-cfg/.git --no-pager diff -U0 
 # '*.nix'
 
