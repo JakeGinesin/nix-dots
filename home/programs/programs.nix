@@ -18,5 +18,6 @@
     ./bspwm/default.nix
 
     ./xbindkeys/default.nix
+    ./nvim/default.nix
   ];
 }
