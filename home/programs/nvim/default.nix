@@ -29,6 +29,8 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
       vim-airline-themes
+      plenary-nvim
+      nvim-web-devicons
       # coc-nvim
       {
         plugin = goyo-vim;
