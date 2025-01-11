@@ -48,14 +48,14 @@
         plugin = nvim-tree-lua;
         config = toLuaFile ./plugins/nvimtree.lua;
       }
-      {
-        plugin = vim-airline;
-        config = toLuaFile ./plugins/airline.lua;
-      }
-      {
-        plugin = barbar-nvim;
-        config = toLuaFile ./plugins/bufferline.lua;
-      }
+      # {
+      #   plugin = vim-airline;
+      #   config = toLuaFile ./plugins/airline.lua;
+      # }
+      # {
+      #   plugin = barbar-nvim;
+      #   config = toLuaFile ./plugins/bufferline.lua;
+      # }
     ];
 
     # extraConfig = lib.fileContents ./init.vim;
