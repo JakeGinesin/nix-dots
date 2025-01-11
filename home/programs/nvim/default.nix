@@ -56,6 +56,10 @@
         plugin = barbar-nvim;
         config = toLuaFile ./plugins/barbar.lua;
       }
+      {
+        plugin = lualine-nvim;
+        config = toLuaFile ./plugins/lualine.lua;
+      }
     ];
 
     # extraConfig = lib.fileContents ./init.vim;
