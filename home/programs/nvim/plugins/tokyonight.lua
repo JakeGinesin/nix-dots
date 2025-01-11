@@ -2,7 +2,7 @@
 
 require("tokyonight").setup({
   -- use the night style
-  style = "day",
+  style = "night",
   -- disable italic for functions
   styles = {
     functions = {}
@@ -10,7 +10,8 @@ require("tokyonight").setup({
   -- Change the "hint" color to the "orange" color, and make the "error" color bright red
   on_colors = function(colors)
     colors.hint = colors.orange
-    colors.error = "#ff0000"
+    colors.bg = "#ff0000"
+    colors.fg = "#e3e1e1"
   end
 })
 
