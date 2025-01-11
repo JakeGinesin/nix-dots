@@ -48,9 +48,9 @@ require('lualine').setup {
     lualine_c = {
       -- '%=', --[[ add your center compoentnts here in place of this comment ]]
       'diagnostics'
-    },
+i    },
     lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
+    lualine_y = { 'filetype', 'location' ,'progress' },
     lualine_z = {
       { 'location', left_padding = 1 },
     },
@@ -61,7 +61,7 @@ require('lualine').setup {
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { 'location' },
+    lualine_z = { },
   },
   tabline = {},
   extensions = {},
