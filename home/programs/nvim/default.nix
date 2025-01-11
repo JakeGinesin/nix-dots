@@ -28,7 +28,7 @@
 
     plugins = with pkgs.vimPlugins; [
       vim-nix
-      coc-nvim
+      # coc-nvim
       {
         plugin = goyo-vim;
         config = toLuaFile ./plugins/goyo.lua;
@@ -43,7 +43,7 @@
       }
       {
         plugin = nvim-tree-lua;
-        config = toLuaFile ./plugins/nerdtree.lua;
+        config = toLuaFile ./plugins/nvimtree.lua;
       }
     ];
 
