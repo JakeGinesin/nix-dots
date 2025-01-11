@@ -1,10 +1,5 @@
 -- Tokyonight configuration in Lua
 
-vim.cmd([[
-  colorscheme tokyonight
-]])
-
-
 require("tokyonight").setup({
   -- use the night style
   style = "night",
@@ -19,6 +14,10 @@ require("tokyonight").setup({
     colors.fg = "#e3e1e1"
   end
 })
+
+vim.cmd([[
+  colorscheme tokyonight
+]])
 
 
 -- vim.g.tokyonight_style = "day"
