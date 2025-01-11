@@ -3,6 +3,7 @@
 -- MIT license, see LICENSE for more details.
 
 -- stylua: ignore
+-- ripped from https://lospec.com/palette-list/tokyo-night
 local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
@@ -11,18 +12,21 @@ local colors = {
   red    = '#ff5189',
   violet = '#d183e8',
   grey   = '#303030',
+  deepblue = '#292e42',
+  deepcyan = '#3b4261',
+  deepred = ' #c53b53',
 }
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
+    a = { fg = colors.black, bg = colors.deepblue },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.white },
   },
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  insert = { a = { fg = colors.black, bg = colors.deepblue } },
+  visual = { a = { fg = colors.black, bg = colors.deepcyan } },
+  replace = { a = { fg = colors.black, bg = colors.deepred } },
 
   inactive = {
     a = { fg = colors.white, bg = colors.black },
