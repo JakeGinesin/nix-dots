@@ -49,9 +49,9 @@ require('lualine').setup {
       '%=', --[[ add your center compoentnts here in place of this comment ]]
     },
     lualine_x = {},
-    lualine_y = { 'filetype', 'location' ,'progress' },
+    lualine_y = { 'filetype' ,'progress' },
     lualine_z = {
-      { 'diagnostics', left_padding = 1 },
+      { 'location', left_padding = 1 },
     },
   },
   inactive_sections = {
