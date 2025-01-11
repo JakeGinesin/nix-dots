@@ -122,8 +122,8 @@ vim.api.nvim_set_keymap("n", "<C-t>", ":term<CR>A", { noremap = true, silent = f
 vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true })
 
 -- "Focus" commands that rely on the Goyo plugin
-vim.api.nvim_set_keymap("n", "<C-a>z", ":Goyo 80<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-a>q", ":Goyo!<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "<C-a>z", ":Goyo 80<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "<C-a>q", ":Goyo!<CR>", opts)
 
 -- Movements in visual mode
 vim.api.nvim_set_keymap("x", "<C-h>", "b", { noremap = true })
