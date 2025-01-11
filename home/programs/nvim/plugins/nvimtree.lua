@@ -1,3 +1,5 @@
+-- buh https://gist.github.com/mrpmohiburrahman/b7ec0d47cd043d3a2ed4c10a20504d4e
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
