@@ -5,6 +5,14 @@
 }: {
   programs.neovim = {
     enable = true;
-    extraConfig = lib.fileContents ./init.vim;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+
+    extraLuaConfig = ''
+      ${builtins.readFile ./init.lua}
+    '';
+
+    # extraConfig = lib.fileContents ./init.vim;
   };
 }
