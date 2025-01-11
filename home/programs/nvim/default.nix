@@ -27,6 +27,8 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
+      vim-nix
+      coc-nvim
       {
         plugin = goyo-vim;
         config = toLuaFile ./plugins/goyo.lua;
@@ -34,6 +36,10 @@
       {
         plugin = tokyonight-nvim;
         config = toLuaFile ./plugins/tokyonight.lua;
+      }
+      {
+        plugin = nerdcommenter;
+        config = toLuaFile ./plugins/nerdcommenter.lua;
       }
     ];
 
