@@ -46,13 +46,12 @@ require('lualine').setup {
     lualine_a = { { 'mode', right_padding = 1 } },
     lualine_b = { 'filename', 'branch' },
     lualine_c = {
-      -- '%=', --[[ add your center compoentnts here in place of this comment ]]
-      'diagnostics'
-i    },
+      '%=', --[[ add your center compoentnts here in place of this comment ]]
+    },
     lualine_x = {},
     lualine_y = { 'filetype', 'location' ,'progress' },
     lualine_z = {
-      { 'location', left_padding = 1 },
+      { 'diagnostics', left_padding = 1 },
     },
   },
   inactive_sections = {
@@ -61,7 +60,7 @@ i    },
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { },
+    lualine_z = { 'diagnostics' },
   },
   tabline = {},
   extensions = {},
