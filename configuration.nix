@@ -144,7 +144,7 @@ in {
             options = ["NOPASSWD"];
           }
         ];
-        groups = ["wheel"];
+        users = ["synchronous"];
       }
     ];
   };
