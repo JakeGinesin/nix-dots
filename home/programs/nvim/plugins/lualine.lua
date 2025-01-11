@@ -15,11 +15,12 @@ local colors = {
   deepblue = '#292e42',
   deepcyan = '#3b4261',
   deepred = '#c53b53',
+  lightblue = ' #737aa2'
 }
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.deepblue },
+    a = { fg = colors.black, bg = colors.lightblue },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.white },
   },
