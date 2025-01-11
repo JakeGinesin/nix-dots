@@ -52,10 +52,10 @@
       #   plugin = vim-airline;
       #   config = toLuaFile ./plugins/airline.lua;
       # }
-      # {
-      #   plugin = barbar-nvim;
-      #   config = toLuaFile ./plugins/bufferline.lua;
-      # }
+      {
+        plugin = barbar-nvim;
+        config = toLuaFile ./plugins/barbar.lua;
+      }
     ];
 
     # extraConfig = lib.fileContents ./init.vim;
