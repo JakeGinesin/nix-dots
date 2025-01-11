@@ -100,6 +100,7 @@
           p.typescript
           p.vue
           p.yaml
+          p.agda
         ]);
         config = toLuaFile ./plugins/treesitter.lua;
       }

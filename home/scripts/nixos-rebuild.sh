@@ -33,7 +33,7 @@ echo ""
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake /home/synchronous/nix-cfg/flake.nix &> /tmp/nixos-switch.log 
+sudo /run/current-system/sw/bin/nixos-rebuild switch --flake /home/synchronous/nix-cfg/flake.nix &> /tmp/nixos-switch.log 
 # cat /tmp/nixos-switch.log | grep --color error && exit 1
 
 if grep --color error /tmp/nixos-switch.log; then
