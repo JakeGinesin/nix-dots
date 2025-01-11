@@ -98,7 +98,6 @@
           p.rust
           p.toml
           p.typescript
-          p.vue
           p.yaml
           p.agda
         ]);

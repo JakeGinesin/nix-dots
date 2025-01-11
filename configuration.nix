@@ -144,7 +144,7 @@ in {
             command = "/home/synchronous/.scripts/nixos-rebuild.sh";
             options = ["NOPASSWD"];
           }
-          {
+          { # are you serious?
             command = "/run/current-system/sw/bin/nixos-rebuild switch --flake /home/synchronous/nix-cfg/flake.nix";
             options = ["NOPASSWD"];
           }
