@@ -60,7 +60,7 @@ require('lualine').setup {
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { 'diagnostics' },
+    lualine_z = {},
   },
   tabline = {},
   extensions = {},
