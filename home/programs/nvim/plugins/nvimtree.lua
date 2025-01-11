@@ -21,7 +21,7 @@ end
 require('nvim-tree').setup()
 
 require('nvim-tree').setup({
-  on_attack = my_on_attach,
+  on_attach = my_on_attach,
   sort_by = 'case_sensitive',
   view = {
     adaptive_size = false,
