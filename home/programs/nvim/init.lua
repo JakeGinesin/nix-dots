@@ -133,6 +133,12 @@ vim.api.nvim_set_keymap("x", "<C-l>", "w", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-BS>", "<C-W>", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })
 
+-- nagiation
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-i>', '<C-w>k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+
 ------------------------------------------------------
 --                    AUTOCMD
 ------------------------------------------------------
