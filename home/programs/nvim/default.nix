@@ -24,6 +24,13 @@
 
       xclip
       wl-clipboard
+      ripgrep
+      fd
+      lua-language-server
+      rust-analyzer-unwrapped
+      black
+      nodejs_22
+      # gh
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -59,6 +66,42 @@
       {
         plugin = lualine-nvim;
         config = toLuaFile ./plugins/lualine.lua;
+      }
+      {
+        plugin = nvim-treesitter.withPlugins (p: [
+          # p.tree-sitter-nix
+          # p.tree-sitter-vim
+          # p.tree-sitter-bash
+          # p.tree-sitter-lua
+          # p.tree-sitter-python
+          # p.tree-sitter-json
+          p.bash
+          p.comment
+          p.css
+          p.dockerfile
+          p.fish
+          p.gitattributes
+          p.gitignore
+          p.go
+          p.gomod
+          p.gowork
+          p.hcl
+          p.javascript
+          p.jq
+          p.json5
+          p.json
+          p.lua
+          p.make
+          p.markdown
+          p.nix
+          p.python
+          p.rust
+          p.toml
+          p.typescript
+          p.vue
+          p.yaml
+        ]);
+        config = toLuaFile ./plugins/treesitter.lua;
       }
     ];
 

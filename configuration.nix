@@ -131,6 +131,7 @@ in {
   };
 
   security.sudo = {
+    # me ne frego. i dare you to privilege escalate me
     enable = true;
     extraRules = [
       {
