@@ -41,6 +41,10 @@
         plugin = nerdcommenter;
         config = toLuaFile ./plugins/nerdcommenter.lua;
       }
+      {
+        plugin = nvim-tree-lua;
+        config = toLuaFile ./plugins/nerdtree.lua;
+      }
     ];
 
     # extraConfig = lib.fileContents ./init.vim;
