@@ -43,7 +43,7 @@ require('lualine').setup {
     section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = { { 'mode', right_padding = 2 } },
+    lualine_a = { { 'mode', right_padding = 1 } },
     lualine_b = { 'filename', 'branch' },
     lualine_c = {
       '%=', --[[ add your center compoentnts here in place of this comment ]]
@@ -60,7 +60,7 @@ require('lualine').setup {
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { 'location' },
+    lualine_z = {},
   },
   tabline = {},
   extensions = {},
