@@ -15,7 +15,7 @@ local colors = {
   deepblue = '#292e42',
   deepcyan = '#3b4261',
   deepred = '#c53b53',
-  lightblue = ' #737aa2'
+  lightblue = '#737aa2'
 }
 
 local bubbles_theme = {
