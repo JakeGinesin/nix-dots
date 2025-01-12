@@ -10,8 +10,8 @@
       "browser.startup.homepage" = "https://lobste.rs";
       "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
       # "browser.urlbar.placeholderName" = "Wikipedia";
-      "browser.urlbar.suggest.history" = "false";
-      "privacy.resistFingerprinting" = "false";
+      # "browser.urlbar.suggest.history" = "false";
+      # "privacy.resistFingerprinting" = "false";
     };
   };
 
