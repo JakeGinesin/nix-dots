@@ -59,7 +59,7 @@ vim.opt.splitbelow = true
 vim.opt.updatetime = 300         -- faster completion
 vim.opt.signcolumn = "auto"
 vim.opt.title = true
-vim.opt.titlestring = "%F - Neovim" -- File path and "Neovim" branding
+vim.opt.titlestring = "%F - NVIM" -- File path and "Neovim" branding
 -- vim.opt.titlestring = "%(%{expand(\"%:~:h\")}%)#%(% t%)%(% M%)%(% )NVIM"
 
 -- Append '+' register to clipboard
