@@ -10,11 +10,29 @@
     mpdSupport = true;
     pulseSupport = true;
   };
+
+  colors = {
+    background = "#0d0d0d";
+    foreground = "#ffffff";
+    theme = "#89adfa";
+  };
+
+  bluetoothScript = pkgs.callPackage ./scripts/bluetooth.nix {};
+
+  bctl = ''
+    [module/bluetooth]
+    type = custom/script
+    interval = 10
+    exec = ${bluetoothScript}/bin/bluetooth-ctl
+    label-foreground = ${colors.foreground}
+    format-foreground = ${colors.theme}
+  '';
 in {
   services.polybar = {
     enable = true;
     package = mypolybar;
-    extraConfig = builtins.readFile ./config.ini;
+    config = ./config.ini;
+    extraConfig = bctl;
     # my savior: https://www.reddit.com/r/NixOS/comments/v8ikwq/polybar_doesnt_start_at_launch/
     script = ''
       # echo "none"
