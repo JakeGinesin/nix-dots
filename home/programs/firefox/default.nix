@@ -24,7 +24,7 @@
             "browser.urlbar.placeholderName" = "DuckDuckGo";
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           };
-        userChrome = builtins.readFile ../conf.d/userChrome.css;
+        # userChrome = builtins.readFile ../conf.d/userChrome.css;
       };
     };
   };
