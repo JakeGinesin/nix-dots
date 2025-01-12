@@ -26,8 +26,8 @@ local bubbles_theme = {
   },
 
   insert = { a = { fg = colors.black, bg = colors.deepblue } },
-  visual = { a = { fg = colors.black, bg = colors.deepcyan } },
-  replace = { a = { fg = colors.black, bg = colors.deepred } },
+  visual = { a = { fg = colors.black, bg = colors.deepred } },
+  replace = { a = { fg = colors.black, bg = colors.violet } },
 
   inactive = {
     a = { fg = colors.white, bg = colors.black },

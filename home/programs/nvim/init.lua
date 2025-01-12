@@ -25,6 +25,7 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+
 -- Tab / indentation
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -58,7 +59,8 @@ vim.opt.splitbelow = true
 vim.opt.updatetime = 300         -- faster completion
 vim.opt.signcolumn = "auto"
 vim.opt.title = true
-vim.opt.titlestring = "%(%{expand(\"%:~:h\")}%)#%(% t%)%(% M%)%(% )NVIM"
+vim.opt.titlestring = "%F - Neovim" -- File path and "Neovim" branding
+-- vim.opt.titlestring = "%(%{expand(\"%:~:h\")}%)#%(% t%)%(% M%)%(% )NVIM"
 
 -- Append '+' register to clipboard
 vim.opt.clipboard:append("unnamedplus")
