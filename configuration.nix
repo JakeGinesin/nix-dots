@@ -14,10 +14,8 @@
   old-nitrogen = pkg_with_working_nitrogen.nitrogen;
 in {
   imports = [
-    # Include the results of the hardware scan.
     # ./hardware-configuration.nix
     ./system/system.nix
-    # inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -92,7 +90,7 @@ in {
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       kdePackages.kate
-      firefox
+      # firefox
       git
       arandr
       procs
@@ -107,7 +105,7 @@ in {
       polybar
       sxhkd
       bspwm
-      librewolf
+      # librewolf
       eza
       flameshot
       neofetch
