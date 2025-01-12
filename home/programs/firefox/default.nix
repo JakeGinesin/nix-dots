@@ -9,7 +9,7 @@
       "app.update.auto" = false;
       "browser.startup.homepage" = "https://lobste.rs";
       "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-      "browser.urlbar.placeholderName" = "Wikipedia (en)";
+      "browser.urlbar.placeholderName" = "Wikipedia";
       "browser.urlbar.suggest.history" = "false";
       "privacy.resistFingerprinting" = "false";
     };
