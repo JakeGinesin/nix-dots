@@ -2,13 +2,14 @@
   bctl = "/run/current-system/sw/bin/bluetoothctl";
   sctl = "/run/current-system/sw/bin/systemctl";
   grep = "/run/current-system/sw/bin/grep";
+  wc = "/run/current-system/sw/bin/wc";
 in
   pkgs.writeShellScriptBin "bluetooth-ctl" ''
-    if [ $(${bctl} show | ${grep} "Powered: yes" | wc -c) -eq 0 ]
+    if [ $(${bctl} show | ${grep} "Powered: yes" | ${wc} -c) -eq 0 ]
     then
       echo ""
     else
-      if [ $(echo info | ${bctl} | ${grep} 'Device' | wc -c) -eq 0 ]
+      if [ $(echo info | ${bctl} | ${grep} 'Device' | ${wc} -c) -eq 0 ]
       then
         echo ""
       fi
