@@ -44,6 +44,10 @@ in {
   #   exec /etc/profiles/per-user/synchronous/bin/polybar -c /home/synchronous/.config/polybar/config.ini mybar & disown
   # '';
 
+  home.activation.polybarRestart = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    /etc/profiles/per-user/synchronous/bin/systemctl --user restart polybar
+  '';
+
   systemd.user.services.polybar = {
     Install.WantedBy = ["graphical-session.target"];
   };
