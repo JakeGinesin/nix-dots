@@ -3,7 +3,13 @@
   lib,
   ...
 }: {
-  programs.librewolf.enable = true;
+  programs.librewolf = {
+    enable = true;
+    settings = {
+      "app.update.auto" = false;
+      "browser.startup.homepage" = "https://lobste.rs";
+    };
+  };
 
   programs.firefox = {
     enable = true;
