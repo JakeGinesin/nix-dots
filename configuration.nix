@@ -15,7 +15,7 @@
 in {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
     ./system/system.nix
     # inputs.home-manager.nixosModules.default
   ];

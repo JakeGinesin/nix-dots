@@ -7,5 +7,6 @@
     ./wm/bspwm.nix
     ./services/services.nix
     ./fonts/fonts.nix
+    ./hardware/hardware.nix
   ];
 }
