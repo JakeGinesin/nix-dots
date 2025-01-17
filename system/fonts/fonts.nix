@@ -5,11 +5,11 @@
       corefonts
       fira-code
       fira-code-symbols
-      font-awesome_4
-      font-awesome_5
+      # font-awesome_4
+      # font-awesome_5
       inconsolata
       ipaexfont
-      jetbrains-mono
+      # jetbrains-mono
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       siji
@@ -18,6 +18,7 @@
       b612
       nerd-fonts.noto
       nerd-fonts.mplus
+      nerd-fonts.jetbrains-mono
     ];
 
     fontconfig = {
