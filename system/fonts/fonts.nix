@@ -16,6 +16,8 @@
       ubuntu_font_family
       noto-fonts-cjk-sans
       b612
+      nerd-fonts.noto
+      nerd-fonts.mplus
     ];
 
     fontconfig = {
