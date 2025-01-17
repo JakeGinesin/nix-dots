@@ -14,6 +14,8 @@
       noto-fonts-cjk-serif
       siji
       ubuntu_font_family
+      noto-fonts-cjk-sans
+      b612
     ];
 
     fontconfig = {
