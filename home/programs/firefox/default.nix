@@ -227,6 +227,8 @@
       settings = {
         ### This is all aesthetic stuff
         # for tiling window managers expands to the size of the window
+
+        "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
         "full-screen-api.ignore-widgets" = true;
 
         # tab open behavior
