@@ -19,6 +19,7 @@
       nerd-fonts.noto
       nerd-fonts.mplus
       nerd-fonts.jetbrains-mono
+      noto-fonts-color-emoji
     ];
 
     fontconfig = {
