@@ -12,11 +12,11 @@
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
 
       # CPU Performance Caps
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MIN_PERF_ON_BAT = 0;
+      # CPU_MIN_PERF_ON_AC = 0;
+      # CPU_MIN_PERF_ON_BAT = 0;
 
       CPU_MAX_PERF_ON_AC = 100;
-      CPU_MAX_PERF_ON_BAT = 50;
+      CPU_MAX_PERF_ON_BAT = 100;
 
       # Platform Profile
       PLATFORM_PROFILE_ON_AC = "performance";
@@ -24,10 +24,10 @@
 
       # Boost
       CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
+      CPU_BOOST_ON_BAT = 1;
 
       CPU_HWP_DYN_BOOST_ON_AC = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT = 0;
+      CPU_HWP_DYN_BOOST_ON_BAT = 1;
 
       # Runtime Power Management
       RUNTIME_PM_ON_AC = "auto";
