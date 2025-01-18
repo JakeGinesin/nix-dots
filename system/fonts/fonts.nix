@@ -22,6 +22,8 @@
       noto-fonts-color-emoji
     ];
 
+    fontDir.enable = true;
+
     fontconfig = {
       enable = true;
       defaultFonts = {
