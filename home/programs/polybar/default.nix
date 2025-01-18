@@ -28,13 +28,40 @@
     format-foreground = ${colors.theme}
   '';
 
-  networkingDevice = builtins.exec "ip route | grep default | awk '{print $5}'";
+  ip = "/run/current-system/sw/bin/ip";
+  grep = "/run/current-system/sw/bin/grep";
+  awk = "/run/current-system/sw/bin/awk";
+
+  # networkingDevice = builtins.exec "ip route | grep default | awk '{print $5}'";
+  # networkingDevice = pkgs.runCommand "get-network-device" {} ''
+  # ${ip} route | ${grep} default | ${awk} '{print $5}' > $out
+  # '';
+
+  internets = ''
+    [module/network]
+    type = internal/network
+    interface = wlp4s0
+    interval = 4.0
+    udspeed-minwidth = 5
+    accumulate-stats = true
+    unknown-as-up = true
+
+    format-connected = 直<label-connected>
+    format-connected-foreground = ${colors.theme}
+    label-connected = %downspeed% [%essid%]
+    label-connected-foreground = ${colors.foreground}
+
+    format-disconnected = 睊  <label-disconnected>
+    format-disconnected-foreground = ${colors.theme}
+    label-disconnected = disconnected
+    label-disconnected-foreground = ${colors.foreground}
+  '';
 in {
   services.polybar = {
     enable = true;
     package = mypolybar;
     config = ./config.ini;
-    extraConfig = bctl;
+    extraConfig = bctl + internets;
     # my savior: https://www.reddit.com/r/NixOS/comments/v8ikwq/polybar_doesnt_start_at_launch/
     script = ''
       # echo "none"
