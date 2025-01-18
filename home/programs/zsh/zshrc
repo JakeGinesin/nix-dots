@@ -10,6 +10,7 @@ zstyle :compinstall filename '/home/synchronous/.zshrc'
 export PATH=/home/synchronous/.local/bin:$PATH
 export PATH=/home/synchronous/.cargo/bin/:$PATH
 export NIX_PATH=/home/synchronous/nix-cfg
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # ==== binding keys ====
 
