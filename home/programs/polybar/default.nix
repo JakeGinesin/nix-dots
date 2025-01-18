@@ -27,6 +27,8 @@
     label-foreground = ${colors.foreground}
     format-foreground = ${colors.theme}
   '';
+
+  networkingDevice = builtins.exec "ip route | grep default | awk '{print $5}'";
 in {
   services.polybar = {
     enable = true;
