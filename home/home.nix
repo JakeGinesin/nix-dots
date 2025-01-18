@@ -10,6 +10,7 @@
     ./programs/programs.nix
     ./services/services.nix
     ./wallpapers/default.nix
+    ./fonts/default.nix # need to manage fonts in two places becuase life sucks nix sucks
   ];
 
   home.activation.copyScripts = lib.mkAfter ''

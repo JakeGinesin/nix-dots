@@ -22,7 +22,7 @@
       noto-fonts-color-emoji
     ];
 
-    fontDir.enable = true;
+    # fontDir.enable = true;
 
     fontconfig = {
       enable = true;
