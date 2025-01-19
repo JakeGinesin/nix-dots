@@ -20,5 +20,6 @@
     ./xbindkeys/default.nix
     ./nvim/default.nix
     ./firefox/default.nix
+    ./git/default.nix
   ];
 }
