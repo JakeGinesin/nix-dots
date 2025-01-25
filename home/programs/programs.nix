@@ -14,6 +14,7 @@
     ./rofi/default.nix
     ./polybar/default.nix
 
+    # wm stuff
     ./sxhkd/default.nix
     ./bspwm/default.nix
 
