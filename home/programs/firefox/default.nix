@@ -211,6 +211,11 @@
           installation_mode = "force_installed";
           default_area = "menupanel";
         };
+        "zotero@chnm.gmu.edu" = {
+          install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.151";
+          installation_mode = "force_installed";
+          default_area = "navbar";
+        };
       };
     };
     profiles.synchronous = {
