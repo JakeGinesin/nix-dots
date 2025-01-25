@@ -10,10 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # old
+    # nur = {
+    # url = "github:nix-community/NUR";
+    # inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = inputs @ {
@@ -68,7 +69,7 @@
               # nur = import inputs.nur {inherit (final) pkgs;};
               # })
               # inputs.emacs-overlay.overlay -- breaks doom on 30.??
-              inputs.nur.overlay
+              # inputs.nur.overlay
             ];
 
             home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];

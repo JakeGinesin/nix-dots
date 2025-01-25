@@ -186,7 +186,6 @@
   programs.firefox = {
     enable = true;
     profiles.synchronous = {
-      # https://home-manager-options.extranix.com/?query=firefox.extensions&release=release-24.05
       # extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
       # ublock-origin
       # stylus
