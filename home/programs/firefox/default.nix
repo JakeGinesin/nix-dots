@@ -198,6 +198,8 @@
         #titlebar-min, #titlebar-max, #titlebar-close {
           display: none !important;
         }
+
+        .titlebar-buttonbox-container{ display:none }
       '';
       bookmarks = [
         {
