@@ -122,6 +122,7 @@ in {
       legcord
       polybar-pulseaudio-control
       bluez # polybar
+      zotero
       # procps # for pgrep
       # xorg.xrandr
       #  thunderbird

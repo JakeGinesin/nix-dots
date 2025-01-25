@@ -38,10 +38,10 @@ super + {_,shift + }w
 # super + g
 #	bspc node -s biggest.window
 super + g 
-  librewolf www.google.com
+  firefox www.google.com
 
 super + shift + g
-  librewolf --new-window "www.google.com"
+  firefox --new-window "www.google.com"
 
 super + z
   zotero
@@ -152,11 +152,10 @@ alt + Tab
 
 # start firefox
 super + {f}
-    # librewolf 
     firefox
 
 super + {shift} + {f}
-    librewolf --private-window
+    firefox --private-window
     
 
 super + {Left,Right}
@@ -209,7 +208,7 @@ super + {ctrl} + {c}
   find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem";
 
 super + {alt} + {c}
-  find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read rsem; yq ".url" "/home/synchronous/current-semester/$rsem/info.yaml" | xargs librewolf
+  find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read rsem; yq ".url" "/home/synchronous/current-semester/$rsem/info.yaml" | xargs firefox
 
 super + {p}
   sh /home/synchronous/.scripts/vimwiki/open_todo.sh
