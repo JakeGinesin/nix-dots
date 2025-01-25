@@ -190,7 +190,15 @@
       # ublock-origin
       # stylus
       # ];
-      # TODO
+      # extensions = [
+      # ublock-origin
+      # ];
+      userChrome = ''
+        /* Hide window control buttons */
+        #titlebar-min, #titlebar-max, #titlebar-close {
+          display: none !important;
+        }
+      '';
       bookmarks = [
         {
           name = "Bar";
@@ -228,7 +236,7 @@
         ### This is all aesthetic stuff
         # for tiling window managers expands to the size of the window
 
-        # "layout.css.devPixelsPerPx" = 1.25;
+        "layout.css.devPixelsPerPx" = 1.25;
 
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
         "full-screen-api.ignore-widgets" = true;
