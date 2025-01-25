@@ -4,7 +4,8 @@
   ...
 }: {
   imports = [
-    ./wm/bspwm.nix
+    # ./wm/bspwm.nix
+    ./xserver/default.nix
     ./services/services.nix
     ./fonts/fonts.nix
     ./hardware/hardware.nix
