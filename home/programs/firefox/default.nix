@@ -185,6 +185,7 @@
 
   programs.firefox = {
     enable = true;
+    # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
     policies = {
       ExtensionSettings = {
         "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
@@ -192,6 +193,7 @@
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "menupanel";
         };
       };
     };
