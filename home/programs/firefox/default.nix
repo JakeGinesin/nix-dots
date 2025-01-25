@@ -232,7 +232,10 @@
           display: none !important;
         }
 
-        .titlebar-buttonbox-container{ display:none }
+        .titlebar-buttonbox-container{
+          display:none;
+          padding-right:-30px;
+        }
       '';
       bookmarks = [
         {
