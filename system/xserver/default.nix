@@ -11,6 +11,8 @@
     # displayManager.defaultSession = "bspwm";
     desktopManager.xterm.enable = false;
 
+    windowManager.bspwm.enable = true;
+
     # windowManager.bspwm = {
     # enable = true;
     # # extraConfig = builtins.readFile ./bspwmrc;
