@@ -64,6 +64,9 @@
               };
             };
             overlays = [
+              (final: prev: {
+                nur = import inputs.nur {inherit (final) pkgs;};
+              })
               # inputs.emacs-overlay.overlay -- breaks doom on 30.??
             ];
 
