@@ -196,6 +196,21 @@
           installation_mode = "force_installed";
           default_area = "menupanel";
         };
+        "jid1-MnnxcxisBPnSXQ@jetpack" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+          installation_mode = "force_installed";
+          default_area = "menupanel";
+        };
+        "addon@darkreader.org" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+          installation_mode = "force_installed";
+          default_area = "menupanel";
+        };
+        "dfyoutube@example.com" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/3449086/df_youtube-1.13.504.xpi";
+          installation_mode = "force_installed";
+          default_area = "menupanel";
+        };
       };
     };
     profiles.synchronous = {
