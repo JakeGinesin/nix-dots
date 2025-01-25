@@ -186,6 +186,7 @@
   programs.firefox = {
     enable = true;
     # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
+    # https://mozilla.github.io/policy-templates/#extensionsettings
     policies = {
       ExtensionSettings = {
         "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
