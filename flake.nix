@@ -64,10 +64,11 @@
               };
             };
             overlays = [
-              (final: prev: {
-                nur = import inputs.nur {inherit (final) pkgs;};
-              })
+              # (final: prev: {
+              # nur = import inputs.nur {inherit (final) pkgs;};
+              # })
               # inputs.emacs-overlay.overlay -- breaks doom on 30.??
+              inputs.nur.overlay
             ];
 
             home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
