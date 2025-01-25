@@ -1,10 +1,10 @@
 {
-  builtins,
-  lib,
+  config,
+  pkgs,
   ...
 }: {
   programs.zathura = {
     enable = true;
-    extraConfig = ./zathurarc;
-  }
+    extraConfig = builtins.readFile ./zathurarc;
+  };
 }
