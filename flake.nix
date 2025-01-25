@@ -62,7 +62,7 @@
               # inputs.emacs-overlay.overlay -- breaks doom on 30.??
             ];
 
-            home.packages = with pkgs; [xrandr procps polybar-pulseaudio-control bluez];
+            home.packages = with pkgs; [xrandr procps polybar-pulseaudio-control bluez zotero];
           };
           specialArgs = {inherit inputs;};
           # extraSpecialArgs = {inherit inputs;};
