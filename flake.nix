@@ -10,26 +10,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # old
-    # nur = {
-    # url = "github:nix-community/NUR";
-    # inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    haumea = {
+      url = "github:nix-community/haumea/v0.2.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     flake-parts,
     self,
+    haumea,
+    nixpkgs,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         # To import a flake module
-        # 1. Add foo to inputs
-        # 2. Add foo as a parameter to the outputs function
-        # 3. Add here: foo.flakeModule
         #cajun-xmonad.default
       ];
+
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
       perSystem = {
         config,
@@ -49,6 +48,12 @@
         formatter = pkgs.alejandra;
       };
       flake = {
+        lib = haumea.lib.load {
+          scripts = ./scripts;
+          inputs = {
+            inherit (nixpkgs) lib;
+          };
+        };
         # The usual flake attributes can be defined here, including system-
         # agnostic ones like nixosModule and system-enumerating ones, although
         # those are more easily expressed in perSystem.
