@@ -48,14 +48,30 @@
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
         # packages.default = pkgs.hello;
         # formatter = pkgs.nixfmt-rfc-style;
-        # pkgs = import nixpkgs {
+
+        formatter = pkgs.alejandra;
+        # pkgs = import inputs.nixpkgs {
         # inherit system;
         # config.allowUnfree = true;
         # };
-
-        formatter = pkgs.alejandra;
+        # lib = inputs.haumea.lib.load {
+        # src = ./scripts;
+        # inputs = {
+        # inherit nixpkgs;
+        # };
+        # };
       };
       flake = {
+        module = {pkgs, ...} @ args:
+          haumea.lib.load {
+            src = ./scripts;
+            inputs =
+              args
+              // {
+                inherit inputs;
+              };
+          };
+
         # The usual flake attributes can be defined here, including system-
         # agnostic ones like nixosModule and system-enumerating ones, although
         # those are more easily expressed in perSystem.
@@ -81,7 +97,14 @@
 
             # home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
           };
-          specialArgs = {inherit inputs;};
+
+          # lib = inputs.haumea.lib.load {
+          # src = ./scripts;
+          # inputs = {
+          # inherit (nixpkgs) lib;
+          # };
+          # };
+
           # extraSpecialArgs = {inherit inputs;};
           modules = [
             ./configuration.nix
@@ -90,7 +113,10 @@
             # agenix.nixosModules.default
             # home manager
             # inputs.haumea.nixosModules
-            # self.h-lib
+            # (haumea.lib.load {
+            # src = ./scripts;
+            # inputs = {inherit pkgs;};
+            # })
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
