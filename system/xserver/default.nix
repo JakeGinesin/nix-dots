@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  services.xserver.dpi = 180;
+  # services.xserver.dpi = 180;
   services.xserver = {
     enable = true;
     xkb.layout = "us";
