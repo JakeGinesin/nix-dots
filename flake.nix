@@ -23,7 +23,9 @@
     nixpkgs,
     ...
   }:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+    flake-parts.lib.mkFlake {
+      inherit inputs;
+    } {
       imports = [
         # To import a flake module
         #cajun-xmonad.default
@@ -32,10 +34,11 @@
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
       perSystem = {
         config,
-        self',
-        inputs',
-        pkgs,
+        self,
+        inputs,
         system,
+        nixpkgs,
+        pkgs,
         ...
       }: {
         # Per-system attributes can be defined here. The self' and inputs'
@@ -45,15 +48,14 @@
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
         # packages.default = pkgs.hello;
         # formatter = pkgs.nixfmt-rfc-style;
+        # pkgs = import nixpkgs {
+        # inherit system;
+        # config.allowUnfree = true;
+        # };
+
         formatter = pkgs.alejandra;
       };
       flake = {
-        lib = haumea.lib.load {
-          scripts = ./scripts;
-          inputs = {
-            inherit (nixpkgs) lib;
-          };
-        };
         # The usual flake attributes can be defined here, including system-
         # agnostic ones like nixosModule and system-enumerating ones, although
         # those are more easily expressed in perSystem.
@@ -77,7 +79,7 @@
               # inputs.nur.overlay
             ];
 
-            home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
+            # home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
           };
           specialArgs = {inherit inputs;};
           # extraSpecialArgs = {inherit inputs;};
@@ -87,6 +89,8 @@
             # agenix
             # agenix.nixosModules.default
             # home manager
+            # inputs.haumea.nixosModules
+            # self.h-lib
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
