@@ -234,7 +234,6 @@
 
         .titlebar-buttonbox-container{
           display:none;
-          padding-right:-300px;
         }
       '';
       bookmarks = [
