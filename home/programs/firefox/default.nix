@@ -273,6 +273,9 @@
         ### This is all aesthetic stuff
         # for tiling window managers expands to the size of the window
 
+        # https://support.mozilla.org/en-US/questions/1253302
+        "mousewheel.with_control.action" = "1";
+
         "layout.css.devPixelsPerPx" = 1.25;
 
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";

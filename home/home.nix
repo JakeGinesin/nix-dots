@@ -15,7 +15,7 @@
 
   home.activation.copyScripts = lib.mkAfter ''
     mkdir -p ~/.scripts
-    cp -r ${./scripts}/* ~/.scripts/
+    cp ${./nixos-rebuild.sh} ~/.scripts/
     chmod -R u+w ~/.scripts/
   '';
 
