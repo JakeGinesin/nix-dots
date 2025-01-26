@@ -3,7 +3,48 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  # readScriptsRecursively = dir: let
+  # entries = builtins.readDir dir; # This gives an attrset of filenames -> { "type": "regular"|"directory", ...}
+  # names = builtins.attrNames entries;
+  # in
+  # # We convert all items to a list of name/value pairs; then flatten them
+  # lib.attrsets.listToAttrs (lib.concatMap (
+  # entry: let
+  # fullPath = "${dir}/${entry}";
+  # entryInfo = entries.${entry}; # e.g., {type="regular"|"directory",size=...}
+  # in
+  # if entryInfo.type == "directory"
+  # then
+  # # Recursively read sub-directory
+  # builtins.attrValues (readScriptsRecursively fullPath)
+  # else
+  # # For a file, produce an attribute set item
+  # [
+  # {
+  # name = entry;
+  # value = fullPath;
+  # }
+  # ]
+  # )
+  # names);
+  # scripts = readScriptsRecursively ./scripts;
+  # scriptDerivations =
+  # lib.attrsets.mapAttrs (
+  # scriptName: scriptPath:
+  # pkgs.writeShellApplication {
+  # name = scriptName;
+  # # Pick whatever runtime dependencies you need
+  # runtimeInputs = with pkgs; [
+  # # Example: netcat, bashInteractive, curl, etc.
+  # netcat
+  # ];
+  # # The text of the shell script is read directly from the file
+  # text = builtins.readFile scriptPath;
+  # }
+  # )
+  # scripts;
+in {
   home.username = "synchronous";
   home.homeDirectory = "/home/synchronous";
   imports = [
@@ -22,40 +63,6 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   # home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
-
-  # home.packages = [
-  # # Adds the 'hello' command to your environment. It prints a friendly
-  # # "Hello, world!" when run.
-  # pkgs.hello
-
-  # # It is sometimes useful to fine-tune packages, for example, by applying
-  # # overrides. You can do that directly here, just don't forget the
-  # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-  # # fonts?
-  # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-  # # You can also create simple shell scripts directly inside your
-  # # configuration. For example, this adds a command 'my-hello' to your
-  # # environment:
-  # (pkgs.writeShellScriptBin "my-hello" ''
-  #   echo "Hello, ${config.home.username}!"
-  # '')
-  # ];
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
 
   home.sessionVariables = {
     EDITOR = "nvim";

@@ -10,26 +10,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    haumea = {
-      url = "github:nix-community/haumea/v0.2.2";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # haumea = {
+    # url = "github:nix-community/haumea/v0.2.2";
+    # inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = inputs @ {
     flake-parts,
     self,
-    haumea,
     nixpkgs,
     ...
   }:
     flake-parts.lib.mkFlake {
       inherit inputs;
     } {
-      imports = [
-        # To import a flake module
-        #cajun-xmonad.default
-      ];
+      imports = [];
 
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
       perSystem = {
@@ -50,28 +46,8 @@
         # formatter = pkgs.nixfmt-rfc-style;
 
         formatter = pkgs.alejandra;
-        # pkgs = import inputs.nixpkgs {
-        # inherit system;
-        # config.allowUnfree = true;
-        # };
-        # lib = inputs.haumea.lib.load {
-        # src = ./scripts;
-        # inputs = {
-        # inherit nixpkgs;
-        # };
-        # };
       };
       flake = {
-        module = {pkgs, ...} @ args:
-          haumea.lib.load {
-            src = ./scripts;
-            inputs =
-              args
-              // {
-                inherit inputs;
-              };
-          };
-
         # The usual flake attributes can be defined here, including system-
         # agnostic ones like nixosModule and system-enumerating ones, although
         # those are more easily expressed in perSystem.
@@ -87,36 +63,16 @@
                 # "package" = pkgs."package".overrideAttrs (attrs: {...})
               };
             };
-            overlays = [
-              # (final: prev: {
-              # nur = import inputs.nur {inherit (final) pkgs;};
-              # })
-              # inputs.emacs-overlay.overlay -- breaks doom on 30.??
-              # inputs.nur.overlay
-            ];
+            overlays = [];
 
             # home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
           };
 
-          # lib = inputs.haumea.lib.load {
-          # src = ./scripts;
-          # inputs = {
-          # inherit (nixpkgs) lib;
-          # };
-          # };
-
+          specialArgs = {inherit inputs;};
           # extraSpecialArgs = {inherit inputs;};
           modules = [
             ./configuration.nix
-            # inputs.nixos-hardware.nixosModules.system76-gaze18
-            # agenix
-            # agenix.nixosModules.default
-            # home manager
-            # inputs.haumea.nixosModules
-            # (haumea.lib.load {
-            # src = ./scripts;
-            # inputs = {inherit pkgs;};
-            # })
+            # self.module
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
