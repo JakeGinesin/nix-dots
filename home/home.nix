@@ -4,22 +4,22 @@
   lib,
   ...
 }: let
+  # 1) Recursively collect all scripts into a *list* of { name, value } items
   # readScriptsRecursively = dir: let
-  # entries = builtins.readDir dir; # This gives an attrset of filenames -> { "type": "regular"|"directory", ...}
+  # entries = builtins.readDir dir;
   # names = builtins.attrNames entries;
   # in
-  # # We convert all items to a list of name/value pairs; then flatten them
-  # lib.attrsets.listToAttrs (lib.concatMap (
+  # lib.concatMap (
   # entry: let
   # fullPath = "${dir}/${entry}";
-  # entryInfo = entries.${entry}; # e.g., {type="regular"|"directory",size=...}
+  # entryInfo = entries.${entry};
   # in
   # if entryInfo.type == "directory"
   # then
-  # # Recursively read sub-directory
-  # builtins.attrValues (readScriptsRecursively fullPath)
+  # # Recursively gather more {name, value} items
+  # readScriptsRecursively fullPath
   # else
-  # # For a file, produce an attribute set item
+  # # For each file, produce one record
   # [
   # {
   # name = entry;
@@ -27,22 +27,21 @@
   # }
   # ]
   # )
-  # names);
-  # scripts = readScriptsRecursively ./scripts;
+  # names;
+  # # 2) Convert that list of {name, value} into an attribute set
+  # scripts = lib.attrsets.listToAttrs (readScriptsRecursively ./scripts);
+  # # 3) Map over the attrset to create shell applications
   # scriptDerivations =
-  # lib.attrsets.mapAttrs (
-  # scriptName: scriptPath:
+  # lib.attrsets.mapAttrs
+  # (scriptName: scriptPath:
   # pkgs.writeShellApplication {
   # name = scriptName;
-  # # Pick whatever runtime dependencies you need
   # runtimeInputs = with pkgs; [
-  # # Example: netcat, bashInteractive, curl, etc.
+  # # put your dependencies here
   # netcat
   # ];
-  # # The text of the shell script is read directly from the file
   # text = builtins.readFile scriptPath;
-  # }
-  # )
+  # })
   # scripts;
 in {
   # home.packages = builtins.attrValues scriptDerivations;
