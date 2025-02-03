@@ -61,6 +61,11 @@
         .titlebar-buttonbox-container{
           display:none;
         }
+
+        /* https://www.reddit.com/r/FirefoxCSS/comments/1igbt7c/comment/mangluv/ */
+        .titlebar-spacer[type="post-tabs"] {
+          display: none !important
+        }
       '';
       bookmarks = [
         {
