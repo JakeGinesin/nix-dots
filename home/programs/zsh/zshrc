@@ -100,6 +100,7 @@ alias cls="clear"
 ## Curl Aliases for easy info
 # note for jake: try to change this back when you go back to boston lmfao
 alias weather="curl https://wttr.in/Boston; echo"
+alias weather-smol="curl https://wttr.in/Boston?format=3; echo"
 alias myip="curl https://ipecho.net/plain; echo"
 # alias crypto="curl https://usd.rate.sx"
 alias pq="ping google.com -c 5"
