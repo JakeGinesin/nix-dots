@@ -37,6 +37,11 @@ in {
   home.packages = with pkgs;
     [
       # any other packages go here
+      # xrandr
+      xorg.xrandr
+      bspwm
+      yt-dlp
+      beets
     ]
     ++ (
       with lib; let

@@ -161,7 +161,7 @@ alias polybar-restart='pkill polybar; setsid polybar mybar > /dev/null 2> /dev/n
 # alias ytdl='alias ytdl="youtube-dl --extract-audio --audio-format mp3 --output "downloads/%(title)s.%(ext)s"'
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output "
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output '/home/synchronous/.music-not-tagged/%(title)s.%(ext)s'"
-alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
+# alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
 alias ytdl-mp3="yt-dlp -x --audio-format mp3 --audio-quality 0 -o '/home/synchronous/music/%(title)s.%(ext)s' "
 
 alias phone-mount="sh /home/synchronous/.scripts/phone-mount/mount.sh"
@@ -169,16 +169,16 @@ alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
 alias music-move="sh /home/synchronous/.scripts/music/music-move.sh"
 
 alias ntpsync="sudo ntpdate pool.ntp.org"
-alias fb="cd /home/synchronous/code/tob/fb"
+# alias fb="cd /home/synchronous/code/tob/fb"
 alias nuid="echo 002141542"
-alias gb="sh /home/synchronous/.scripts/bluetooth/gb.sh"
+# alias gb="sh /home/synchronous/.scripts/bluetooth/gb.sh"
 alias gbdc="bluetoothctl disconnect"
 # alias sxhkdrc="vim /home/synchronous/.config/sxhkd/sxhkdrc"
 # alias bspwmrc="vim /home/synchronous/.config/bspwm/bspwmrc"
 
 # monitor stuff
-alias dupe-display="sh /home/synchronous/.scripts/bspwm/dupe-display.sh"
-alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
+# alias dupe-display="sh /home/synchronous/.scripts/bspwm/dupe-display.sh"
+# alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
 
 # termbin
 # alias termbin="sh /home/synchronous/.scripts/termbin/tb.sh"

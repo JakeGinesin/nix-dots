@@ -14,6 +14,8 @@ if git --git-dir /home/synchronous/nix-cfg/.git diff-index --quiet HEAD; then
     exit 0
 fi
 
+nix flake check /home/synchronous/nix-cfg/
+
 # Autoformat your nix files
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
