@@ -1,4 +1,3 @@
-#!/bin/bash
 shift="$1"
 current=$(bspc query -D -d --names)
 #echo "$(($current + 1))"

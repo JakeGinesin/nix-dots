@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [[ $(bluetoothctl devices) == "No default controller available" ]]; then
   echo "click the bluetooth button lol"
   exit 1

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 MOUNT_POINT="/home/synchronous/android_phone"
 
 # Check if mount point exists, if not, create it

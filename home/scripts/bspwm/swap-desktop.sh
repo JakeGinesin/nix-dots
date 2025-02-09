@@ -1,4 +1,3 @@
-#!/bin/bash
 # swaps the current desktop with selected
 shift="$1"
 current=$(bspc query -D -d --names)

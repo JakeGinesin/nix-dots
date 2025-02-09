@@ -1,5 +1,3 @@
-#!/bin/sh
-
 usage() {
     echo "Usage: ./ytdl [URL] [options]"
     echo "Download an mp3 from a given URL, process it, and optionally move it to the music directory."

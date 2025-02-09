@@ -16,11 +16,11 @@ in {
     ./fonts/default.nix # need to manage fonts in two places becuase life sucks nix sucks
   ];
 
-  home.activation.copyScripts = lib.mkAfter ''
-    mkdir -p ~/.scripts
-    cp ${./nixos-rebuild.sh} ~/.scripts/
-    chmod -R u+w ~/.scripts/
-  '';
+  # home.activation.copyScripts = lib.mkAfter ''
+  # mkdir -p ~/.scripts
+  # cp ${./nixos-rebuild.sh} ~/.scripts/
+  # chmod -R u+w ~/.scripts/
+  # '';
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
