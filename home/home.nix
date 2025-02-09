@@ -4,45 +4,6 @@
   lib,
   ...
 }: let
-  # 1) Recursively collect all scripts into a *list* of { name, value } items
-  # readScriptsRecursively = dir: let
-  # entries = builtins.readDir dir;
-  # names = builtins.attrNames entries;
-  # in
-  # lib.concatMap (
-  # entry: let
-  # fullPath = "${dir}/${entry}";
-  # entryInfo = entries.${entry};
-  # in
-  # if entryInfo.type == "directory"
-  # then
-  # # Recursively gather more {name, value} items
-  # readScriptsRecursively fullPath
-  # else
-  # # For each file, produce one record
-  # [
-  # {
-  # name = entry;
-  # value = fullPath;
-  # }
-  # ]
-  # )
-  # names;
-  # # 2) Convert that list of {name, value} into an attribute set
-  # scripts = lib.attrsets.listToAttrs (readScriptsRecursively ./scripts);
-  # # 3) Map over the attrset to create shell applications
-  # scriptDerivations =
-  # lib.attrsets.mapAttrs
-  # (scriptName: scriptPath:
-  # pkgs.writeShellApplication {
-  # name = scriptName;
-  # runtimeInputs = with pkgs; [
-  # # put your dependencies here
-  # netcat
-  # ];
-  # text = builtins.readFile scriptPath;
-  # })
-  # scripts;
 in {
   # home.packages = builtins.attrValues scriptDerivations;
 
@@ -72,4 +33,28 @@ in {
   };
 
   programs.home-manager.enable = true;
+
+  home.packages = with pkgs;
+    [
+      # any other "normal" packages go here
+    ]
+    ++ (
+      with lib; let
+        # This function extracts the base file name from a path.
+        basename = path: lib.lists.last (lib.strings.splitString "/" (toString path));
+
+        # Adjust this path to wherever your scripts are.
+        # If your home-manager config is in ~/dotfiles/home.nix,
+        # and your scripts are in ~/dotfiles/bin/bin, you could do:
+        files = lib.filesystem.listFilesRecursive ./scripts;
+      in
+        # For each script found, create a derivation installed in $PATH
+        lib.lists.forEach files (
+          file:
+            pkgs.writeScriptBin
+            (basename file) # the new package's name
+            
+            (builtins.readFile file)
+        )
+    );
 }
