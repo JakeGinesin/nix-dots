@@ -42,6 +42,8 @@ in {
       bspwm
       yt-dlp
       beets
+      netcat
+      zathura
     ]
     ++ (
       with lib; let
