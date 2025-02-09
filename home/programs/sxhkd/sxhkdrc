@@ -100,10 +100,10 @@ super + alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
 # swap between desktops
 
 XF86WakeUp + super; {1,2,3,4,5,6,7,8,9,0}
-  sh /home/synchronous/.scripts/bspwm/swap-desktop.sh '{1,2,3,4,5,6,7,8,9,10}'
+  swap-desktop '{1,2,3,4,5,6,7,8,9,10}'
 
 XF86WakeUp + super + alt; {1,2,3,4,5,6,7,8,9,0}
-  sh /home/synchronous/.scripts/bspwm/swap-desktop.sh '{11,12,13,14,15,16,17,18,19,20}'
+  swap-desktop.sh '{11,12,13,14,15,16,17,18,19,20}'
 
 
 # preselect
@@ -162,13 +162,13 @@ super + {Left,Right}
     bspc desktop -f {prev,next}
 
 ctrl + super + {Left,Right}
-    sh /home/synchronous/.scripts/bspwm/fast-shift.sh {left,right}
+    fast-shift {left,right}
 
 super + {shift} + {d}
     pkill -f discord
 
 ctrl + super + bracket{left,right}
-    sh /home/synchronous/.scripts/bspwm/fast-shift.sh {left,right}
+    fast-shift {left,right}
 
 
 super + bracket{left,right}
@@ -181,7 +181,7 @@ super + bracket{left,right}
 # alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo | autocmd VimResized * call GoyoWrapper()"
 # open my notes file in nvim w/ a new alacritty window, then jump to end of file
 super + {o}
-  sh /home/synchronous/.scripts/vimwiki/open_daily.sh
+  open_daily
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
