@@ -164,9 +164,9 @@ alias polybar-restart='pkill polybar; setsid polybar mybar > /dev/null 2> /dev/n
 # alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
 alias ytdl-mp3="yt-dlp -x --audio-format mp3 --audio-quality 0 -o '/home/synchronous/music/%(title)s.%(ext)s' "
 
-alias phone-mount="sh /home/synchronous/.scripts/phone-mount/mount.sh"
-alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
-alias music-move="sh /home/synchronous/.scripts/music/music-move.sh"
+# alias phone-mount="sh /home/synchronous/.scripts/phone-mount/mount.sh"
+# alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
+# alias music-move="sh /home/synchronous/.scripts/music/music-move.sh"
 
 alias ntpsync="sudo ntpdate pool.ntp.org"
 # alias fb="cd /home/synchronous/code/tob/fb"
