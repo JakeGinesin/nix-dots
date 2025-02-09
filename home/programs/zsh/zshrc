@@ -186,7 +186,7 @@ alias gbdc="bluetoothctl disconnect"
 # alias backup_home="sh /home/synchronous/.scripts/backup/backup.sh"
 
 # ====== NIXOS ALIASES
-alias rebuild="sh /home/synchronous/.scripts/nixos-rebuild.sh"
+# alias rebuild="sh /home/synchronous/.scripts/nixos-rebuild.sh"
 alias cfg="cd /home/synchronous/nix-cfg"
 alias cfg-main="nvim /home/synchronous/nix-cfg/configuration.nix"
 alias zshrc="nvim /home/synchronous/nix-cfg/home/programs/zsh/zshrc"
