@@ -36,24 +36,23 @@ in {
 
   home.packages = with pkgs;
     [
-      # any other "normal" packages go here
+      # any other packages go here
     ]
     ++ (
       with lib; let
-        # This function extracts the base file name from a path.
+        # this function extracts the base file name from a path.
         basename = path: lib.lists.last (lib.strings.splitString "/" (toString path));
 
-        # Adjust this path to wherever your scripts are.
-        # If your home-manager config is in ~/dotfiles/home.nix,
-        # and your scripts are in ~/dotfiles/bin/bin, you could do:
         files = lib.filesystem.listFilesRecursive ./scripts;
       in
-        # For each script found, create a derivation installed in $PATH
+        # for each script found, create a derivation installed in $PATH
         lib.lists.forEach files (
-          file:
+          file: let
+            scriptName = strings.removeSuffix ".sh" (basename file);
+          in
             pkgs.writeScriptBin
-            (basename file) # the new package's name
-            
+            # (basename file) # the new package's name
+            scriptName
             (builtins.readFile file)
         )
     );
