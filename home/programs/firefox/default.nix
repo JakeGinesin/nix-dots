@@ -63,6 +63,7 @@
         }
 
         /* https://www.reddit.com/r/FirefoxCSS/comments/1igbt7c/comment/mangluv/ */
+        /* hide top right gap */
         .titlebar-spacer[type="post-tabs"] {
           display: none !important
         }
@@ -73,38 +74,41 @@
           toolbar = true;
           bookmarks = [
             {
-              name = "nixos";
+              name = "Nixos";
               bookmarks = [
                 {
                   name = "noogle";
                   url = "https://noogle.dev/";
                 }
+                {
+                  name = "home manager options";
+                  url = "https://home-manager-options.extranix.com/";
+                }
+                {
+                  name = "nixpkgs";
+                  url = "https://search.nixos.org/packages";
+                }
+                {
+                  name = "dots";
+                  url = "https://github.com/JakeGinesin/nix-dots";
+                }
+                {
+                  name = "nix options";
+                  url = "https://search.nixos.org/options";
+                }
               ];
             }
             {
-              name = "noogle";
-              url = "https://noogle.dev/";
-            }
-            {
-              name = "homepkgs";
-              url = "https://home-manager-options.extranix.com/";
-            }
-            {
-              name = "pkgs";
-              url = "https://search.nixos.org/options";
-            }
-
-            {
-              name = "github";
-              url = "https://github.com";
-            }
-            {
-              name = "simplenote";
-              url = "https://app.simplenote.com";
-            }
-            {
-              name = "calendar";
+              name = "Cal";
               url = "https://calendar.google.com/";
+            }
+            {
+              name = "GPT";
+              url = "https://chatgpt.com"; # sam altman is a horrible person
+            }
+            {
+              name = "performance";
+              url = "about:processes";
             }
           ];
         }
@@ -124,6 +128,7 @@
 
         # tab open behavior
         "browser.search.openintab" = true;
+        "browser.search.suggest.enabled" = false; # fuck you search, wikipedia is my default.
         "browser.link.open_newwindow" = 3;
         "browser.link.open_newwindow.restriction" = 0;
 
