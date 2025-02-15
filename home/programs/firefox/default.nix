@@ -73,6 +73,15 @@
           toolbar = true;
           bookmarks = [
             {
+              name = "nixos";
+              bookmarks = [
+                {
+                  name = "noogle";
+                  url = "https://noogle.dev/";
+                }
+              ];
+            }
+            {
               name = "noogle";
               url = "https://noogle.dev/";
             }
