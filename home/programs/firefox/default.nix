@@ -129,6 +129,13 @@
         # tab open behavior
         "browser.search.openintab" = true;
         "browser.search.suggest.enabled" = false; # fuck you search, wikipedia is my default.
+
+        "browser.urlbar.suggest.topsites" = false;
+        "browser.urlbar.suggest.searches" = false;
+        "browser.urlbar.suggest.history" = false;
+        "browser.urlbar.suggest.engines" = false;
+        "browser.urlbar.suggest.openpage" = false;
+        "browser.urlbar.suggest.bookmark" = false;
         "browser.link.open_newwindow" = 3;
         "browser.link.open_newwindow.restriction" = 0;
 
@@ -297,7 +304,7 @@
     };
   };
   programs.librewolf = {
-    enable = true;
+    enable = false; # sorry
     settings = {
       "app.update.auto" = false;
       # "browser.startup.homepage" = "https://lobste.rs";

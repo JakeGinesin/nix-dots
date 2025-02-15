@@ -64,6 +64,11 @@
         config = toLuaFile ./plugins/barbar.lua;
       }
       {
+        # the most helpful thing is this guy: https://ejmastnak.com/tutorials/vim-latex/luasnip/
+        plugin = luasnip;
+        config = toLuaFile ./luasnip/luasnip.lua;
+      }
+      {
         plugin = lualine-nvim;
         config = toLuaFile ./plugins/lualine.lua;
       }

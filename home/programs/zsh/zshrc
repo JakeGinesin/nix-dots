@@ -194,6 +194,8 @@ alias zshrc="nvim /home/synchronous/nix-cfg/home/programs/zsh/zshrc"
 alias sxhkdrc="nvim /home/synchronous/nix-cfg/home/programs/sxhkd/sxhkdrc"
 alias programs="cd /home/synchronous/nix-cfg/home/programs"
 
+alias nrc = "cd /home/synchronous/nix-cfg/home/programs/nvim"
+
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
