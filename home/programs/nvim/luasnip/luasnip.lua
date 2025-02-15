@@ -24,6 +24,7 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 })
 
 
-require("luasnip.loaders.from_lua").load({paths = "./snippets/"})
+-- require("luasnip.loaders.from_lua").load({paths = "./snippets/"})
+require("luasnip.loaders.from_lua").load({ paths = "./luasnip/snippets/" })
 
 -- require("luasnip.loaders.from_lua").lazy_load({paths = "./snippets/"})
