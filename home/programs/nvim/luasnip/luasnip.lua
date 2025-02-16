@@ -23,6 +23,19 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   store_selection_keys = "<Tab>",
 })
 
+local ls = require "luasnip"
+local s = ls.snippet
+local s = ls.text_node
+local i = ls.insert_node
+
+ls.add_snippets("lua", {
+  s("hello", {
+    t('print("hello '),
+    i(1),
+    t(' world")')
+  })
+})
+
 
 -- require("luasnip.loaders.from_lua").load({paths = "./snippets/"})
 require("luasnip.loaders.from_lua").load({ paths = "./snippets/" })
