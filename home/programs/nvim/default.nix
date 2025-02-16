@@ -66,7 +66,7 @@
       {
         # the most helpful thing is this guy: https://ejmastnak.com/tutorials/vim-latex/luasnip/
         plugin = luasnip;
-        config = toLuaFile ./luasnip/luasnip.lua;
+        config = toLuaFile ./plugins/luasnip.lua;
       }
       {
         plugin = lualine-nvim;
@@ -112,4 +112,11 @@
 
     # extraConfig = lib.fileContents ./init.vim;
   };
+
+  # copy the snippets :#
+  home.activation.copySnippetsDir = lib.mkAfter ''
+    mkdir -p ~/.config/nvim/snippets
+    cp -r ${./snippets}/* ~/.config/nvim/snippets/
+    chmod -R u+w ~/.config/nvim/snippets/
+  '';
 }

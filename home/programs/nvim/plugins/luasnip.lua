@@ -23,10 +23,9 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   store_selection_keys = "<Tab>",
 })
 
--- require("luasnip.loaders.from_lua").load({paths = "./snippets/"})
+-- JAKENOTE, relative imports *do not work* with nixos. don't GG yourself blud.
 require("luasnip.loaders.from_lua").load({ 
-  -- paths = "/home/synchronous/nix-cfg/home/programs/nvim/luasnip/snippets/" 
-  paths = vim.fn.stdpath('config') .. "/luasnip/snippets/"
+  paths = vim.fn.stdpath('config') .. "/snippets/"
 })
 
 -- require("luasnip.loaders.from_lua").lazy_load({paths = "./snippets/"})
