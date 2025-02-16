@@ -9,6 +9,7 @@ local c = ls.choice_node
 local f = ls.function_node
 local d = ls.dynamic_node
 local sn = ls.snippet_node
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 ls.add_snippets("lua", {
     s("hello", {
@@ -26,3 +27,16 @@ ls.add_snippets("lua", {
     })
 })
 
+ require("luasnip").snippet(
+    { -- Table 1: snippet parameters
+      trig="hi",
+      dscr="An autotriggering snippet that expands 'hi' into 'Hello, world!'",
+      regTrig=false,
+      priority=100,
+      snippetType="autosnippet"
+    },
+    { -- Table 2: snippet nodes (don't worry about this for now---we'll cover nodes shortly)
+      t("Hello, world!"), -- A single text node
+    }
+    -- Table 3, the advanced snippet options, is left blank.
+  )
