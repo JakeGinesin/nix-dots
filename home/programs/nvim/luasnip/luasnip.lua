@@ -24,6 +24,9 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 })
 
 -- require("luasnip.loaders.from_lua").load({paths = "./snippets/"})
-require("luasnip.loaders.from_lua").load({ paths = "/home/synchronous/nix-cfg/home/programs/nvim/luasnip/snippets/" })
+require("luasnip.loaders.from_lua").load({ 
+  -- paths = "/home/synchronous/nix-cfg/home/programs/nvim/luasnip/snippets/" 
+  paths = vim.fn.stdpath('config') .. "/luasnip/snippets/"
+})
 
 -- require("luasnip.loaders.from_lua").lazy_load({paths = "./snippets/"})
