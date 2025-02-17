@@ -40,6 +40,10 @@
       nvim-web-devicons
       # coc-nvim
       {
+        plugin = vimtex;
+        config = toLuaFile ./plugins/vimtex.lua;
+      }
+      {
         plugin = goyo-vim;
         config = toLuaFile ./plugins/goyo.lua;
       }

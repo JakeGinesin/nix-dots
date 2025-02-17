@@ -43,15 +43,3 @@ ls.add_snippets("lua", {
         t(' end')
     })
 })
-
-
-
-ls.add_snippets("all", {
-    ms({
-        common = {snippetType = "autosnippet"},
-        "a",
-        "b"
-    }, {
-        t"a or b (but autotriggered!!)"
-    })
-})
