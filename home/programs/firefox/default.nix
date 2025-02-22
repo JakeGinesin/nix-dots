@@ -128,7 +128,7 @@
 
         # tab open behavior
         "browser.search.openintab" = true;
-        "browser.search.suggest.enabled" = false; # fuck you search, wikipedia is my default.
+        "browser.search.suggest.enabled" = true; # fuck you search, wikipedia is my default.
 
         "browser.urlbar.suggest.topsites" = false;
         "browser.urlbar.suggest.searches" = false;
