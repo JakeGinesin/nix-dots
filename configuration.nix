@@ -123,6 +123,7 @@ in {
       polybar-pulseaudio-control
       bluez # polybar
       zotero
+      grizzly
       # procps # for pgrep
       # xorg.xrandr
       #  thunderbird
