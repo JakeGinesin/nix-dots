@@ -30,8 +30,6 @@
       rust-analyzer-unwrapped
       black
       nodejs_22
-      texliveFull
-      texlivePackages.latexmk
       # gh
     ];
 

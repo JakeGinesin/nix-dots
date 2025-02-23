@@ -123,6 +123,8 @@ in {
       polybar-pulseaudio-control
       bluez # polybar
       zotero
+      texliveFull
+      texlivePackages.latexmk
       # procps # for pgrep
       # xorg.xrandr
       #  thunderbird
