@@ -133,6 +133,7 @@ in {
       zotero
       texliveFull
       texlivePackages.latexmk
+      nmap
       # procps # for pgrep
       # xorg.xrandr
       #  thunderbird
