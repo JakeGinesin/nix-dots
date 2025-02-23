@@ -65,6 +65,7 @@ ls.add_snippets("tex", {
 \usepackage{bookmark}
 \usepackage[linguistics]{forest}
 \usepackage{tikz}
+\usepackage{float}
 
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -125,6 +126,7 @@ ls.add_snippets("tex", {
 \usepackage{bookmark}
 \usepackage[linguistics]{forest}
 \usepackage{tikz}
+\usepackage{float}
 
 \usepackage{enumitem}
 \usepackage{euler}
@@ -181,17 +183,457 @@ ls.add_snippets("tex", {
     )
   ),
 
+  s({trig = "isc"},
+    fmta("\\textsc{<>}",
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
 
-  -- s({trig = "ff"},
-  -- fmta(
-    -- "\\frac{<>}{<>}",
-    -- {
-      -- i(1),
-      -- i(2),
-    -- }
-  -- ),
-  -- {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
--- ),
+
+  s({trig = "frac"},
+    fmta(
+      "\\frac{<>}{<>}",
+      {
+        i(1),
+        i(2),
+      }
+    ),
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
+  ),
+
+  s({trig = "it"},
+    fmta(
+      "\\item ",
+      {}
+    ), {}  -- `condition` option passed in the snippet `opts` table 
+  ),
+
+  s({trig="eq", dscr="Expands 'eq' into an equation environment"},
+    fmta(
+       [[
+         \begin{equation*}
+             <>
+         \end{equation*}
+       ]],
+       { i(1) }
+    )
+  ),
+
+  s({trig="align", dscr="Expands 'eq' into an equation environment"},
+    fmta(
+       [[
+         \begin{align*}
+             <>
+         \end{align*}
+       ]],
+       { i(1) }
+    )
+  ),
+
+
+  s({trig="beg", 
+    -- snippetType="autosnippet"
+  },
+    fmta(
+      [[
+        \begin{<>}
+            <>
+        \end{<>}
+      ]],
+      {
+        i(1),
+        i(2),
+        rep(1),  -- this node repeats insert node i(1)
+      }
+    )
+  ),
+
+
+  s({trig="href", dscr="The hyperref package's href{}{} command (for url links)"},
+    fmta(
+      [[\href{<>}{<>}]],
+      {
+        i(1, "url"),
+        i(2, "display name"),
+      }
+    )
+  ),
+
+  s({trig="([^%a])mk", 
+    snippetType="autosnippet",
+    wordTrig = false,
+    regTrig = true
+  },
+    fmta(
+      "<>$<>$",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    )
+  ),
+
+  s({trig="mk", 
+    snippetType="autosnippet",
+    wordTrig = false,
+    regTrig = true
+  },
+    fmta(
+      "<>$<>$",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = line_begin}
+  ),
+
+  s({trig="([^%a])dm", 
+    snippetType="autosnippet",
+    wordTrig = false,
+    regTrig = true
+  },
+    fmta(
+      [[
+      \[
+        <>
+      \]
+      ]],
+      {
+        -- f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    )
+  ),
+
+  s({trig="dm", 
+    snippetType="autosnippet",
+    wordTrig = false,
+    regTrig = true
+  },
+    fmta(
+      [[
+      \[
+        <>
+      \]
+      <>
+      ]],
+      {
+        -- f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+        i(0)
+      }
+    ),
+    {condition = line_begin}
+  ),
+
+  s({
+    trig = "^^",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "^{<>}",
+      {
+        i(1),
+      }
+    ),
+    {condition = in_mathzone}  
+  ),
+
+  s({
+    trig = "__",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "_{<>}",
+      {
+        i(1),
+      }
+    ),
+    {condition = in_mathzone}  
+  ),
+
+  s({
+    trig = "sec",
+  },
+    fmta(
+      [[
+      \section{<>}
+      \label{sec:<>}
+      <>
+      ]],
+      {
+        i(1, "section name"),
+        i(2, "section label"),
+        i(3),
+      }
+    ),
+    {}  
+  ),
+
+  s({
+    trig = "sub",
+  },
+    fmta(
+      [[
+      \subsection{<>}
+      \label{sec:<>}
+      <>
+      ]],
+      {
+        i(1, "section name"),
+        i(2, "section label"),
+        i(0),
+      }
+    ),
+    {}  
+  ),
+
+  ms({
+    common = {snippetType = "autosnippet"},
+    "!=",
+    {trig = "neq", snippetType = "snippet"},
+  },
+    fmta(
+      "\\neq ",
+      {}
+    ),
+    {condition = in_mathzone} 
+  ),
+
+  ms({
+    common = {snippetType = "autosnippet"},
+    "<=",
+    {trig = "leq", snippetType = "snippet"},
+  },
+    fmta(
+      "\\leq ",
+      {}
+    ),
+    {condition = in_mathzone} 
+  ),
+
+  ms({
+    common = {snippetType = "autosnippet"},
+    ">=",
+    {trig = "geq", snippetType = "snippet"},
+    {trig = "ge", snippetType = "snippet"},
+  },
+    fmta(
+      "\\ge ",
+      {}
+    ),
+    {condition = in_mathzone} 
+  ),
+
+  s({
+    trig = "**",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "\\cdot ",
+      { }
+    ),
+    {condition = in_mathzone}  
+  ),
+
+  s({
+    trig = "->",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "\\to ",
+      { }
+    ),
+    {condition = in_mathzone}  
+  ),
+
+  s({
+    trig = "<->",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "\\leftrightarrow ",
+      { }
+    ),
+    {condition = in_mathzone}  
+  ),
+
+  s({
+    trig = "notin",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "\\not\\in ",
+      { }
+    ),
+    {condition = in_mathzone}  
+  ),
+
+  s({
+    trig = "notin",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "\\not\\in ",
+      { }
+    ),
+    {condition = in_mathzone}  
+  ),
+
+  s({trig="lemma"},
+    fmta(
+       [[
+         \begin{lemma}
+             <>
+         \end{lemma}
+       ]],
+       { i(1) }
+    )
+  ),
+
+  s({trig="proof"},
+    fmta(
+       [[
+         \begin{proof}
+             <>
+         \end{proof}
+       ]],
+       { i(1) }
+    )
+  ),
+
+  s({trig = "bf"},
+    fmta("\\textbf{<>}",
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+
+  s({
+    trig = "...",
+    snippetType="autosnippet",
+  },
+    fmta(
+      "\\ldots ",
+      { }
+    ),
+    {}  
+  ),
+
+  s({
+    trig = "image",
+  },
+    fmta(
+      [[
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{<>}
+    \caption{<>}
+    \label{fig:<>}
+\end{figure}
+<>
+      ]],
+      {
+        i(1, "image.png"),
+        i(2, "A great image!"),
+        i(3, "image"),
+        i(0)
+      }
+    ),
+    {}  
+  ),
+
+  s({
+    trig = "enum",
+  },
+    fmta(
+      [[
+\begin{enumerate}
+  \item <>
+\end{enumerate}
+      ]],
+      {
+        i(0)
+      }
+    ),
+    {}  
+  ),
+
+  s({
+    trig = "item",
+  },
+    fmta(
+      [[
+\begin{itemize}
+  \item <>
+\end{itemize}
+      ]],
+      {
+        i(0)
+      }
+    ),
+    {}  
+  ),
+
+
+  -- s({ trig = "!=", snippetType="autosnippet" }, fmta("\\neq ", {}), {condition = in_mathzone}),
+  -- s({ trig = "<=", snippetType="autosnippet" }, fmta("\\leq ", {}), {condition = in_mathzone}),
+  -- s({ trig = ">=", snippetType="autosnippet" }, fmta("\\geq ", {}), {condition = in_mathzone}),
+  s({ trig = "<<", snippetType="autosnippet" }, fmta("\\ll ", {}), {condition = in_mathzone}),
+  s({ trig = ">>", snippetType="autosnippet" }, fmta("\\gg ", {}), {condition = in_mathzone}),
+  s({ trig = "~~", snippetType="autosnippet" }, fmta("\\sim ", {}), {condition = in_mathzone}),
+  s({ trig = "~=", snippetType="autosnippet" }, fmta("\\approx ", {}), {condition = in_mathzone}),
+  s({ trig = "~-", snippetType="autosnippet" }, fmta("\\simeq ", {}), {condition = in_mathzone}),
+  s({ trig = "-~", snippetType="autosnippet" }, fmta("\\backsimeq ", {}), {condition = in_mathzone}),
+  s({ trig = "-=", snippetType="autosnippet" }, fmta("\\equiv ", {}), {condition = in_mathzone}),
+  s({ trig = "=~", snippetType="autosnippet" }, fmta("\\cong ", {}), {condition = in_mathzone}),
+  s({ trig = ":=", snippetType="autosnippet" }, fmta("\\definedas ", {}), {condition = in_mathzone}),
+  -- s({ trig = "**", snippetType="autosnippet" }, fmta("\\cdot ", {}), {condition = in_mathzone}),
+  s({ trig = "xx", snippetType="autosnippet" }, fmta("\\times ", {}), {condition = in_mathzone}),
+  s({ trig = "!+", snippetType="autosnippet" }, fmta("\\oplus ", {}), {condition = in_mathzone}),
+  s({ trig = "!*", snippetType="autosnippet" }, fmta("\\otimes ", {}), {condition = in_mathzone}),
+  s({ trig = "NN", snippetType="autosnippet" }, fmta("\\mathbb{N} ", {}), {condition = in_mathzone}),
+  s({ trig = "ZZ", snippetType="autosnippet" }, fmta("\\mathbb{Z} ", {}), {condition = in_mathzone}),
+  s({ trig = "QQ", snippetType="autosnippet" }, fmta("\\mathbb{Q} ", {}), {condition = in_mathzone}),
+  s({ trig = "RR", snippetType="autosnippet" }, fmta("\\mathbb{R} ", {}), {condition = in_mathzone}),
+  s({ trig = "CC", snippetType="autosnippet" }, fmta("\\mathbb{C} ", {}), {condition = in_mathzone}),
+  s({ trig = "OO", snippetType="autosnippet" }, fmta("\\emptyset ", {}), {condition = in_mathzone}),
+  s({ trig = "pwr", snippetType="autosnippet" }, fmta("\\powerset ", {}), {condition = in_mathzone}),
+  s({ trig = "cc", snippetType="autosnippet" }, fmta("\\subset ", {}), {condition = in_mathzone}),
+  s({ trig = "cq", snippetType="autosnippet" }, fmta("\\subseteq ", {}), {condition = in_mathzone}),
+  s({ trig = "qq", snippetType="autosnippet" }, fmta("\\supset ", {}), {condition = in_mathzone}),
+  s({ trig = "qc", snippetType="autosnippet" }, fmta("\\supseteq ", {}), {condition = in_mathzone}),
+  s({ trig = "Nn", snippetType="autosnippet" }, fmta("\\cap ", {}), {condition = in_mathzone}),
+  s({ trig = "UU", snippetType="autosnippet" }, fmta("\\cup ", {}), {condition = in_mathzone}),
+  s({ trig = "::", snippetType="autosnippet" }, fmta("\\colon ", {}), {condition = in_mathzone}),
+  s({ trig = "AA", snippetType="autosnippet" }, fmta("\\forall ", {}), {condition = in_mathzone}),
+  s({ trig = "EE", snippetType="autosnippet" }, fmta("\\exists ", {}), {condition = in_mathzone}),
+  s({ trig = "inn", snippetType="autosnippet" }, fmta("\\in ", {}), {condition = in_mathzone}),
+  -- s({ trig = "notin", snippetType="autosnippet" }, fmta("\\not\\in ", {}), {condition = in_mathzone}),
+  s({ trig = "!-", snippetType="autosnippet" }, fmta("\\lnot ", {}), {condition = in_mathzone}),
+  s({ trig = "VV", snippetType="autosnippet" }, fmta("\\lor ", {}), {condition = in_mathzone}),
+  s({ trig = "WW", snippetType="autosnippet" }, fmta("\\land ", {}), {condition = in_mathzone}),
+  s({ trig = "!W", snippetType="autosnippet" }, fmta("\\bigwedge ", {}), {condition = in_mathzone}),
+  s({ trig = "=>", snippetType="autosnippet" }, fmta("\\implies ", {}), {condition = in_mathzone}),
+  s({ trig = "=<", snippetType="autosnippet" }, fmta("\\impliedby ", {}), {condition = in_mathzone}),
+  s({ trig = "iff", snippetType="autosnippet" }, fmta("\\iff ", {}), {condition = in_mathzone}),
+  s({ trig = "->", snippetType="autosnippet" }, fmta("\\to ", {}), {condition = in_mathzone}),
+  s({ trig = "!>", snippetType="autosnippet" }, fmta("\\mapsto ", {}), {condition = in_mathzone}),
+  s({ trig = "<-", snippetType="autosnippet" }, fmta("\\gets ", {}), {condition = in_mathzone}),
+  s({ trig = "dp", snippetType="autosnippet" }, fmta("\\partial ", {}), {condition = in_mathzone}),
+  s({ trig = "-->", snippetType="autosnippet" }, fmta("\\longrightarrow ", {}), {condition = in_mathzone}),
+  s({ trig = "<->", snippetType="autosnippet" }, fmta("\\leftrightarrow ", {}), {condition = in_mathzone}),
+  s({ trig = "2>", snippetType="autosnippet" }, fmta("\\rightrightarrows ", {}), {condition = in_mathzone}),
+  s({ trig = "upar", snippetType="autosnippet" }, fmta("\\uparrow ", {}), {condition = in_mathzone}),
+  s({ trig = "dnar", snippetType="autosnippet" }, fmta("\\downarrow ", {}), {condition = in_mathzone}),
+  s({ trig = "ooo", snippetType="autosnippet" }, fmta("\\infty ", {}), {condition = in_mathzone}),
+  s({ trig = "lll", snippetType="autosnippet" }, fmta("\\ell ", {}), {condition = in_mathzone}),
+  s({ trig = "dag", snippetType="autosnippet" }, fmta("\\dagger ", {}), {condition = in_mathzone}),
+  s({ trig = "+-", snippetType="autosnippet" }, fmta("\\pm ", {}), {condition = in_mathzone}),
+  s({ trig = "-+", snippetType="autosnippet" }, fmta("\\mp ", {}), {condition = in_mathzone}),
 
 })
-
