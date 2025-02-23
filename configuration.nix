@@ -26,14 +26,22 @@ in {
   networking.hostName = "thonkpad"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
   nix = {
     nixPath = [
       "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
       "nixos-config=/home/synchronous/nix-cfg/configuration.nix"
       "/nix/var/nix/profiles/per-user/root/channels"
     ];
+
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      substituters = [
+        "https://nix-community.cachix.org"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
   };
 
   # Configure network proxy if necessary
