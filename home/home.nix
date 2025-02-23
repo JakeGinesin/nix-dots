@@ -36,6 +36,7 @@ in {
 
   home.packages = with pkgs;
     [
+      cachix
       # any other packages go here
       # xrandr
       xorg.xrandr
