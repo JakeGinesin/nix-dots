@@ -134,7 +134,7 @@ in {
       texliveFull
       texlivePackages.latexmk
       nmap
-      # procps # for pgrep
+      procps # for pgrep
       # xorg.xrandr
       #  thunderbird
     ];
