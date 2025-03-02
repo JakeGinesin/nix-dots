@@ -300,6 +300,13 @@
         "extensions.formautofill.creditCards.available" = false;
         "extensions.formautofill.creditCards.enabled" = false;
         "extensions.formautofill.heuristics.enabled" = false;
+
+        # disable attributes
+        # https://blog.zgp.org/turn-off-advertising-features-in-firefox/
+        "dom.private-attribution.submission.enabled" = false;
+
+        # compact mode
+        "browser.compactmode.show" = true;
       };
     };
   };
