@@ -14,14 +14,25 @@
   old-nitrogen = pkg_with_working_nitrogen.nitrogen;
 in {
   imports = [
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
     ./system/system.nix
   ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";
+  # boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.version = 2;
+  #boot = {
+  #  loader.systemd-boot = {
+  #    enable = true;
+  #    editor = false;
+  #  };
+  #  kernelPackages = pkgs.linuxPackages;
+  #};
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = false;
 
   networking.hostName = "thonkpad"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -72,6 +83,7 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
   hardware.bluetooth.enable = true;
+  programs.dconf.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
