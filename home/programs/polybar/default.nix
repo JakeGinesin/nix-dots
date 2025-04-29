@@ -41,9 +41,11 @@
   hd = ''
     [bar/mybar]
     height = 20
-    font-0 = "NotoSans-Regular:size=10;2.5"
-    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=10;2.5"
-    font-2 = "Noto Sans Symbols:size=10;1"
+    font-0 = "NotoSans-Regular:size=9;2.5"
+    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=9;2.5"
+    font-2 = "Noto Sans Symbols:size=9;1"
+    offset-x = 4
+    offset-y = 2
   '';
 
   fhd = ''
@@ -52,6 +54,8 @@
     font-0 = "NotoSans-Regular:size=11;2.5"
     font-1 = "JetBrainsMono Nerd Font:style=Regular:size=11;2.5"
     font-2 = "Noto Sans Symbols:size=11;1"
+    offset-x = 4
+    offset-y = 3
   '';
 
   qhd = ''
@@ -60,6 +64,8 @@
     font-0 = "NotoSans-Regular:size=11;2.5"
     font-1 = "JetBrainsMono Nerd Font:style=Regular:size=11;2.5"
     font-2 = "Noto Sans Symbols:size=13;1"
+    offset-x = 4
+    offset-y = 3
   '';
 
   mon =
