@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  osConfig,
   ...
 }: let
   mypolybar = pkgs.polybar.override {
@@ -37,8 +38,6 @@
   # ${ip} route | ${grep} default | ${awk} '{print $5}' > $out
   # '';
 
-  res = builtins.getEnv "RES";
-
   hd = ''
     [bar/mybar]
     height = 20
@@ -64,9 +63,9 @@
   '';
 
   mon =
-    if res == "1366x768"
+    if osConfig.res == "1366x768"
     then hd
-    else if res == "2560x1440"
+    else if osConfig.res == "2560x1440"
     then qhd
     else fhd;
 

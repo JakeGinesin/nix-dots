@@ -35,6 +35,7 @@
   in {
     nixosConfigurations.thonkpad = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+
       modules = [
         baseModule
         ./hosts/thonkpad/configuration.nix
