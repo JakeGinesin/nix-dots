@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  services.ssh-agent.enable = true;
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
