@@ -65,4 +65,10 @@ in {
             (builtins.readFile file)
         )
     );
+
+  # home.file.".profile".text = ''
+  # if [ -f "$HOME/.scripts/res.sh" ]; then
+  # . "$HOME/.scripts/res.sh"
+  # fi
+  # '';
 }

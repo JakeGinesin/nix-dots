@@ -1,102 +1,44 @@
 {
-  description = "Nixos config flake";
+  description = "NixOS system configuration";
+
+  nixConfig = {
+    substituters = [
+      "https://cache.nixos.org/"
+      "https://nix-community.cachix.org"
+    ];
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
 
   inputs = {
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # haumea = {
-    # url = "github:nix-community/haumea/v0.2.2";
-    # inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
-  outputs = inputs @ {
-    flake-parts,
+  outputs = {
     self,
     nixpkgs,
-    ...
-  }:
-    flake-parts.lib.mkFlake {
-      inherit inputs;
-    } {
-      imports = [];
-
-      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
-      perSystem = {
-        config,
-        self,
-        inputs,
-        system,
-        nixpkgs,
-        pkgs,
-        ...
-      }: {
-        # Per-system attributes can be defined here. The self' and inputs'
-        # module parameters provide easy access to attributes of the same
-        # system.
-
-        # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
-        # packages.default = pkgs.hello;
-        # formatter = pkgs.nixfmt-rfc-style;
-
-        formatter = pkgs.alejandra;
-      };
-      flake = {
-        # The usual flake attributes can be defined here, including system-
-        # agnostic ones like nixosModule and system-enumerating ones, although
-        # those are more easily expressed in perSystem.
-        # nixosConfigurations.myhostname = "thonkpad";
-        nixosConfigurations.thonkpad = inputs.nixpkgs.lib.nixosSystem rec {
-          system = "x86_64-linux";
-          pkgs = import inputs.nixpkgs {
-            inherit system;
-
-            config = {
-              allowUnfree = true;
-              packageOverrides = pkgs: {
-                # "package" = pkgs."package".overrideAttrs (attrs: {...})
-              };
-            };
-            overlays = [];
-
-            # home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
-          };
-
-          specialArgs = {inherit inputs;};
-          # extraSpecialArgs = {inherit inputs;};
-          modules = [
-            ./configuration.nix
-            # self.module
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.synchronous = import ./home/home.nix;
-              home-manager.extraSpecialArgs = {inherit inputs;};
-              home-manager.backupFileExtension = "hm-backup";
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
-            }
-          ];
-        };
-      };
-
-      # outputs = { self, nixpkgs, ... }@inputs: {
-      #   nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      #     specialArgs = {inherit inputs;};
-      #     modules = [
-      #       ./configuration.nix
-      #       # inputs.home-manager.nixosModules.default
-      #       { home-manager.users.synch = import ./home.nix; }
-      #     ];
-      #   };
-      # };
+    home-manager,
+  }: let
+    baseModule = {
+      imports = [
+        home-manager.nixosModules.default
+      ];
+      system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+      nixpkgs.overlays = [];
     };
+  in {
+    nixosConfigurations.thonkpad = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        baseModule
+        ./hosts/thonkpad/configuration.nix
+      ];
+    };
+  };
 }
