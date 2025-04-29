@@ -44,7 +44,7 @@
     height = 20
     font-0 = "NotoSans-Regular:size=10;2.5"
     font-1 = "JetBrainsMono Nerd Font:style=Regular:size=10;2.5"
-    font-2 = "Noto Sans Symbols:size=0;1"
+    font-2 = "Noto Sans Symbols:size=10;1"
   '';
 
   fhd = ''

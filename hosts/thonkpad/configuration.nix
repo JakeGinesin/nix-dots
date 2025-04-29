@@ -25,7 +25,7 @@ in {
     users.synchronous = import ../../home/home.nix;
   };
 
-  environment.variables = {
+  environment.sessionVariables = {
     RES = "1366x768";
   };
 
