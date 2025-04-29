@@ -25,6 +25,10 @@ in {
     users.synchronous = import ../../home/home.nix;
   };
 
+  environment.variables = {
+    RES = "1366x768";
+  };
+
   # Bootloader.
   # boot.loader.grub.enable = true;
   # boot.loader.grub.device = "/dev/sda";

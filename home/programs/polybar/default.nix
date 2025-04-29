@@ -37,6 +37,39 @@
   # ${ip} route | ${grep} default | ${awk} '{print $5}' > $out
   # '';
 
+  res = builtins.getEnv "RES";
+
+  hd = ''
+    [bar/mybar]
+    height = 20
+    font-0 = "NotoSans-Regular:size=11;2.5"
+    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=11;2.5"
+    font-2 = "Noto Sans Symbols:size=11;1"
+  '';
+
+  fhd = ''
+    [bar/mybar]
+    height = 20
+    font-0 = "NotoSans-Regular:size=11;2.5"
+    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=11;2.5"
+    font-2 = "Noto Sans Symbols:size=11;1"
+  '';
+
+  qhd = ''
+    [bar/mybar]
+    height = 25
+    font-0 = "NotoSans-Regular:size=11;2.5"
+    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=11;2.5"
+    font-2 = "Noto Sans Symbols:size=13;1"
+  '';
+
+  mon =
+    if res == "1366x768"
+    then hd
+    else if res == "2560x1440"
+    then qhd
+    else fhd;
+
   internets = ''
     [module/network]
     type = internal/network
@@ -61,7 +94,7 @@ in {
     enable = true;
     package = mypolybar;
     config = ./config.ini;
-    extraConfig = bctl + internets;
+    extraConfig = bctl + internets + mon;
     # my savior: https://www.reddit.com/r/NixOS/comments/v8ikwq/polybar_doesnt_start_at_launch/
     script = ''
       # echo "none"

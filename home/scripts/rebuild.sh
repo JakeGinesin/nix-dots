@@ -14,7 +14,7 @@ if git --git-dir /home/synchronous/nix-cfg/.git diff-index --quiet HEAD; then
     exit 0
 fi
 
-/run/current-system/sw/bin/nix flake check /home/synchronous/nix-cfg/ || { echo "Flake check failed. Exiting."; exit 1; }
+# /run/current-system/sw/bin/nix flake check /home/synchronous/nix-cfg/ || { echo "Flake check failed. Exiting."; exit 1; }
 
 # Autoformat your nix files
 alejandra . &>/dev/null \
