@@ -44,7 +44,7 @@
     font-0 = "NotoSans-Regular:size=9;2.5"
     font-1 = "JetBrainsMono Nerd Font:style=Regular:size=9;2.5"
     font-2 = "Noto Sans Symbols:size=9;1"
-    offset-x = 4
+    offset-x = 2
     offset-y = 2
   '';
 

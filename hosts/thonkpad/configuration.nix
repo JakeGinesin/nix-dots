@@ -38,9 +38,6 @@ in {
             inherit config pkgs lib;
           })
       ];
-      # users.synchronous = import ../../home/home.nix {
-      # inherit config lib pkgs;
-      # };
     };
 
     res = "1366x768";
