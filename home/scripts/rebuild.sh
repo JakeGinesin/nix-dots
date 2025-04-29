@@ -34,8 +34,10 @@ git status --porcelain
 echo ""
 echo "NixOS Rebuilding..."
 
+prev=$(basename $(readlink /run/current-system) | sed 's/.*nixos-system-\(.*\)-.*$/\1/')
+
 # Rebuild, output simplified errors, log trackebacks
-sudo /run/current-system/sw/bin/nixos-rebuild switch --flake /home/synchronous/nix-cfg/flake.nix 2>&1 | tee /tmp/nixos-switch.log 
+sudo /run/current-system/sw/bin/nixos-rebuild switch --flake /home/synchronous/nix-cfg/flake.nix#"$prev" 2>&1 | tee /tmp/nixos-switch.log
 
 # cat /tmp/nixos-switch.log | grep --color error && exit 1
 
