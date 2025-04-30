@@ -39,7 +39,7 @@ search() {
 open_daily() {
   alacritty -t "daily.md" -e nvim "$main/daily.md" \
     -c "Goyo | set path+=$main_dir" \
-    -c "execute 'normal G'"
+    -c "execute 'normal G'" &!
 }
 
 open_todo() {
