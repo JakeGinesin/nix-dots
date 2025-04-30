@@ -52,6 +52,7 @@ in {
       netcat
       zathura
       keepassxc
+      sshpass
     ]
     ++ (
       with lib; let
