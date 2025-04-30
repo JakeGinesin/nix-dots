@@ -2,6 +2,8 @@
   pkgs,
   lib,
   system,
+  config,
+  osConfig,
   ...
 }: {
   home.packages = with pkgs; [zsh-powerlevel10k meslo-lgs-nf];
@@ -39,6 +41,7 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
 
+    # initExtra = builtins.readFile ./zshrc + builtins.readFile osConfig.age.secrets.zsh_remote.path;
     initExtra = builtins.readFile ./zshrc;
   };
 }

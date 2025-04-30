@@ -18,12 +18,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    agenix,
   }: let
     baseModule = {
       imports = [
@@ -38,6 +40,10 @@
 
       modules = [
         baseModule
+        {
+          environment.systemPackages = [agenix.packages.x86_64-linux.default];
+        }
+        agenix.nixosModules.default
         ./hosts/thonkpad/configuration.nix
       ];
     };
