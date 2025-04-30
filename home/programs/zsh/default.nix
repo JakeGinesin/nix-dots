@@ -41,12 +41,13 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
 
+    # recall agenix secrets cannot be used at eval time, so we must do this trash
+    # like what the fuck? I spent 4 hours figuring this out. will i ever reach nix nirvana?
     initExtra = ''
       ${builtins.readFile ./zshrc}
       if [ -f "${osConfig.age.secrets.zsh_remote.path}" ]; then
         source "${osConfig.age.secrets.zsh_remote.path}"
       fi
     '';
-    # initExtra = builtins.readFile ./zshrc;
   };
 }
