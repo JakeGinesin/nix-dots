@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 main="/home/synchronous/journal/"
 #main_dir="$main/abstract"
