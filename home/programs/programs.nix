@@ -22,5 +22,6 @@
     ./firefox/default.nix
     ./git/default.nix
     ./zathura/default.nix
+    ./keepassxc/default.nix
   ];
 }

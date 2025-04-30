@@ -46,6 +46,7 @@ in {
       beets
       netcat
       zathura
+      keepassxc
     ]
     ++ (
       with lib; let
