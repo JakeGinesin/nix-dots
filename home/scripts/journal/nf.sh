@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-main="/home/synchronous/journal/"
+main="/home/synchronous/journal"
 #main_dir="$main/abstract"
 #main="/home/synchronous/code/nm/notes"
 main_dir="$main/rest"
