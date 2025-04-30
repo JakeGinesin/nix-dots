@@ -127,7 +127,7 @@ in {
         # for tiling window managers expands to the size of the window
 
         # https://support.mozilla.org/en-US/questions/1253302
-        "mousewheel.with_control.action" = "1";
+        "mousewheel.with_control.action" = 1;
 
         # should change this based on your resolution
         "layout.css.devPixelsPerPx" = scale;
