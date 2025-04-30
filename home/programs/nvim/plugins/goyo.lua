@@ -18,8 +18,8 @@ vim.api.nvim_create_autocmd("VimResized", {
 local lualine = require('lualine')
 local grp = vim.api.nvim_create_augroup('goyo_lualine_toggle', { clear = true })
 
-local function hide() lualine.hide({ place = {'statusline', 'winbar', 'tabline'} }) end
-local function unhide() lualine.hide({ place = {'statusline', 'winbar', 'tabline'}, unhide = true }) end
+local function hide() lualine.hide{ place = {'statusline', 'winbar', 'tabline'} } end
+local function unhide() lualine.hide{ place = {'statusline', 'winbar', 'tabline'}, unhide = true } end
 
 
 vim.api.nvim_create_autocmd('User', {
