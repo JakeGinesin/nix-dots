@@ -12,3 +12,19 @@ vim.api.nvim_create_autocmd("VimResized", {
         end
     end,
 })
+
+vim.api.nvim_create_autocmd('User', {
+  group = grp,
+  pattern = 'GoyoEnter',
+  callback = function()
+    lualine.hide({ place = {'statusline', 'winbar', 'tabline'} })
+  end,
+})
+
+vim.api.nvim_create_autocmd('User', {
+  group = grp,
+  pattern = 'GoyoLeave',
+  callback = function()
+    lualine.hide({ place = {'statusline', 'winbar', 'tabline'}, unhide = true })
+  end,
+})
