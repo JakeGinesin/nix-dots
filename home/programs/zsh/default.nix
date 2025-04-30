@@ -41,7 +41,7 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
 
-    # initExtra = builtins.readFile ./zshrc + builtins.readFile osConfig.age.secrets.zsh_remote.path;
     initExtra = builtins.readFile ./zshrc;
+    # initExtra = builtins.readFile ./zshrc;
   };
 }

@@ -24,6 +24,11 @@ in {
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  # age.secrets.zsh_remote.file = ../secrets/zsh_remote.age;
+  # age.secretsDir = "/home/synchronous/.agenix/agenix";
+  # age.secretsMountPoint = "/home/synchronous/.agenix/agenix.d";
+  # age.identityPaths = ["/home/synchronous/.ssh/id_ed25519"];
+
   # home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
 
   home.sessionVariables = {

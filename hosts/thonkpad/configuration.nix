@@ -22,12 +22,19 @@ in {
     description = "screen resolution";
   };
 
+  options.zsh_remote = lib.mkOption {
+    type = lib.types.str;
+    default = "1920x1080";
+    description = "zsh remote secret";
+  };
+
   config = {
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "hm-backup";
-      extraSpecialArgs = {inherit (config) res;};
+      # sharedModules = [agenix.homeManagerModules.default];
+      extraSpecialArgs = {inherit (config);};
       users.synchronous.imports = [
         ({
           config,
@@ -41,8 +48,11 @@ in {
     };
 
     res = "1366x768";
-    age.secrets.zsh_remote.file = ../../secrets/zsh_remote.age;
-    age.identityPaths = ["/home/synchronous/.ssh/id_ed25519"];
+    # age.secrets.zsh_remote.file = ../../secrets/zsh_remote.age;
+    # zsh_remote = builtins.readFile ../../secrets/zsh_remote.age;
+    # age.secretsDir = "/home/synchronous/.agenix/agenix";
+    # age.secretsMountPoint = "/home/synchronous/.agenix/agenix.d";
+    # age.identityPaths = ["/home/synchronous/.ssh/id_ed25519"];
 
     # config = {
     # res = "1366x768";
