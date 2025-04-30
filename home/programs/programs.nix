@@ -23,5 +23,6 @@
     ./git/default.nix
     ./zathura/default.nix
     ./keepassxc/default.nix
+    ./nf/default.nix
   ];
 }
