@@ -13,8 +13,14 @@ vim.api.nvim_create_autocmd("VimResized", {
     end,
 })
 
+-- hide and unhide lualine when entering and leaving goyo
+
 local lualine = require('lualine')
 local grp = vim.api.nvim_create_augroup('goyo_lualine_toggle', { clear = true })
+
+local function hide() lualine.hide({ place = {'statusline', 'winbar', 'tabline'} }) end
+local function unhide() lualine.hide({ place = {'statusline', 'winbar', 'tabline'}, unhide = true }) end
+
 
 vim.api.nvim_create_autocmd('User', {
   group = grp,
@@ -29,5 +35,15 @@ vim.api.nvim_create_autocmd('User', {
   pattern = 'GoyoLeave',
   callback = function()
     lualine.hide({ place = {'statusline', 'winbar', 'tabline'}, unhide = true })
+  end,
+})
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  group = grp,
+  once  = true,
+  callback = function()
+    if vim.fn.exists('g:goyo_width') == 1 then
+      vim.schedule(hide)
+    end
   end,
 })
