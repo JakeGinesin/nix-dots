@@ -42,7 +42,8 @@ vim.api.nvim_create_autocmd('VimEnter', {
   group = grp,
   once  = true,
   callback = function()
-    if vim.fn.exists('g:goyo_width') == 1 then
+    local w = vim.g.goyo_if
+    if w then
       vim.schedule(hide)
     end
   end,
