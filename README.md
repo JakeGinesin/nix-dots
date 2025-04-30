@@ -1,6 +1,14 @@
 uhuh yeah endgame nixos config
 
-Installation:
+# Install
+if you're me, you need to bootstrap your secrets for agenix to work right:
+```
+cp -r /home/sync/.ssh /mnt/home/sync/.ssh
+cp /home/sync/Passwords.kdbx /mnt/home/sync/.config/keep
+```
+if you're not me, you probably have to go in my config and change things for nix to build everything. 
+
+then, proceed with regular installation:
 ```
 sudo nixos-install --root /mnt --flake github:jakeginesin/nix-dots#thonkpad
 ```
