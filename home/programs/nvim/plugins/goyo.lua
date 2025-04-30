@@ -13,6 +13,9 @@ vim.api.nvim_create_autocmd("VimResized", {
     end,
 })
 
+local lualine = require('lualine')
+local grp = vim.api.nvim_create_augroup('goyo_lualine_toggle', { clear = true })
+
 vim.api.nvim_create_autocmd('User', {
   group = grp,
   pattern = 'GoyoEnter',
