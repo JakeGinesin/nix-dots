@@ -27,7 +27,7 @@ search() {
 
     no_md="${rcv%.md}"
     replaced="${no_md//[-_]/ }"
-    echo "lol"
+    # echo "lol"
 
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
       -c "Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
@@ -38,7 +38,7 @@ search() {
 
 open_daily() {
   alacritty -t "daily.md" -e nvim "$main/daily.md" \
-    -c "Goyo | set path+=$main_dir" &!
+    -c "Goyo | set path+=$main_dir" \
     -c "execute 'normal G'"
 }
 
