@@ -44,7 +44,9 @@ vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     local w = vim.g.goyo_if
     if w then
-      vim.cmd 'BarbarDisable'
+      vim.schedule(
+        vim.cmd 'BarbarDisable'
+      end)
       vim.schedule(hide)
     end
   end,
