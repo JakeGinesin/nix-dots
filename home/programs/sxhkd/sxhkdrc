@@ -185,15 +185,13 @@ super + {o}
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
-  # alacritty -e nvim /home/synchronous/journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/journal"
   sh nf daily
 
 # search my notes using rofi and open the right one
 super + {ctrl} + {o}
-  # sh /home/synchronous/.scripts/vimwiki/search_notes.sh
   sh nf search
 
-super + {ctrl} + {p} 
+# super + {ctrl} + {p} 
   # sh /home/synchronous/.scripts/papers/paper-search-cached.sh
 
 super + {ctrl} + {l} 

@@ -8,13 +8,13 @@ rofi_prompt="/home/synchronous/.config/rofi/styles/prompt-search.rasi"
 len_maindir=${#main_dir}
 
 search() {
-  rs="$(find "$main_dir" -follow -printf "%T@ %Tc %p\n" | sort -n -r | cut -c"$((len_maindir + 49))"- | rg -a '\.md$')"
+  rs="$(find "$main_dir" -follow -printf "%T@ %Tc %p\n" | sort -n -r | cut -c"$((len_maindir + 56))"- | rg -a '\.md$')"
   rcv=$(echo "$rs" | rofi -dmenu -theme "$rofi_prompt")
   if [[ "$rcv" == "" ]]; then exit 1; fi
   if [[ $(echo "$rs" | rg "$rcv") ]]; then # check if we actually have our note
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "Goyo | execute 'normal 4j' | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \ 
-      -c "lua vim.g.goyo_if = 1" &!
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | execute 'normal 4j' | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" &!
+      # -c "lua vim.g.goyo_if = 1"
       # -c "syntax match LinkPattern /[a-zA-Z0-9\-][a-zA-Z0-9\-]*\.md/" \
       # -c "highlight LinkPattern guifg=LightBlue gui=underline" \
       # -c "nnoremap <CR> :call CustomGf()<CR>" \
@@ -31,9 +31,8 @@ search() {
     # echo "lol"
 
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
-      -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" \ 
-      -c "lua vim.g.goyo_if = 1" &!
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
+      -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" &!
           # make sure standardized frontmatter is there
   fi
 }
@@ -47,8 +46,7 @@ open_daily() {
 
 open_todo() {
   alacritty -t "todo.md" -e nvim "$main/todo.md" \
-    -c "Goyo | set path+=$main_dir" \ 
-    -c "lua vim.g.goyo_if = 1" &!
+    -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir" &!
     # -c "execute 'normal G'"
 }
 
@@ -86,8 +84,7 @@ search_by_tags() {
   if [[ "$rcv" == "" ]]; then exit 1; fi
   if [[ $(echo "$rs" | rg "$rcv") ]]; then # check if we actually have our note
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "Goyo | execute 'normal 4j' | set path+=$main_dir |  autocmd BufEnter * let b:coc_suggest_disable=1" \ 
-      -c "lua vim.g.goyo_if = 1" &!
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | execute 'normal 4j' | set path+=$main_dir |  autocmd BufEnter * let b:coc_suggest_disable=1" &!
   else 
 
     # if rcv doesn't contain md, add it
@@ -99,9 +96,8 @@ search_by_tags() {
     replaced="${no_md//[-_]/ }"
 
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
-      -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" \
-      -c "lua vim.g.goyo_if = 1" &! 
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
+      -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" &! 
   fi
 }
 
@@ -139,8 +135,7 @@ search_by_title() {
   # echo "$rcv"
   if [[ $(echo "$rs" | rg "$rcv") ]]; then # check if we actually have our note
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "Goyo | execute 'normal 4j' | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
-      -c "lua vim.g.goyo_if = 1" &!
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | execute 'normal 4j' | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" &!
   else 
 
     # if rcv doesn't contain md, add it
@@ -152,9 +147,8 @@ search_by_title() {
     replaced="${no_md//[-_]/ }"
 
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
-      -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" \
-      -c "lua vim.g.goyo_if = 1" &! 
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
+      -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" &! 
   fi
 }
 
