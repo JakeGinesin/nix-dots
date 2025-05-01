@@ -44,10 +44,19 @@ vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     local w = vim.g.goyo_if
     if w then
-      vim.schedule(function()
-        vim.cmd('BarbarDisable')
-      end)
       vim.schedule(hide)
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd('UIEnter', {
+  once  = true,
+  group = grp,
+  callback = function()
+    local w = vim.g.goyo_if
+    if w then
+      vim.opt.showtabline = 0
+      vim.cmd('BarbarDisable')
     end
   end,
 })
