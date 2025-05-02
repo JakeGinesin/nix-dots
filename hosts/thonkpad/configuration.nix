@@ -34,17 +34,18 @@ in {
       useUserPackages = true;
       backupFileExtension = "hm-backup";
       # sharedModules = [agenix.homeManagerModules.default];
-      extraSpecialArgs = {inherit (config);};
-      users.synchronous.imports = [
-        ({
-          config,
-          lib,
-          ...
-        }:
-          import ../../home/home.nix {
-            inherit config pkgs lib;
-          })
-      ];
+      # extraSpecialArgs = {inherit (config);};
+      # users.synchronous.imports = [
+      # ({
+      # config,
+      # lib,
+      # ...
+      # }:
+      # import ../../home/home.nix {
+      # inherit config pkgs lib;
+      # })
+      # ];
+      users.synchronous.imports = [../../home/home.nix];
     };
 
     res = "1366x768";
