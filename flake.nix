@@ -28,9 +28,9 @@
     agenix,
   }: let
     baseModule = {
-      imports = [
-        home-manager.nixosModules.default
-      ];
+      # imports = [
+      # home-manager.nixosModules.default
+      # ];
       system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
       nixpkgs.overlays = [];
     };
@@ -43,7 +43,7 @@
         {
           environment.systemPackages = [agenix.packages.x86_64-linux.default];
         }
-
+        home-manager.nixosModules.default
         agenix.nixosModules.default
         # agenix.homeManagerModules.age
         ./hosts/thonkpad/configuration.nix
