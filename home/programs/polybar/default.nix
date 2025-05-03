@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  osConfig,
   ...
 }: let
   mypolybar = pkgs.polybar.override {
@@ -37,6 +38,43 @@
   # ${ip} route | ${grep} default | ${awk} '{print $5}' > $out
   # '';
 
+  hd = ''
+    [bar/mybar]
+    height = 20
+    font-0 = "NotoSans-Regular:size=9;2.5"
+    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=9;2.5"
+    font-2 = "Noto Sans Symbols:size=9;1"
+    offset-x = 2
+    offset-y = 2
+  '';
+
+  fhd = ''
+    [bar/mybar]
+    height = 20
+    font-0 = "NotoSans-Regular:size=11;2.5"
+    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=11;2.5"
+    font-2 = "Noto Sans Symbols:size=11;1"
+    offset-x = 4
+    offset-y = 3
+  '';
+
+  qhd = ''
+    [bar/mybar]
+    height = 25
+    font-0 = "NotoSans-Regular:size=11;2.5"
+    font-1 = "JetBrainsMono Nerd Font:style=Regular:size=11;2.5"
+    font-2 = "Noto Sans Symbols:size=13;1"
+    offset-x = 4
+    offset-y = 3
+  '';
+
+  mon =
+    if osConfig.res == "1366x768"
+    then hd
+    else if osConfig.res == "2560x1440"
+    then qhd
+    else fhd;
+
   internets = ''
     [module/network]
     type = internal/network
@@ -61,7 +99,7 @@ in {
     enable = true;
     package = mypolybar;
     config = ./config.ini;
-    extraConfig = bctl + internets;
+    extraConfig = bctl + internets + mon;
     # my savior: https://www.reddit.com/r/NixOS/comments/v8ikwq/polybar_doesnt_start_at_launch/
     script = ''
       # echo "none"

@@ -24,12 +24,18 @@ in {
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  # age.secrets.zsh_remote.file = ../secrets/zsh_remote.age;
+  # age.secretsDir = "/home/synchronous/.agenix/agenix";
+  # age.secretsMountPoint = "/home/synchronous/.agenix/agenix.d";
+  # age.identityPaths = ["/home/synchronous/.ssh/id_ed25519"];
+
   # home.packages = with pkgs; [xrandr procps polybar bspwm sxhkd polybar-pulseaudio-control bluez];
 
   home.sessionVariables = {
     EDITOR = "nvim";
     HOME = "/home/synchronous";
     XDG_CACHE_HOME = "$HOME/.cache";
+    DBUS_SESSION_BUS_ADDRESS = "unix:path=$XDG_RUNTIME_DIR/bus";
   };
 
   programs.home-manager.enable = true;
@@ -45,6 +51,8 @@ in {
       beets
       netcat
       zathura
+      keepassxc
+      sshpass
     ]
     ++ (
       with lib; let
@@ -64,4 +72,10 @@ in {
             (builtins.readFile file)
         )
     );
+
+  # home.file.".profile".text = ''
+  # if [ -f "$HOME/.scripts/res.sh" ]; then
+  # . "$HOME/.scripts/res.sh"
+  # fi
+  # '';
 }

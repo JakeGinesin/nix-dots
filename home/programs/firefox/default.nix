@@ -1,8 +1,17 @@
 {
   pkgs,
   lib,
+  osConfig,
   ...
-}: {
+}: let
+  # osConfig carries config from configuration.nix
+  scale =
+    if osConfig.res == "1366x768"
+    then 0.80
+    else if osConfig.res == "2560x1440"
+    then 1.25
+    else 1.00;
+in {
   home.activation.copyStartpage = lib.mkAfter ''
     mkdir -p ~/.firefox-startpage
     cp -r ${./startpage}/* ~/.firefox-startpage/
@@ -118,10 +127,10 @@
         # for tiling window managers expands to the size of the window
 
         # https://support.mozilla.org/en-US/questions/1253302
-        "mousewheel.with_control.action" = "1";
+        "mousewheel.with_control.action" = 1;
 
         # should change this based on your resolution
-        "layout.css.devPixelsPerPx" = 1.25;
+        "layout.css.devPixelsPerPx" = scale;
 
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
         "full-screen-api.ignore-widgets" = true;

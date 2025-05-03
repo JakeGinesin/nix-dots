@@ -181,18 +181,18 @@ super + bracket{left,right}
 # alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo | autocmd VimResized * call GoyoWrapper()"
 # open my notes file in nvim w/ a new alacritty window, then jump to end of file
 super + {o}
-  open_daily
+  sh nf daily
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
-  alacritty -e nvim /home/synchronous/journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/journal"
+  sh nf daily
 
 # search my notes using rofi and open the right one
 super + {ctrl} + {o}
-  sh /home/synchronous/.scripts/vimwiki/search_notes.sh
+  sh nf search
 
-super + {ctrl} + {p} 
-  sh /home/synchronous/.scripts/papers/paper-search-cached.sh
+# super + {ctrl} + {p} 
+  # sh /home/synchronous/.scripts/papers/paper-search-cached.sh
 
 super + {ctrl} + {l} 
   sh /home/synchronous/.scripts/papers/paper-search.sh
@@ -211,7 +211,8 @@ super + {alt} + {c}
   find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read rsem; yq ".url" "/home/synchronous/current-semester/$rsem/info.yaml" | xargs firefox
 
 super + {p}
-  sh /home/synchronous/.scripts/vimwiki/open_todo.sh
+  # sh /home/synchronous/.scripts/vimwiki/open_todo.sh
+  nf todo
 
 super + {m}
   sh /home/synchronous/.scripts/vimwiki/open-learning.sh

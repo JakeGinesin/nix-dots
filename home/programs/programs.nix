@@ -13,7 +13,6 @@
     # ./nitrogen/defualt.nix
     ./rofi/default.nix
     ./polybar/default.nix
-
     # wm stuff
     ./sxhkd/default.nix
     ./bspwm/default.nix
@@ -23,5 +22,7 @@
     ./firefox/default.nix
     ./git/default.nix
     ./zathura/default.nix
+    ./keepassxc/default.nix
+    ./nf/default.nix
   ];
 }
