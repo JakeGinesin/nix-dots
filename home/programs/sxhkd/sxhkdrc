@@ -191,11 +191,12 @@ super + {shift} + {o}
 super + {ctrl} + {o}
   sh nf search
 
-# super + {ctrl} + {p} 
-  # sh /home/synchronous/.scripts/papers/paper-search-cached.sh
+# sh /home/synchronous/.scripts/papers/paper-search-cached.sh
+super + {ctrl} + {p} 
+  sh paper-search-cached
 
 super + {ctrl} + {l} 
-  sh /home/synchronous/.scripts/papers/paper-search.sh
+  sh paper-search
 
 #super + {ctrl} + {l} 
 #  sh /home/synchronous/.scripts/document-scripts/document-search-fast.sh
@@ -210,9 +211,9 @@ super + {ctrl} + {c}
 super + {alt} + {c}
   find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read rsem; yq ".url" "/home/synchronous/current-semester/$rsem/info.yaml" | xargs firefox
 
+# sh /home/synchronous/.scripts/vimwiki/open_todo.sh
 super + {p}
-  # sh /home/synchronous/.scripts/vimwiki/open_todo.sh
-  nf todo
+  sh nf todo
 
 super + {m}
   sh /home/synchronous/.scripts/vimwiki/open-learning.sh

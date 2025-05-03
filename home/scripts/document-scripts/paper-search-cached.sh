@@ -1,6 +1,6 @@
+#!/bin/bash
 paper_dir="/home/synchronous/Zotero/storage"
-papers=$(find $paper_dir -name "*.pdf" -exec basename {} \;)
-echo "$papers" > /home/synchronous/.paper-cache
+papers=$(cat "/home/synchronous/.paper-cache")
 selected_file=$(echo "$papers" | rofi -dmenu -i -p "Select a paper" -theme /home/synchronous/.config/rofi/styles/prompt-papers.rasi)
 
 if [ -n "$selected_file" ]; then
