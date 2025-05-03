@@ -53,6 +53,10 @@ in {
       zathura
       keepassxc
       sshpass
+      mpv
+      jellyfin-ffmpeg
+      simple-mtpfs
+      signal-desktop
     ]
     ++ (
       with lib; let

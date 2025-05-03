@@ -24,5 +24,6 @@
     ./zathura/default.nix
     ./keepassxc/default.nix
     ./nf/default.nix
+    ./beets/default.nix
   ];
 }

@@ -49,5 +49,20 @@
         ./hosts/thonkpad/configuration.nix
       ];
     };
+
+    nixosConfigurations.rq = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        baseModule
+        {
+          environment.systemPackages = [agenix.packages.x86_64-linux.default];
+        }
+        home-manager.nixosModules.default
+        agenix.nixosModules.default
+        # agenix.homeManagerModules.age
+        ./hosts/rq/configuration.nix
+      ];
+    };
   };
 }

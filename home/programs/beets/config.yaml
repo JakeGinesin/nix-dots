@@ -1,0 +1,9 @@
+plugins: chroma
+
+chroma:
+    auto: yes
+
+import:
+    copy: no
+    write: yes
+    move: no

@@ -24,7 +24,7 @@ in {
     # https://mozilla.github.io/policy-templates/#extensionsettings
     policies = {
       ExtensionSettings = {
-        "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
+        # "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
         # uBlock Origin:
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
@@ -113,7 +113,7 @@ in {
             }
             {
               name = "GPT";
-              url = "https://chatgpt.com"; # sam altman is a horrible person
+              url = "https://chatgpt.com"; # sam altman is a horrible person and i cannot wait for the day i can ditch this shit
             }
             {
               name = "performance";
@@ -125,6 +125,10 @@ in {
       settings = {
         ### This is all aesthetic stuff
         # for tiling window managers expands to the size of the window
+
+        # dir lol
+        "browser.download.dir" = "/home/synchronous/downloads";
+        "browser.download.folderList" = 2;
 
         # https://support.mozilla.org/en-US/questions/1253302
         "mousewheel.with_control.action" = 1;

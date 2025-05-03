@@ -13,7 +13,7 @@ search() {
   if [[ "$rcv" == "" ]]; then exit 1; fi
   if [[ $(echo "$rs" | rg "$rcv") ]]; then # check if we actually have our note
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | execute 'normal 4j' | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" &!
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | execute 'normal 4j' | set path+=$main_dir | set wrap | autocmd BufEnter * let b:coc_suggest_disable=1" &!
       # -c "lua vim.g.goyo_if = 1"
       # -c "syntax match LinkPattern /[a-zA-Z0-9\-][a-zA-Z0-9\-]*\.md/" \
       # -c "highlight LinkPattern guifg=LightBlue gui=underline" \
@@ -31,7 +31,7 @@ search() {
     # echo "lol"
 
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir | set wrap | autocmd BufEnter * let b:coc_suggest_disable=1" \
       -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" &!
           # make sure standardized frontmatter is there
   fi
@@ -39,14 +39,14 @@ search() {
 
 open_daily() {
   alacritty -t "daily.md" -e nvim "$main/daily.md" \
-    -c "Goyo | set path+=$main_dir" \
+    -c "Goyo | set wrap | set path+=$main_dir" \
     -c "execute 'normal G'" \
     -c "lua vim.g.goyo_if = 1" &!
 }
 
 open_todo() {
   alacritty -t "todo.md" -e nvim "$main/todo.md" \
-    -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir" &!
+    -c "execute 'lua vim.g.goyo_if = 1' | set wrap | Goyo | set path+=$main_dir" &!
     # -c "execute 'normal G'"
 }
 
@@ -147,7 +147,7 @@ search_by_title() {
     replaced="${no_md//[-_]/ }"
 
     alacritty -t "$rcv" -e nvim "$main_dir/$rcv" \
-      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
+      -c "execute 'lua vim.g.goyo_if = 1' | Goyo | set wrap | set path+=$main_dir | autocmd BufEnter * let b:coc_suggest_disable=1" \
       -c "call setline(1, ['---', 'title: $replaced', 'tags: ', '---', '']) | execute 'normal G'" &! 
   fi
 }

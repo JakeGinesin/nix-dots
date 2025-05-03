@@ -92,6 +92,13 @@ vim.opt.encoding = "utf-8"
 -- Leader key
 vim.g.mapleader = ","
 
+vim.opt_local.conceallevel = 0
+vim.opt_local.foldmethod  = 'manual'
+-- Keep treesitter, ditch legacy syntax:
+vim.g.markdown_fenced_languages = {}
+
+vim.loader.enable() 
+
 ------------------------------------------------------
 --                  KEY MAPPINGS
 ------------------------------------------------------
@@ -105,6 +112,11 @@ vim.api.nvim_set_keymap("n", "<Esc>^[", "<Esc>^[", { noremap = true })
 
 -- inoremap {<CR> {<CR>}<C-o>O}
 vim.api.nvim_set_keymap("i", "{<CR>", "{<CR>}<C-o>O", { noremap = true })
+
+local map  = vim.keymap.set
+local opts = { noremap = true, silent = true }
+-- yank link
+map("n", "<leader>yl", "?\\](<CR>lvi)y<Cmd>nohlsearch<CR>", opts)
 
 -- Save file with Ctrl+S
 vim.cmd([[

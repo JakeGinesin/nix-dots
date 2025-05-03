@@ -32,12 +32,12 @@ fi
 # Import into beets
 
 if [ "$2" = "-na" ] || [ "$2" = "--no-auto" ]; then
-  if ! /usr/bin/beet import -s /home/synchronous/.music-not-tagged/tmp.mp3; then
+  if ! /etc/profiles/per-user/synchronous/bin/beet import -s /home/synchronous/.music-not-tagged/tmp.mp3; then
       echo "Error importing into beets."
       exit 1
   fi
 else 
-  if ! /usr/bin/beet import -s /home/synchronous/.music-not-tagged/tmp.mp3 <<< "A"; then
+  if ! /etc/profiles/per-user/synchronous/bin/beet import -s /home/synchronous/.music-not-tagged/tmp.mp3 <<< "A"; then
       echo "Error importing into beets."
       exit 1
   fi
@@ -45,7 +45,7 @@ fi
 
 
 # Remove all entries from beets
-if ! /usr/bin/beet ls | /usr/bin/beet remove -f; then
+if ! /etc/profiles/per-user/synchronous/bin/beet ls | /etc/profiles/per-user/synchronous/bin/beet remove -f; then
     echo "Error removing entries from beets."
     exit 1
 fi
