@@ -145,7 +145,7 @@ alias untar="tar -zxvf"
 alias mktar="tar -cvzf"
 
 # by default, put zathura windows in new process
-# alias zathura="zathura --fork"
+alias zathura="zathura --fork"
 # alias zathura="sh /home/synchronous/.scripts/zathura/zathura_conditional.sh"
 # alias exclude-zathura="pwd >> /home/synchronous/.scripts/zathura/excluded;echo 'done'"
 
