@@ -57,6 +57,7 @@ in {
       jellyfin-ffmpeg
       simple-mtpfs
       signal-desktop
+      slack
     ]
     ++ (
       with lib; let

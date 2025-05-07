@@ -46,7 +46,7 @@ ls.add_snippets("markdown", {
   -- ),
     
   s({
-    trig = [[%f[%S](https?://([^/%s]+)[^%s]*)]],
+    trig = [[%f[%S](https?://([^/%s]+[^%s]*))]],
     regTrig  = true,
     wordTrig = false,
   }, fmt("[{}]({})", {
