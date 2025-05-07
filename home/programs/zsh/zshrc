@@ -193,6 +193,7 @@ alias cfg-main="nvim /home/synchronous/nix-cfg/configuration.nix"
 alias zshrc="nvim /home/synchronous/nix-cfg/home/programs/zsh/zshrc"
 alias sxhkdrc="nvim /home/synchronous/nix-cfg/home/programs/sxhkd/sxhkdrc"
 alias programs="cd /home/synchronous/nix-cfg/home/programs"
+alias home-cfg="nvim /home/synchronous/nix-cfg/home/home.nix"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 

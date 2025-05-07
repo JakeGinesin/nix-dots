@@ -58,6 +58,7 @@ in {
       simple-mtpfs
       signal-desktop
       slack
+      nodejs_23
     ]
     ++ (
       with lib; let

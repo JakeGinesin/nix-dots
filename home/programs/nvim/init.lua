@@ -97,6 +97,8 @@ vim.opt_local.foldmethod  = 'manual'
 -- Keep treesitter, ditch legacy syntax:
 vim.g.markdown_fenced_languages = {}
 
+vim.opt.shell = "zsh"
+
 vim.loader.enable() 
 
 ------------------------------------------------------
