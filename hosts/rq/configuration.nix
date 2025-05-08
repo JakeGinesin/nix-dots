@@ -67,6 +67,7 @@ in {
     # system.res = "1366x768";
 
     # Bootloader.
+    services.logind.lidSwitchExternalPower = "ignore";
     boot.loader.grub.enable = true;
     boot.loader.grub.device = "/dev/nvme0n1";
     boot.loader.grub.useOSProber = true;
@@ -220,7 +221,7 @@ in {
             }
             {
               # are you serious?
-              command = "/run/current-system/sw/bin/nixos-rebuild switch --flake /home/synchronous/nix-cfg/flake.nix";
+              command = "/run/current-system/sw/bin/nixos-rebuild";
               options = ["NOPASSWD"];
             }
           ];
