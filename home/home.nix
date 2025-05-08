@@ -59,6 +59,10 @@ in {
       signal-desktop
       slack
       nodejs_23
+      gnumake
+
+      # security
+      aflplusplus
     ]
     ++ (
       with lib; let
