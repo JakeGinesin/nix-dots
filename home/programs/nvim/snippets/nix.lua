@@ -49,7 +49,13 @@ ls.add_snippets("nix", {
       devShells.x86_64-linux.default = pkgs.mkShell {
         packages = [
           pkgs.hello
+          pkgs.zsh
         ];
+
+        shellHook = ''
+          export SHELL=${pkgs.zsh}/bin/zsh
+          exec $SHELL
+        '';
       };
     };
 }
