@@ -197,6 +197,22 @@ alias home-cfg="nvim /home/synchronous/nix-cfg/home/home.nix"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 
+a.nixi() {
+  nix-store -q --references /var/run/current-system/sw | cut -d'-' -f2-
+}
+
+a.pingg() {
+  grc ping 8.8.8.8 -c 1
+}
+
+a.sitecopy() {
+  wget -k -K -E -r -l 10 -p -N -F -nH $@
+}
+
+a.fo() {
+  firefox `pwd`
+}
+
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

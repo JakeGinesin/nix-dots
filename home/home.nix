@@ -61,12 +61,16 @@ in {
       nodejs_23
       gnumake
       choose # better awk and cut
+      grc
 
       # security
       aflplusplus
       wget
       traceroute
       dig
+      httpx
+      sshfs
+      katana
     ]
     ++ (
       with lib; let

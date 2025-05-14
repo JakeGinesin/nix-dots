@@ -11,6 +11,7 @@
 
   old-nitrogen = pkg_with_working_nitrogen.nitrogen;
 in {
+  # import system, hardware config, and home manager
   imports = [
     ./hardware-configuration.nix
     ../../system/system.nix
@@ -72,6 +73,26 @@ in {
     boot.loader.grub.useOSProber = true;
     boot.loader.grub.version = 2;
     services.logind.lidSwitchExternalPower = "ignore";
+
+    virtualisation.docker = {
+      enable = true;
+      enableOnBoot = true;
+      liveRestore = false;
+    };
+
+    virtualisation.libvirtd.enable = true;
+    programs.virt-manager.enable = true;
+
+    xdg.mime.defaultApplications = {
+      "application/pdf" = "firefox.desktop";
+      "text/html" = "firefox.desktop";
+      "text/markdown" = "firefox.desktop";
+      "text/x-markdown" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
+    };
     #boot = {
     #  loader.systemd-boot = {
     #    enable = true;
@@ -156,7 +177,7 @@ in {
     users.users.synchronous = {
       isNormalUser = true;
       description = "jake";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
       packages = with pkgs; [
         kdePackages.kate
         # firefox
