@@ -63,6 +63,9 @@ in {
 
       # security
       aflplusplus
+      wget
+      traceroute
+      dig
     ]
     ++ (
       with lib; let
