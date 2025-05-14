@@ -60,6 +60,7 @@ in {
       slack
       nodejs_23
       gnumake
+      choose # better awk and cut
 
       # security
       aflplusplus
