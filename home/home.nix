@@ -71,6 +71,11 @@ in {
       httpx
       sshfs
       katana
+      dnsenum
+      eyewitness
+      masscan
+      dnsx
+      amass
     ]
     ++ (
       with lib; let

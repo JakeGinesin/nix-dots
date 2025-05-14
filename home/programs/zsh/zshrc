@@ -194,6 +194,7 @@ alias zshrc="nvim /home/synchronous/nix-cfg/home/programs/zsh/zshrc"
 alias sxhkdrc="nvim /home/synchronous/nix-cfg/home/programs/sxhkd/sxhkdrc"
 alias programs="cd /home/synchronous/nix-cfg/home/programs"
 alias home-cfg="nvim /home/synchronous/nix-cfg/home/home.nix"
+alias nix-shell="nix-shell --run zsh"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 
@@ -211,6 +212,19 @@ a.sitecopy() {
 
 a.fo() {
   firefox `pwd`
+}
+
+a.sherlock() {
+  if [[ "$#" -ne "1" ]]; then
+    echo "ERROR: Specify username"
+    return 1
+  fi
+
+  docker run --rm -t sherlock/sherlock "$@"
+}
+
+a.dnsenum() {
+  dnsenum "$@"
 }
 
 
