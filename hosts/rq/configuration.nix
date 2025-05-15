@@ -74,6 +74,8 @@ in {
     boot.loader.grub.version = 2;
     services.logind.lidSwitchExternalPower = "ignore";
 
+    services.udisks2.enable = true;
+
     virtualisation.docker = {
       enable = true;
       enableOnBoot = true;
