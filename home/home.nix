@@ -71,11 +71,15 @@ in {
       httpx
       sshfs
       katana
-      dnsenum
       eyewitness
       masscan
       dnsx
       amass
+
+      (perl.withPackages (ps: with ps; [NetDNS NetIP XMLWriter])) # ensure Perl modules
+      (pkgs.writeShellScriptBin "dnsenum" ''
+        exec ${pkgs.dnsenum}/bin/dnsenum "$@"
+      '')
     ]
     ++ (
       with lib; let
