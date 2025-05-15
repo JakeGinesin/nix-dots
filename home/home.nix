@@ -82,6 +82,7 @@ in {
       gnumake
       choose # better awk and cut
       grc
+      go
 
       # security
       aflplusplus
