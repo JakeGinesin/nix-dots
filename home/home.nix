@@ -4,6 +4,26 @@
   lib,
   ...
 }: let
+  myPerl = pkgs.perl.withPackages (ps:
+    with ps; [
+      perl
+      NetDNS
+      NetIP
+      NetNetmask
+      StringRandom
+      XMLWriter
+      NetWhoisIP
+      WWWMechanize
+    ]);
+
+  myDnsenum =
+    pkgs.runCommand "dnsenum-wrapped" {
+      nativeBuildInputs = [pkgs.makeWrapper];
+    } ''
+      mkdir -p $out/bin
+      makeWrapper ${pkgs.dnsenum}/bin/dnsenum $out/bin/dnsenum \
+        --set PERL5LIB ${myPerl}/lib/perl5/site_perl
+    '';
 in {
   # home.packages = builtins.attrValues scriptDerivations;
 
@@ -75,11 +95,7 @@ in {
       masscan
       dnsx
       amass
-
-      (perl.withPackages (ps: with ps; [NetDNS NetIP XMLWriter])) # ensure Perl modules
-      (pkgs.writeShellScriptBin "dnsenum" ''
-        exec ${pkgs.dnsenum}/bin/dnsenum "$@"
-      '')
+      myDnsenum
     ]
     ++ (
       with lib; let
