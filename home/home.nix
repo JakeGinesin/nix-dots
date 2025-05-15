@@ -83,6 +83,7 @@ in {
       choose # better awk and cut
       grc
       go
+      calibre
 
       # security
       aflplusplus
@@ -97,6 +98,7 @@ in {
       dnsx
       amass
       myDnsenum
+      whois
     ]
     ++ (
       with lib; let
