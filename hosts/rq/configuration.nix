@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  # inputs,
   ...
 }: let
   pkg_with_working_nitrogen = import (builtins.fetchTarball {
@@ -60,6 +61,8 @@ in {
       secretsMountPoint = "/home/synchronous/.agenix/agenix.d";
       identityPaths = ["/home/synchronous/.ssh/id_ed25519"];
     };
+
+    # nix.channels = {inherit nixpkgs;};
 
     # config = {
     # res = "1366x768";
