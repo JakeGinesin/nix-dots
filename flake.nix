@@ -15,7 +15,7 @@
     nixpkgs,
     home-manager,
     agenix,
-  }: let
+  } @ inputs: let
     baseModule = {
       # imports = [
       # home-manager.nixosModules.default
