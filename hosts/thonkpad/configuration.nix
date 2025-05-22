@@ -16,16 +16,18 @@ in {
     ../../system/system.nix
   ];
 
-  options.res = lib.mkOption {
-    type = lib.types.str;
-    default = "1920x1080";
-    description = "screen resolution";
-  };
+  options = {
+    res = lib.mkOption {
+      type = lib.types.str;
+      default = "1920x1080";
+      description = "screen resolution";
+    };
 
-  options.zsh_remote = lib.mkOption {
-    type = lib.types.str;
-    default = "1920x1080";
-    description = "zsh remote secret";
+    # zsh_remote = lib.mkOption {
+    # type = lib.types.str;
+    # default = "1920x1080";
+    # description = "zsh remote secret";
+    # };
   };
 
   config = {

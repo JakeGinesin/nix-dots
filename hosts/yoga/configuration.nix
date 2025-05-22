@@ -17,44 +17,32 @@ in {
     ../../system/system.nix
   ];
 
-  options.res = lib.mkOption {
-    type = lib.types.str;
-    default = "1920x1080";
-    description = "screen resolution";
+  options = {
+    res = lib.mkOption {
+      type = lib.types.str;
+      default = "1920x1080";
+      description = "screen resolution";
+    };
+
+    zsh_remote = lib.mkOption {
+      type = lib.types.str;
+      default = "1920x1080";
+      description = "zsh remote secret";
+    };
   };
 
-  options.zsh_remote = lib.mkOption {
-    type = lib.types.str;
-    default = "1920x1080";
-    description = "zsh remote secret";
-  };
-
-  
   config = {
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "backup";
-      # sharedModules = [agenix.homeManagerModules.default];
-      # extraSpecialArgs = {inherit (config);};
-      # users.synchronous.imports = [
-      # ({
-      # config,
-      # lib,
-      # ...
-      # }:
-      # import ../../home/home.nix {
-      # inherit config pkgs lib;
-      # })
-      # ];
       users.synchronous.imports = [../../home/home.nix];
     };
 
     # nixPath = [
-      # "nixpkgs=${inputs.nixpkgs}" # FLAKE, NIXD
-      # "/nix/var/nix/profiles/per-user/root/channels"
+    # "nixpkgs=${inputs.nixpkgs}" # FLAKE, NIXD
+    # "/nix/var/nix/profiles/per-user/root/channels"
     # ];
-
 
     res = "1920x1080";
     age = {
@@ -134,7 +122,6 @@ in {
         ];
       };
     };
-
 
     # Set your time zone.
     time.timeZone = "America/New_York";
