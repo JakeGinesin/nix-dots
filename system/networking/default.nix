@@ -14,10 +14,10 @@
 
     networkmanager.enable = true;
 
-    interfaces = {
-      enp0s31f6 = {};
-      wlp4s0 = {};
-    };
-    # usePredictableInterfaceNames = true;
+    # interfaces = {
+    # enp0s31f6 = {};
+    # wlp4s0 = {};
+    # };
+    usePredictableInterfaceNames = false;
   };
 }
