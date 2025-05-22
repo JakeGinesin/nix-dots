@@ -64,5 +64,20 @@
         ./hosts/rq/configuration.nix
       ];
     };
+
+    nixosConfigurations.yoga = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        baseModule
+        {
+          environment.systemPackages = [agenix.packages.x86_64-linux.default];
+        }
+        home-manager.nixosModules.default
+        agenix.nixosModules.default
+        # agenix.homeManagerModules.age
+        ./hosts/yoga/configuration.nix
+      ];
+    };
   };
 }
