@@ -3,6 +3,16 @@
   pkgs,
   ...
 }: {
+  imports = [
+    # ./wm/bspwm.nix
+    ./xserver/default.nix
+    ./services/services.nix
+    ./fonts/fonts.nix
+    ./hardware/hardware.nix
+    ./networking/default.nix
+    ./users/default.nix
+  ];
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -116,13 +126,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
-  imports = [
-    # ./wm/bspwm.nix
-    ./xserver/default.nix
-    ./services/services.nix
-    ./fonts/fonts.nix
-    ./hardware/hardware.nix
-    ./networking/default.nix
-  ];
 }
