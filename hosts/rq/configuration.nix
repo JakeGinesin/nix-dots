@@ -24,11 +24,11 @@ in {
       description = "screen resolution";
     };
 
-    zsh_remote = lib.mkOption {
-      type = lib.types.str;
-      default = "1920x1080";
-      description = "zsh remote secret";
-    };
+    # zsh_remote = lib.mkOption {
+    # type = lib.types.str;
+    # default = "1920x1080";
+    # description = "zsh remote secret";
+    # };
   };
 
   config = {
