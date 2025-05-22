@@ -4,7 +4,6 @@
   lib,
   ...
 }: {
-  # import system, hardware config, and home manager
   imports = [
     ./hardware-configuration.nix
     ../../system/system.nix
