@@ -198,6 +198,13 @@ alias nix-shell="nix-shell --run zsh"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 
+alias ndwc="nmcli device wifi connect"
+alias ndwl="nmcli device wifi list"
+
+stack() {
+  find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
+}
+
 a.nixi() {
   nix-store -q --references /var/run/current-system/sw | cut -d'-' -f2-
 }

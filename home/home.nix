@@ -84,6 +84,7 @@ in {
       grc
       go
       calibre
+      gcc
 
       # security
       aflplusplus
