@@ -78,7 +78,7 @@
   internets = ''
     [module/network]
     type = internal/network
-    interface = wlan0
+    interface = wlp4s0
     interval = 4.0
     udspeed-minwidth = 5
     accumulate-stats = true
