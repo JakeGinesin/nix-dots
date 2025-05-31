@@ -205,6 +205,10 @@ stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
 }
 
+stack-min() {
+  find . -maxdepth 1 -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
+}
+
 a.nixi() {
   nix-store -q --references /var/run/current-system/sw | cut -d'-' -f2-
 }
