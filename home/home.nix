@@ -106,6 +106,8 @@ in {
       myDnsenum
       whois
       macchanger
+      aircrack-ng
+      dhcpcd
     ]
     ++ (
       with lib; let
