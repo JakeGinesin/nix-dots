@@ -105,6 +105,7 @@ in {
       amass
       myDnsenum
       whois
+      macchanger
     ]
     ++ (
       with lib; let
