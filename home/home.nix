@@ -88,6 +88,8 @@ in {
       calibre
       gcc
       vscode
+      code-cursor
+      cloc
 
       # security
       aflplusplus
