@@ -108,6 +108,35 @@ in {
               ];
             }
             {
+              name = "CMU";
+              bookmarks = [
+                {
+                  name = "computing facilities";
+                  url = "https://computing.cs.cmu.edu/landing/student";
+                }
+                {
+                  name = "csd phd resources";
+                  url = "https://www.cs.cmu.edu/~csd-grad/";
+                }
+                {
+                  name = "general phd resources";
+                  url = "https://csd.cmu.edu/academics/doctoral-resources";
+                }
+                {
+                  name = "orders";
+                  url = "https://rams.srv.cs.cmu.edu/ords/";
+                }
+                {
+                  name = "husker";
+                  url = "https://www.husker.nu";
+                }
+                {
+                  name = "mit library experts";
+                  url = "https://libraries.mit.edu/experts/";
+                }
+              ];
+            }
+            {
               name = "Cal";
               url = "https://calendar.google.com/";
             }
