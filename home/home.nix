@@ -63,6 +63,7 @@ in {
 
   home.packages = with pkgs;
     [
+      systemd
       cachix
       # any other packages go here
       # xrandr

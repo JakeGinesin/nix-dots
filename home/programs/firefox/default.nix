@@ -126,9 +126,30 @@ in {
         ### This is all aesthetic stuff
         # for tiling window managers expands to the size of the window
 
+        # QUIC
+        "network.http.http3.enabled" = true;
+        "network.http.http3.grease-advertised-version" = true;
+        "browser.sessionstore.restore_on_demand" = true;
+        "dom.ipc.processPriorityManager.idleUsesNanoStackshot" = true;
+
+        "dom.ipc.processPriorityManager.backgroundUsesEcoQoS" = false;
+
+        # disable prefetch
+        "network.prefetch-next" = false;
+        "network.dns.disablePrefetch" = true;
+        "network.dns.disablePrefetchFromHTTPS" = true;
+        "network.predictor.enable-prefetch" = false;
+        "network.http.speculative-parallel-limit" = 0;
+
         # dir lol
         "browser.download.dir" = "/home/synchronous/downloads";
         "browser.download.folderList" = 2;
+
+        "browser.cache.memory.enable" = false;
+        "browser.tabs.unloadOnLowMemory" = true;
+        "accessibility.force_disabled" = 1;
+        "gfx.webrender.all" = true;
+        "gfx.webrender.software" = false;
 
         # https://support.mozilla.org/en-US/questions/1253302
         "mousewheel.with_control.action" = 1;

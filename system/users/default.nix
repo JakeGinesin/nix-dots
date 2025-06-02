@@ -15,7 +15,7 @@ in {
     description = "jake";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      kdePackages.kate
+      # kdePackages.kate
       # firefox
       git
       arandr
