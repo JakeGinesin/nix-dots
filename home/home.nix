@@ -90,6 +90,7 @@ in {
       vscode
       code-cursor
       cloc
+      gnome-pomodoro
 
       # security
       aflplusplus
