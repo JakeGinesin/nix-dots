@@ -209,6 +209,19 @@ stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
 }
 
+stack-b() {
+  (
+  while IFS= read -r -d '' file; do
+    # Print a header for each filename:
+    printf '\n--- %s ---\n' "$file"
+    # Dump the raw content of "$file" exactly (no transformations).
+    cat "$file"
+  done < <(find . -type f ! -name '*.json' -print0)
+) \
+| perl -p -e 'chomp if eof' \
+| xclip -in -sel clip
+}
+
 stack-min() {
   find . -maxdepth 1 -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
 }

@@ -134,6 +134,10 @@ in {
                   name = "mit library experts";
                   url = "https://libraries.mit.edu/experts/";
                 }
+                {
+                  name = "cmu email";
+                  url = "https://email.cmu.edu";
+                }
               ];
             }
             {

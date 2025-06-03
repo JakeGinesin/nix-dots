@@ -108,6 +108,8 @@ in {
       macchanger
       aircrack-ng
       dhcpcd
+      wireshark
+      postman
     ]
     ++ (
       with lib; let
