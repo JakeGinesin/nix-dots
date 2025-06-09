@@ -22,6 +22,12 @@
             "dynamic"
           ];
         };
+        SM-G398FN = {
+          id = "AKNMO2T-YYTTUL2-463A4VU-37ZULQO-E4EKIYG-VGKV4RI-S4PVP3J-CMAQ6Q7";
+          addresses = [
+            "dynamic"
+          ];
+        };
       };
       folders = {
         notes = {
@@ -30,7 +36,7 @@
           path = "/home/synchronous/journal";
           type = "sendreceive";
 
-          devices = ["cluster"];
+          devices = ["cluster" "SM-G398FN"];
         };
       };
     };
