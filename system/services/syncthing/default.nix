@@ -21,7 +21,7 @@
         notes = {
           id = "notes";
           label = "Notes";
-          path = "/home/synchronous/notes";
+          path = "/home/synchronous/journal";
           type = "sendreceive";
 
           devices = ["cluster"];
