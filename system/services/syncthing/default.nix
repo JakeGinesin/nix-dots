@@ -19,8 +19,8 @@
       };
       folders = {
         notes = {
-          id = "notes";
-          label = "Notes";
+          id = "journal";
+          label = "journal";
           path = "/home/synchronous/journal";
           type = "sendreceive";
 
