@@ -15,7 +15,13 @@
 
     settings = {
       devices = {
-        cluster = {id = "RBT7JA4-DFQ33SG-JUWJOQ2-MLPVLV4-SL2NATS-VZBB5M5-L7CHO3N-UTBOGA4";};
+        cluster = {
+          id = "WLJQSWD-IGXNYPW-2OMCGM4-N2M5MSN-6Z6TRDA-VLZGWVC-5PJTO5U-BPFFCAU";
+          addresses = [
+            "tcp://100.117.155.3:22000"
+            "dynamic"
+          ];
+        };
       };
       folders = {
         notes = {

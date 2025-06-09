@@ -204,6 +204,7 @@ alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 alias ndwc="nmcli device wifi connect"
 alias ndwl="nmcli device wifi list"
 alias wt="systemctl restart NetworkManager"
+alias syncthing="firefox localhost:8384"
 
 stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
