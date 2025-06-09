@@ -13,7 +13,7 @@ in {
   users.users.synchronous = {
     isNormalUser = true;
     description = "jake";
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "syncthing"];
     packages = with pkgs; [
       # kdePackages.kate
       # firefox

@@ -6,5 +6,6 @@
   imports = [
     ./synaptics/default.nix
     ./tailscale/default.nix
+    ./syncthing/default.nix
   ];
 }
