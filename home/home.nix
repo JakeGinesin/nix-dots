@@ -91,6 +91,9 @@ in {
       code-cursor
       cloc
       gnome-pomodoro
+      zip
+      unzip
+      jq
 
       # security
       aflplusplus
