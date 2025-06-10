@@ -8,6 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:ryantm/agenix";
+
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -15,13 +20,16 @@
     nixpkgs,
     home-manager,
     agenix,
+    emacs-overlay,
   } @ inputs: let
     baseModule = {
       # imports = [
       # home-manager.nixosModules.default
       # ];
       system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-      nixpkgs.overlays = [];
+      nixpkgs.overlays = [
+        inputs.emacs-overlay.overlay
+      ];
     };
   in {
     nixosConfigurations.thonkpad = nixpkgs.lib.nixosSystem {
