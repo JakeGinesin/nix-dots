@@ -39,6 +39,7 @@
       vim-airline-themes
       plenary-nvim
       nvim-web-devicons
+      presenting-vim
       # coc-nvim
       {
         plugin = vimtex;
