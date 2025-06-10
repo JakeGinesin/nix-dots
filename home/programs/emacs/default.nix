@@ -114,6 +114,8 @@
     aria
   ];
 
+  xdg.enable = true;
+  xdg.configHome = "/home/synchronous/.config";
   # fonts.fontconfig.enable = true;
 
   # GIT_SSH_COMMAND = ${pkgs.openssh}/bin/ssh ${pkgs.git}/bin/git  clone "git@github.com:Cajunvooodoo/Doom-Emacs-Config.git" "${config.xdg.configHome}/doom"

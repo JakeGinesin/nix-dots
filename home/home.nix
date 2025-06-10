@@ -55,7 +55,7 @@ in {
     EDITOR = "nvim";
     SHELL = "zsh";
     HOME = "/home/synchronous";
-    XDG_CACHE_HOME = "$HOME/.cache";
+    # XDG_CACHE_HOME = "$HOME/.cache";
     DBUS_SESSION_BUS_ADDRESS = "unix:path=$XDG_RUNTIME_DIR/bus";
   };
 
