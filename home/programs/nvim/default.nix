@@ -39,7 +39,10 @@
       vim-airline-themes
       plenary-nvim
       nvim-web-devicons
-      presenting-vim
+      {
+        plugin = presenting-vim;
+        config = toLuaFile ./plugins/presenting.lua;
+      }
       # coc-nvim
       {
         plugin = vimtex;
