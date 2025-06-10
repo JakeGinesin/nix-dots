@@ -115,14 +115,15 @@
   ];
 
   # fonts.fontconfig.enable = true;
-  # Install doom emacs
-  # home.activation = {
-  # installDoomEmacs = lib.hm.dag.entryAfter ["installPhase"] ''
-  # if [ ! -d "${config.xdg.configHome}/emacs" ]; then
-  # ${pkgs.git}/bin/git clone --depth=1 --single-branch "https://github.com/doomemacs/doomemacs" "${config.xdg.configHome}/emacs"
-  # GIT_SSH_COMMAND = ${pkgs.openssh}/bin/ssh ${pkgs.git}/bin/git  clone "git@github.com:Cajunvooodoo/Doom-Emacs-Config.git" "${config.xdg.configHome}/doom"
 
-  # fi
-  # '';
-  # };
+  # GIT_SSH_COMMAND = ${pkgs.openssh}/bin/ssh ${pkgs.git}/bin/git  clone "git@github.com:Cajunvooodoo/Doom-Emacs-Config.git" "${config.xdg.configHome}/doom"
+  # Install doom emacs
+  home.activation = {
+    installDoomEmacs = lib.hm.dag.entryAfter ["installPhase"] ''
+      if [ ! -d "${config.xdg.configHome}/emacs" ]; then
+      ${pkgs.git}/bin/git clone --depth=1 --single-branch "https://github.com/doomemacs/doomemacs" "${config.xdg.configHome}/emacs"
+
+      fi
+    '';
+  };
 }
