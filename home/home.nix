@@ -94,6 +94,8 @@ in {
       zip
       unzip
       jq
+      btop
+      # emacs # haha
 
       # security
       aflplusplus
