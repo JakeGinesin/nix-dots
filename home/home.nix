@@ -96,6 +96,7 @@ in {
       jq
       btop
       wikiman
+      iodine
       # emacs # haha
 
       # security
