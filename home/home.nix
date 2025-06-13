@@ -95,6 +95,7 @@ in {
       unzip
       jq
       btop
+      wikiman
       # emacs # haha
 
       # security
