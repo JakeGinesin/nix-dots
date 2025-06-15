@@ -206,6 +206,7 @@ alias ndwl="nmcli device wifi list"
 alias wt="systemctl restart NetworkManager"
 alias syncthing="firefox localhost:8384"
 alias htop="btop" # of course
+alias top="btop" # of course
 
 stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
