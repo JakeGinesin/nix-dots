@@ -102,6 +102,8 @@
     ];
   };
 
+  programs.direnv.enable = true;
+
   nix = {
     nixPath = [
       "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
