@@ -261,7 +261,7 @@ a.dnsenum() {
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fdfind --type f'
+export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 
 # ------------------- Key Binding
@@ -271,6 +271,7 @@ bindkey "\e[3~" delete-char #Del
 bindkey "\e[2~" overwrite-mode # Ins
 bindkey "\e[6~" end-of-history # PageDown
 bindkey "\e[5~" beginning-of-history #PageUp
+bindkey '^R' history-incremental-search-backward
 
 # -------------------- control backspace deleting previous word entirely
 bindkey '^H' backward-kill-word

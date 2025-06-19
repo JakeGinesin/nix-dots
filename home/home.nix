@@ -97,6 +97,7 @@ in {
       btop
       wikiman
       iodine
+      fzf
       # emacs # haha
 
       # security
