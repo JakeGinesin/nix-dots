@@ -98,7 +98,7 @@ in {
       wikiman
       iodine
       fzf
-      direnv
+      # direnv
       # emacs # haha
 
       # security

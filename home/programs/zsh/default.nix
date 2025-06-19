@@ -8,7 +8,7 @@
 }: {
   home.packages = with pkgs; [zsh-powerlevel10k meslo-lgs-nf];
   home.file.".p10k.zsh".source = ./p10k;
-  # programs.direnv.enable = true;
+  programs.direnv.enable = true;
 
   programs.zsh = {
     enable = true;
