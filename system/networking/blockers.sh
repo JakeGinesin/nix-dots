@@ -12,7 +12,7 @@ for ssid in "${blacklist[@]}"; do
   fi
 done
 
-echo "$2, $CONNECTION_ID, $should_block" >> /home/synchronous/lol
+# echo "$2, $CONNECTION_ID, $should_block" >> /home/synchronous/lol
 
 if [[ "$should_block" == "false" ]]; then
   exit 1
@@ -42,7 +42,7 @@ else
 fi
 
 for website in "${websites[@]}"; do
-  /run/current-system/sw/bin/bash /etc/profiles/per-user/synchronous/bin/dnsblock-norestart "$op" "$website" 2> /home/synchronous/lol
+  /run/current-system/sw/bin/bash /etc/profiles/per-user/synchronous/bin/dnsblock-norestart "$op" "$website" 
 done
 
-sudo systemctl restart dnsmasq
+systemctl restart dnsmasq

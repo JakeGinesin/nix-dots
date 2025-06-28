@@ -200,6 +200,7 @@ alias nix-snippets="echo 'flake-devshell, nix-default'"
 alias snippets="cd /home/synchronous/.config/nvim/snippets"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
+alias 
 
 alias ndwc="nmcli device wifi connect"
 alias ndwl="nmcli device wifi list"
