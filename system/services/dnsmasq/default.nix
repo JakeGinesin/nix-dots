@@ -9,7 +9,7 @@
     settings = {
       conf-dir = "/var/lib/dnsmasq/conf.d";
       listen-address = "127.0.0.1";
-      port = "53535";
+      # port = "53535";
     };
   };
 }
