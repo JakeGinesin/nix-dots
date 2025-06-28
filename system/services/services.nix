@@ -7,7 +7,7 @@
     ./synaptics/default.nix
     ./tailscale/default.nix
     ./syncthing/default.nix
-    ./resolved/default.nix
+    # ./resolved/default.nix
     ./dnsmasq/default.nix
   ];
 }
