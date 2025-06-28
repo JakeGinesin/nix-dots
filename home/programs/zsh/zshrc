@@ -203,6 +203,7 @@ alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 
 alias ndwc="nmcli device wifi connect"
 alias ndwl="nmcli device wifi list"
+alias ndc="nmcli device disconnect wlan0"
 alias wt="systemctl restart NetworkManager"
 alias syncthing="firefox localhost:8384"
 alias htop="btop" # of course
