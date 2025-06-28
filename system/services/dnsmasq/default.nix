@@ -1,8 +1,13 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
+  system.activationScripts.dnsmasqConfd = lib.stringAfter ["var"] ''
+    mkdir -p /var/lib/dnsmasq/conf.d
+  '';
+
   services.dnsmasq = {
     enable = true;
     resolveLocalQueries = true;
