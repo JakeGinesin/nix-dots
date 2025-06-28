@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+set -euo pipefail
 
 blacklist=(
-"NUWave"
+  "NUwave"
 )
 
 should_block=false
@@ -12,23 +12,37 @@ for ssid in "${blacklist[@]}"; do
   fi
 done
 
-$should_block || exit 0 
+echo "$2, $CONNECTION_ID, $should_block" >> /home/synchronous/lol
 
-websites=("www.reddit.com" "www.youtube.com" "www.instagram.com" "www.facebook.com" "facebook.com" "www.craigslist.org" "www.ebay.com" "www.monkeytype.com" "www.typeracer.com" "www.twitter.com" "www.linkedin.com")
+if [[ "$should_block" == "false" ]]; then
+  exit 1
+fi
+
+websites=(
+  "www.reddit.com"
+  "www.youtube.com"
+  "www.instagram.com"
+  "www.facebook.com"
+  "facebook.com"
+  "www.craigslist.org"
+  "www.ebay.com"
+  "www.monkeytype.com"
+  "www.typeracer.com"
+  "www.twitter.com"
+  "www.linkedin.com"
+)
 
 op=""
 if [ "$2" == "up" ]; then
   op="on"
-elif ["$2" == "pre-down" ]; then
+elif [ "$2" == "down" ]; then
   op="off"
 else
-  exit 1;
+  exit 0
 fi
 
-for website in ${websites[@]}; do
-    sh /etc/profiles/per-user/synchronous/bin/dnsblock-norestart "$op" "$website"
-    # grep -v "$website" /etc/hosts > "$tempHosts"
-    # mv "$tempHosts" /etc/hosts
+for website in "${websites[@]}"; do
+  /run/current-system/sw/bin/bash /etc/profiles/per-user/synchronous/bin/dnsblock-norestart "$op" "$website" 2> /home/synchronous/lol
 done
 
 sudo systemctl restart dnsmasq
