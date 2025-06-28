@@ -14,12 +14,12 @@
 
     networkmanager = {
       enable = true;
-      # dispatcherScripts = [
-      # {
-      # source = ./blockers.sh;
-      # type = "basic";
-      # }
-      # ];
+      dispatcherScripts = [
+        {
+          source = ./blockers.sh;
+          type = "basic";
+        }
+      ];
     };
 
     # interfaces = {

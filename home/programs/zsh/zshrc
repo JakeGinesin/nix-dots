@@ -207,6 +207,7 @@ alias wt="systemctl restart NetworkManager"
 alias syncthing="firefox localhost:8384"
 alias htop="btop" # of course
 alias top="btop" # of course
+alias activecon="nmcli -t -f name  connection show --active"
 
 stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
