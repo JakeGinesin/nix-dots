@@ -210,7 +210,7 @@ alias syncthing="firefox localhost:8384"
 alias htop="btop" # of course
 alias top="btop" # of course
 alias activecon="nmcli -t -f name  connection show --active"
-alias dnsblock-clear="echo 'attemping to clear blocked dns...'; 'ls /var/lib/dnsmasq/conf.d; sudo rm -rf /var/lib/dnsmasq/conf.d/*"
+alias dnsblock-clear="echo 'attemping to clear blocked dns...'; ls /var/lib/dnsmasq/conf.d; sudo rm -rf /var/lib/dnsmasq/conf.d/*"
 
 stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
