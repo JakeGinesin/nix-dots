@@ -5,7 +5,7 @@
 }: {
   services.dnsmasq = {
     enable = true;
-    resolveLocalQueries = true;
+    # resolveLocalQueries = true;
     settings = {
       conf-dir = "/var/lib/dnsmasq/conf.d";
       # listen-address = "127.0.0.1";
