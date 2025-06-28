@@ -8,8 +8,8 @@
     resolveLocalQueries = true;
     settings = {
       conf-dir = "/var/lib/dnsmasq/conf.d";
-      # listen-address = "127.0.0.1";
-      # port = 53535; # a free address lol
+      listen-address = "127.0.0.1";
+      port = "53535";
     };
   };
 }
