@@ -98,6 +98,8 @@ in {
       wikiman
       iodine
       fzf
+      lsof
+      ldns
       # direnv
       # emacs # haha
 
