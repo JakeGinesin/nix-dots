@@ -8,8 +8,10 @@
     resolveLocalQueries = true;
     settings = {
       conf-dir = "/var/lib/dnsmasq/conf.d";
-      listen-address = "127.0.0.1";
+      # listen-address = "127.0.0.1";
       server = ["1.1.1.1" "1.0.0.1"];
     };
   };
+
+  services.resolved.enable = false;
 }
