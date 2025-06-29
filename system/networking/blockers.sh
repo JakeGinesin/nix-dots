@@ -1,3 +1,4 @@
+# websites i'd like to (automatically) block on certain wifi connections
 set -euo pipefail
 
 blacklist=(
