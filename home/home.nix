@@ -100,6 +100,8 @@ in {
       fzf
       lsof
       ldns
+      cmatrix
+      pipes-rs
       # direnv
       # emacs # haha
 
