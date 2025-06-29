@@ -30,6 +30,7 @@ websites=(
   "www.typeracer.com"
   "www.twitter.com"
   "www.linkedin.com"
+  "www.chess.com"
 )
 
 op=""
