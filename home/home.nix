@@ -102,6 +102,7 @@ in {
       ldns
       cmatrix
       pipes-rs
+      gimp
       # direnv
       # emacs # haha
 

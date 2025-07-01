@@ -159,6 +159,9 @@ in {
         ### This is all aesthetic stuff
         # for tiling window managers expands to the size of the window
 
+        # tighten dns cache expiration since we have local cache (dnsmasq) declared
+        "network.dnsCacheExpiration" = "0";
+
         # QUIC
         "network.http.http3.enabled" = true;
         "network.http.http3.grease-advertised-version" = true;
@@ -184,7 +187,7 @@ in {
         "gfx.webrender.all" = true;
         "gfx.webrender.software" = false;
 
-        # https://support.mozilla.org/en-US/questions/1253302
+        # disable zoom with ctrl+mouse, https://support.mozilla.org/en-US/questions/1253302
         "mousewheel.with_control.action" = 1;
 
         # should change this based on your resolution
@@ -197,6 +200,8 @@ in {
         "browser.search.openintab" = true;
         "browser.search.suggest.enabled" = false; # fuck you search, wikipedia is my default.
 
+        # fuck you, searching in the URL bar should only touch my bookmarks
+        # (can control + g to get to google anyways)
         "browser.urlbar.suggest.topsites" = false;
         "browser.urlbar.suggest.searches" = false;
         "browser.urlbar.suggest.history" = false;
