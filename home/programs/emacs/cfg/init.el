@@ -3,6 +3,9 @@
 (setq doom-leader-key      ","   ;; global leader
       doom-localleader-key ",")    ;; local-leader
 
+(setq x-super-keysym 'meta
+      x-meta-keysym  'alt)
+
 ;; This file controls what Doom modules are enabled and what order they load
 ;; in. Remember to run 'doom sync' after modifying it!
 

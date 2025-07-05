@@ -7,7 +7,10 @@
   doomPath = "/home/synchronous/nix-cfg/home/programs/emacs/cfg";
 in {
   # https://nixos-and-flakes.thiscute.world/best-practices/accelerating-dotfiles-debugging
-  xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink doomPath;
+  xdg.configFile."doom" = {
+    source = config.lib.file.mkOutOfStoreSymlink doomPath;
+    recursive = true;
+  };
 
   programs.emacs = {
     enable = true;
@@ -57,8 +60,14 @@ in {
     libtool
 
     # emacsPackages.agda-input
+    agda
     emacsPackages.agda2-mode
     emacsPackages.agda-editor-tactics
+
+    # coq
+    coq_8_19
+
+    # lean4
 
     ## Doom dependencies
     (ripgrep.override {withPCRE2 = true;})
