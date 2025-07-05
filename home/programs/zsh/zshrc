@@ -198,6 +198,7 @@ alias home-cfg="nvim /home/synchronous/nix-cfg/home/home.nix"
 alias nix-shell="nix-shell --run zsh"
 alias nix-snippets="echo 'flake-devshell, nix-default'" 
 alias snippets="cd /home/synchronous/.config/nvim/snippets"
+alias emacs-cfg="cd /home/synchronous/nix-cfg/home/programs/emacs/cfg"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 

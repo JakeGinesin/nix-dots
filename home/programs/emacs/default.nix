@@ -3,7 +3,12 @@
   lib,
   config,
   ...
-}: {
+}: let
+  doomPath = "/home/synchronous/nix-cfg/home/programs/emacs/cfg";
+in {
+  # https://nixos-and-flakes.thiscute.world/best-practices/accelerating-dotfiles-debugging
+  xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink doomPath;
+
   programs.emacs = {
     enable = true;
     # package = pkgs.emacs-gtk;
