@@ -32,7 +32,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+; (setq doom-theme 'doom-one)
+(setq doom-theme 'doom-ayu-dark)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -74,3 +75,41 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! proof-general
+  ;; Display proof state in a dedicated buffer on the right
+  (setq proof-three-window-mode-policy 'hybrid
+        proof-script-fly-past-comments t
+        proof-electric-terminator-enable t))
+
+(after! company-coq
+  (setq company-coq-disabled-features '(hello))) ; silence “Hello” banner
+
+;; If you enabled +lsp, prefer LSP diagnostics over PG’s fringe marks
+(setq lsp-coq-defeault-semantic-highlighting t)
+
+
+(after! proof-general                       ; wait until PG is loaded
+  (map! :map coq-mode-map
+        :localleader                             ; first press your leader key
+        "RET" #'proof-goto-point))
+
+
+(after! proof-general
+  ;; , RET  →  jump to cursor
+  (map! :map coq-mode-map
+        :localleader           ; starts with your "," key
+        :desc "Goto point"     ; label for which-key
+        :n "RET"  #'proof-goto-point   ; Normal state
+        :v "RET"  #'proof-goto-point   ; Visual (optional)
+        :i "RET"  #'proof-goto-point)) ; Insert (optional)
+
+(map! :after proof-general
+      :localleader
+      "RET" #'proof-goto-point)
+
+(map! :after proof-general
+      :leader
+      "RET" #'proof-goto-point)
+
+(setq doom-font (font-spec :family "Fira Code" :size 16)) 

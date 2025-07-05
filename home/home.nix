@@ -103,6 +103,7 @@ in {
       cmatrix
       pipes-rs
       gimp
+      file
       # direnv
       # emacs # haha
 

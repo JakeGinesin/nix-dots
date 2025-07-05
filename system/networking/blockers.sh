@@ -3,6 +3,7 @@ set -euo pipefail
 
 blacklist=(
   "NUwave"
+  "BostonPublicLibrary"
 )
 
 should_block=false

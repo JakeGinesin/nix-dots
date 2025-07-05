@@ -199,6 +199,7 @@ alias nix-shell="nix-shell --run zsh"
 alias nix-snippets="echo 'flake-devshell, nix-default'" 
 alias snippets="cd /home/synchronous/.config/nvim/snippets"
 alias emacs-cfg="cd /home/synchronous/nix-cfg/home/programs/emacs/cfg"
+alias doom-cfg="cd /home/synchronous/nix-cfg/home/programs/emacs/cfg"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 
@@ -211,6 +212,7 @@ alias htop="btop" # of course
 alias top="btop" # of course
 alias activecon="nmcli -t -f name  connection show --active"
 alias dnsblock-clear="echo 'attemping to clear blocked dns...'; ls /var/lib/dnsmasq/conf.d; sudo rm -rf /var/lib/dnsmasq/conf.d/*; sudo systemctl restart dnsmasq;"
+alias dnsblock-add="nvim /home/synchronous/nix-cfg/system/networking/blockers.sh"
 alias focus-wifi="nvim /home/synchronous/nix-cfg/system/networking/blockers.sh"
 
 stack() {
