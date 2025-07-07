@@ -34,6 +34,8 @@ websites=(
   "www.linkedin.com"
   "www.chess.com"
   "www.x.com"
+  "x.com"
+  "https://news.ycombinator.com"
 )
 
 op=""
