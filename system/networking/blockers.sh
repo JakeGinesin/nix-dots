@@ -35,7 +35,8 @@ websites=(
   "www.chess.com"
   "www.x.com"
   "x.com"
-  "https://news.ycombinator.com"
+  "news.ycombinator.com"
+  "linkedin.com"
 )
 
 op=""
@@ -51,4 +52,5 @@ for website in "${websites[@]}"; do
   /run/current-system/sw/bin/bash /etc/profiles/per-user/synchronous/bin/dnsblock-norestart "$op" "$website" 
 done
 
+systemctl restart dnsmasq
 systemctl restart dnsmasq

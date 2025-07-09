@@ -104,6 +104,7 @@ in {
       pipes-rs
       gimp
       file
+      feh
       # direnv
       # emacs # haha
 
