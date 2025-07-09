@@ -39,7 +39,10 @@
       vim-airline-themes
       plenary-nvim
       nvim-web-devicons
-      telescope-nvim
+      {
+        plugin = telescope-nvim;
+        config = toLuaFile ./plugins/telescope.lua;
+      }
       {
         plugin = presenting-vim;
         config = toLuaFile ./plugins/presenting.lua;
