@@ -11,5 +11,5 @@
   awk = "/run/current-system/sw/bin/awk";
 in
   pkgs.writeShellScriptBin "tailscale-ctl" ''
-    tailscale status | rg "$(hostname)" &> /dev/null && echo "%{F#2193ff}⍀ %{F#ffffff}[$(ip addr show tailscale0 | rg "inet " | awk '{print $2}' | cut -d'/' -f1 )]" || echo ""
+    tailscale status | rg "$(hostname)" &> /dev/null && echo "%{F#2193ff}⍀  %{F#ffffff}[$(ip addr show tailscale0 | rg "inet " | awk '{print $2}' | cut -d'/' -f1 )]" || echo ""
   ''
