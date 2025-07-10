@@ -1,3 +1,7 @@
+if vim.g.goyo_if then
+  return
+end
+
 local builtin = require('telescope.builtin')
 vim.g.mapleader = ","
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
