@@ -34,7 +34,7 @@
     [module/tailscale]
     type = custom/script
     interval = 15
-    exec = ${tailscaleScript}/bin/bluetooth-ctl
+    exec = ${tailscaleScript}/bin/tailscale-ctl
     label-foreground = ${colors.foreground}
     format-foreground = ${colors.theme}
   '';
