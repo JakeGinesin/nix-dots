@@ -35,6 +35,10 @@ Double space found.
 ]]
 vim.g.Tex_IgnoreLevel = 8
 
+if vim.g.goyo_if then
+  return
+end
+
 -- Delete extra compilation files when a TeX buffer is deleted.
 vim.api.nvim_create_autocmd("BufDelete", {
   pattern = "*.tex",
