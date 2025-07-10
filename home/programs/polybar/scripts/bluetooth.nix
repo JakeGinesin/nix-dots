@@ -19,7 +19,7 @@ in
       then
         echo "%{F#2193ff}"
       else
-        echo "%{F#2193ff}  %{F#ffffff}[$device]"
+      echo "%{F#2193ff}  %{F#ffffff}[$device]"
       fi
     fi
   ''

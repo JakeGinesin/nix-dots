@@ -29,6 +29,16 @@
     format-foreground = ${colors.theme}
   '';
 
+  tailscaleScript = pkgs.callPackage ./scripts/tailscale.nix {};
+  tctl = ''
+    [module/tailscale]
+    type = custom/script
+    interval = 15
+    exec = ${tailscaleScript}/bin/bluetooth-ctl
+    label-foreground = ${colors.foreground}
+    format-foreground = ${colors.theme}
+  '';
+
   ip = "/run/current-system/sw/bin/ip";
   grep = "/run/current-system/sw/bin/grep";
   awk = "/run/current-system/sw/bin/awk";
@@ -99,7 +109,7 @@ in {
     enable = true;
     package = mypolybar;
     config = ./config.ini;
-    extraConfig = bctl + internets + mon;
+    extraConfig = bctl + internets + mon + tctl;
     # my savior: https://www.reddit.com/r/NixOS/comments/v8ikwq/polybar_doesnt_start_at_launch/
     script = ''
       # echo "none"
