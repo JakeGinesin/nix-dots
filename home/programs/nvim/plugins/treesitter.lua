@@ -1,7 +1,3 @@
-if vim.g.goyo_if then
-  return
-end
-
 require('nvim-treesitter.configs').setup {
   ensure_installed = {},
   auto_install = false,
