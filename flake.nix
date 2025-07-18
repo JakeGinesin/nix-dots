@@ -13,6 +13,8 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-clisp.url = "github:NixOS/nixpkgs/da320e5472f021b96a883f71fc525ca0e4815273";
   };
 
   outputs = {
@@ -21,58 +23,46 @@
     home-manager,
     agenix,
     emacs-overlay,
+    nixpkgs-clisp,
   } @ inputs: let
-    baseModule = {
-      # imports = [
-      # home-manager.nixosModules.default
-      # ];
-      system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+    system = "x86_64-linux";
+    baseModule = {lib, ...}: {
+      imports = [
+        home-manager.nixosModules.default
+        agenix.nixosModules.default
+      ];
+
+      system.configurationRevision = lib.mkIf (self ? rev) self.rev;
+
       nixpkgs.overlays = [
-        inputs.emacs-overlay.overlay
+        emacs-overlay.overlay
+        (final: _prev: {
+          clisp = nixpkgs-clisp.legacyPackages.${system}.clisp;
+        })
+      ];
+
+      environment.systemPackages = [
+        agenix.packages.${system}.default
       ];
     };
   in {
     nixosConfigurations.thonkpad = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
       modules = [
         baseModule
-        {
-          environment.systemPackages = [agenix.packages.x86_64-linux.default];
-        }
-        home-manager.nixosModules.default
-        agenix.nixosModules.default
-        # agenix.homeManagerModules.age
         ./hosts/thonkpad/configuration.nix
       ];
     };
 
     nixosConfigurations.rq = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
       modules = [
         baseModule
-        {
-          environment.systemPackages = [agenix.packages.x86_64-linux.default];
-        }
-        home-manager.nixosModules.default
-        agenix.nixosModules.default
-        # agenix.homeManagerModules.age
         ./hosts/rq/configuration.nix
       ];
     };
 
     nixosConfigurations.yoga = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
       modules = [
         baseModule
-        {
-          environment.systemPackages = [agenix.packages.x86_64-linux.default];
-        }
-        home-manager.nixosModules.default
-        agenix.nixosModules.default
-        # agenix.homeManagerModules.age
         ./hosts/yoga/configuration.nix
       ];
     };

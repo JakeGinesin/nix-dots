@@ -80,7 +80,7 @@ in {
       simple-mtpfs
       signal-desktop
       slack
-      nodejs_23
+      nodejs_24
       gnumake
       choose # better awk and cut
       grc
@@ -102,9 +102,12 @@ in {
       ldns
       cmatrix
       pipes-rs
-      gimp
+      # gimp (doens't werk)
       file
       feh
+      ncdu
+      clisp
+      # rocmPackages.llvm.clang-unwrapped
       # direnv
       # emacs # haha
 
