@@ -203,6 +203,9 @@ alias doom-cfg="cd /home/synchronous/nix-cfg/home/programs/emacs/cfg"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
 
+# make ncdu run fast wow
+alias ncdu="ncdu -rx"
+
 alias ndwc="nmcli device wifi connect"
 alias ndwl="nmcli device wifi list"
 alias ndc="nmcli device disconnect wlan0"
