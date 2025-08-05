@@ -38,3 +38,4 @@ Some subtleties about my setup:
 - bspwm on x is used, with sxhkd used for most hotkeys
 - papers automatically saved with zotero are [automatically searchable](https://github.com/JakeGinesin/nix-dots/tree/master/home/scripts/document-scripts)
 - there is an option for resolution in the [configuration.nix file](https://github.com/JakeGinesin/nix-dots/tree/master/hosts/rq)
+- my [scripts](https://github.com/JakeGinesin/nix-dots/tree/master/home/scripts) are autopackaged using writeScriptBin
