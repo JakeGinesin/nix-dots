@@ -130,6 +130,8 @@ in {
       dhcpcd
       wireshark
       postman
+      nuclei
+      subfinder
     ]
     ++ (
       with lib; let

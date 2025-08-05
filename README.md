@@ -25,7 +25,7 @@ sudo nixos-rebuild switch --flake.#thonkpad
 - [hlissner](https://github.com/hlissner/dotfiles) (also uses bspwm)
 
 # For if you're not me
-My setup is designed for (1) [academic research](https://jakegines.in/research) in my PhD, and (2) security research, in my work as a cryptographic auditor. I would highly recommend *not* (not) installing this bare and trying to figure out my system. Read my system manually and pick out the parts you're interested in. 
+My setup is designed for (1) [academic research](https://jakegines.in/research) in my PhD, and (2) security research, in my work as a cryptographic auditor. I would highly recommend *not* (not) installing this bare and trying to rawdog figure out my system. Read my system configuration manually and pick out the parts you're interested in. 
 
 Some subtleties about my setup:
 - tailscale and syncthing are automatically set up. my note system is integrated with the OS itself with [nf](https://github.com/JakeGinesin/nix-dots/blob/master/home/scripts/journal/nf.sh), alacritty, and rofi. syncing of notes between my server, my phone, and my computer(s) is fully automatic, bootstrapping from the agenix'ed API keys
