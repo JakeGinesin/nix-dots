@@ -122,9 +122,13 @@ in {
                   name = "general phd resources";
                   url = "https://csd.cmu.edu/academics/doctoral-resources";
                 }
+                # {
+                # name = "cmu orders";
+                # url = "https://rams.srv.cs.cmu.edu/ords/";
+                # }
                 {
-                  name = "orders";
-                  url = "https://rams.srv.cs.cmu.edu/ords/";
+                  name = "cmu sio";
+                  url = "https://s3.andrew.cmu.edu/sio";
                 }
                 {
                   name = "husker";
@@ -133,6 +137,10 @@ in {
                 {
                   name = "mit library experts";
                   url = "https://libraries.mit.edu/experts/";
+                }
+                {
+                  name = "cmu canvas";
+                  url = "https://canvas.cmu.edu/";
                 }
                 {
                   name = "cmu email";

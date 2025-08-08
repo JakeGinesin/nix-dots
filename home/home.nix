@@ -107,6 +107,8 @@ in {
       feh
       ncdu
       clisp
+      libsForQt5.qt5.qttools
+      bc # for qdbus + bc for pomodoro script
       # rocmPackages.llvm.clang-unwrapped
       # direnv
       # emacs # haha
