@@ -146,6 +146,10 @@ in {
                   name = "cmu email";
                   url = "https://email.cmu.edu";
                 }
+                {
+                  name = "grfp";
+                  url = "https://www.research.gov/grfp/Login.do"; # your tax dollars fund my phd loser. pay big sam up.
+                }
               ];
             }
             {
