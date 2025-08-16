@@ -112,6 +112,7 @@ in {
       # rocmPackages.llvm.clang-unwrapped
       # direnv
       # emacs # haha
+      ripgrep-all
 
       # security
       aflplusplus
