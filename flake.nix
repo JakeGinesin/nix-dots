@@ -53,6 +53,13 @@
       ];
     };
 
+    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+      modules = [
+        baseModule
+        ./hosts/thonkpad/configuration.nix
+      ];
+    };
+
     nixosConfigurations.rq = nixpkgs.lib.nixosSystem {
       modules = [
         baseModule
