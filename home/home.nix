@@ -113,6 +113,7 @@ in {
       # direnv
       # emacs # haha
       ripgrep-all
+      element-desktop
 
       # security
       aflplusplus
