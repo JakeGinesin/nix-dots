@@ -7,26 +7,12 @@
   imports = [
     ./hardware-configuration.nix
     ../../system/system.nix
+    ../meta.nix
   ];
-
-  options = {
-    res = lib.mkOption {
-      type = lib.types.str;
-      default = "1920x1080";
-      description = "screen resolution";
-    };
-  };
 
   config = {
     networking.hostName = "thonkpad"; # Define your hostname.
     res = "1366x768";
-
-    home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
-      backupFileExtension = "hm-backup";
-      users.synchronous.imports = [../../home/home.nix];
-    };
 
     age = {
       secrets = {
@@ -46,10 +32,16 @@
           mode = "0400";
         };
       };
-
       secretsDir = "/home/synchronous/.agenix/agenix";
       secretsMountPoint = "/home/synchronous/.agenix/agenix.d";
       identityPaths = ["/home/synchronous/.ssh/id_ed25519"];
+    };
+
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      backupFileExtension = "hm-backup";
+      users.synchronous.imports = [../../home/home.nix];
     };
 
     boot.loader.systemd-boot.enable = true;

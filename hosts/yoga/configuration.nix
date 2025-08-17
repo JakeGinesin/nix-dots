@@ -10,13 +10,13 @@
     ../../system/system.nix
   ];
 
-  options = {
-    res = lib.mkOption {
-      type = lib.types.str;
-      default = "1920x1080";
-      description = "screen resolution";
-    };
-  };
+  # options = {
+  # res = lib.mkOption {
+  # type = lib.types.str;
+  # default = "1920x1080";
+  # description = "screen resolution";
+  # };
+  # };
 
   config = {
     networking.hostName = "yoga"; # Define your hostname.
