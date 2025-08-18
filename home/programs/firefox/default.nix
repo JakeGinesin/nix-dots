@@ -153,13 +153,27 @@ in {
               ];
             }
             {
+              name = "solvers";
+              bookmarks = [
+                {
+                  name = "GPT";
+                  url = "https://chatgpt.com"; # sam altman is a horrible person and i cannot wait for the day i can ditch this shit
+                }
+                {
+                  name = "claude";
+                  url = "https://claude.ai";
+                }
+                {
+                  name = "gemini";
+                  url = "https://gemini.google.com";
+                }
+              ];
+            }
+            {
               name = "Cal";
               url = "https://calendar.google.com/";
             }
-            {
-              name = "GPT";
-              url = "https://chatgpt.com"; # sam altman is a horrible person and i cannot wait for the day i can ditch this shit
-            }
+
             {
               name = "performance";
               url = "about:processes";
