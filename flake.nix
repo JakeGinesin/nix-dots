@@ -56,7 +56,14 @@
     nixosConfigurations.server = nixpkgs.lib.nixosSystem {
       modules = [
         baseModule
-        ./hosts/thonkpad/configuration.nix
+        ./hosts/server/configuration.nix
+      ];
+    };
+
+    nixosConfigurations.server-gpu = nixpkgs.lib.nixosSystem {
+      modules = [
+        baseModule
+        ./hosts/server-gpu/configuration.nix
       ];
     };
 
