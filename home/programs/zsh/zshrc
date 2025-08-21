@@ -202,6 +202,7 @@ alias emacs-cfg="cd /home/synchronous/nix-cfg/home/programs/emacs/cfg"
 alias doom-cfg="cd /home/synchronous/nix-cfg/home/programs/emacs/cfg"
 
 alias nrc="cd /home/synchronous/nix-cfg/home/programs/nvim"
+alias rg-nobs="rg --glob '\!**/*test*/**' --glob '\!**/*integration*/**'" # haha!!!!
 
 # make ncdu run fast wow
 alias ncdu="ncdu -rx"
