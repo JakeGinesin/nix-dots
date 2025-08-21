@@ -136,7 +136,8 @@ in {
     # my savior: https://www.reddit.com/r/NixOS/comments/v8ikwq/polybar_doesnt_start_at_launch/
     script = ''
       # echo "none"
-      polybar mybar 2> /dev/null & disown
+      # polybar mybar 2> /dev/null & disown
+      setsid polybar mybar > /dev/null 2> /dev/null &> /dev/null
     '';
   };
 
