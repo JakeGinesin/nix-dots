@@ -83,7 +83,7 @@ in {
           toolbar = true;
           bookmarks = [
             {
-              name = "Nixos";
+              name = "nixos";
               bookmarks = [
                 {
                   name = "noogle";
@@ -108,7 +108,7 @@ in {
               ];
             }
             {
-              name = "CMU";
+              name = "cmu";
               bookmarks = [
                 {
                   name = "computing facilities";
@@ -170,7 +170,7 @@ in {
               ];
             }
             {
-              name = "Cal";
+              name = "cal";
               url = "https://calendar.google.com/";
             }
 

@@ -8,7 +8,7 @@
     ./hardware-configuration.nix
     ../../system/system.nix
     ../meta.nix
-    ./ssh.nix
+    ../../extras/ssh.nix
   ];
 
   config = {

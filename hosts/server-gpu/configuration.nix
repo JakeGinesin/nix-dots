@@ -8,8 +8,8 @@
     ./hardware-configuration.nix
     ../../system/system.nix
     ../meta.nix
-    ./ssh.nix
-    ./gpu.nix
+    ../../extras/ssh.nix
+    ../../extras/gpu.nix
   ];
 
   config = {
