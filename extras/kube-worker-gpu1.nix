@@ -1,34 +1,34 @@
 {
   services.kubernetes = {
-    roles = ["node"]; # Only "node", not "master"
+    roles = ["node"];
 
-    masterAddress = "192.168.1.100"; # Your master's IP
+    masterAddress = "192.168.1.100";
 
-    # Enable required components for a worker
     kubelet.enable = true;
     proxy.enable = true;
-    flannel.enable = true; # Or whatever CNI you're using
+    flannel.enable = true;
 
-    # Use the same certificate setup
     easyCerts = true;
     pki.enable = true;
 
-    # Kubelet configuration
     kubelet = {
       kubeconfig.server = "https://192.168.1.100:6443";
-      hostname = "worker-gpu1"; # Or use the actual hostname
-      extraOpts = "--fail-swap-on=false"; # If you have swap enabled
+      hostname = "worker-gpu1";
+      extraOpts = "--fail-swap-on=false";
     };
   };
 
-  # Container runtime
   virtualisation.containerd.enable = true;
 
-  # Open required ports
   networking.firewall.allowedTCPPorts = [
-    10250 # Kubelet API
+    10250
   ];
 
-  # Ensure hostname is set properly
-  networking.hostName = "worker-gpu1"; # Or your preferred name
+  virtualisation.docker = {
+    enable = true;
+
+    # use nvidia as the default runtime
+    enableNvidia = true;
+    extraOptions = "--default-runtime=nvidia";
+  };
 }
