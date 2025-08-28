@@ -10,6 +10,7 @@
     ../meta.nix
     ../../extras/ssh.nix
     ../../extras/gpu.nix
+    ../../extras/k3s-node.nix
   ];
 
   config = {
