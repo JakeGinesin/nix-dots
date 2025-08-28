@@ -30,6 +30,11 @@
           owner = "synchronous";
           mode = "0400";
         };
+        kube = {
+          file = ../secrets/kube.age;
+          owner = "synchronous";
+          mode = "0400";
+        };
       };
       secretsDir = "/home/synchronous/.agenix/agenix";
       secretsMountPoint = "/home/synchronous/.agenix/agenix.d";

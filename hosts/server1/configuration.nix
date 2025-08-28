@@ -9,6 +9,7 @@
     ../../system/system.nix
     ../meta.nix
     ../../extras/ssh.nix
+    ../../extras/k3s.nix
   ];
 
   config = {
