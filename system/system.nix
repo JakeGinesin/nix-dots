@@ -40,6 +40,8 @@
     liveRestore = false;
   };
 
+  programs.nix-ld.enable = true;
+
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   services.udisks2.enable = true;
