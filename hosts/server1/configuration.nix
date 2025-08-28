@@ -12,7 +12,7 @@
   ];
 
   config = {
-    networking.hostName = "server"; # Define your hostname.
+    networking.hostName = "server1"; # Define your hostname.
     res = "2560x1440";
 
     home-manager = {

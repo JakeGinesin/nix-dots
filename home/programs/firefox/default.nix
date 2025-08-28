@@ -150,6 +150,14 @@ in {
                   name = "grfp";
                   url = "https://www.research.gov/grfp/Login.do"; # your tax dollars fund my phd loser. pay big sam up.
                 }
+                {
+                  name = "cmueats";
+                  url = "https://cmueats.com/";
+                }
+                {
+                  name = "cmucourses";
+                  url = "https://cmucourses.com/";
+                }
               ];
             }
             {

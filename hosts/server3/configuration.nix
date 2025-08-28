@@ -13,7 +13,7 @@
   ];
 
   config = {
-    networking.hostName = "server-gpu"; # Define your hostname.
+    networking.hostName = "server3-gpu"; # Define your hostname.
     res = "2560x1440";
 
     home-manager = {
