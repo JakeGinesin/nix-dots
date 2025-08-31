@@ -16,6 +16,8 @@
     };
 
     nixpkgs-clisp.url = "github:NixOS/nixpkgs/da320e5472f021b96a883f71fc525ca0e4815273";
+
+    verus-flake.url = "github:JakeGinesin/verus-flake";
   };
   outputs = {
     self,
@@ -24,6 +26,7 @@
     agenix,
     emacs-overlay,
     nixpkgs-clisp,
+    verus-flake,
   } @ inputs: let
     system = "x86_64-linux";
 
@@ -44,6 +47,8 @@
       ];
       environment.systemPackages = [
         agenix.packages.${system}.default
+        # verus-flake.packages.default
+        verus-flake.packages.${system}.default
       ];
     };
 

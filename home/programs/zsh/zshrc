@@ -218,6 +218,8 @@ alias activecon="nmcli -t -f name  connection show --active"
 alias dnsblock-clear="echo 'attemping to clear blocked dns...'; ls /var/lib/dnsmasq/conf.d; sudo rm -rf /var/lib/dnsmasq/conf.d/*; sudo systemctl restart dnsmasq;"
 alias dnsblock-add="nvim /home/synchronous/nix-cfg/system/networking/blockers.sh"
 alias focus-wifi="nvim /home/synchronous/nix-cfg/system/networking/blockers.sh"
+alias verus="cd /home/synchronous/code/verus"
+alias cure="cd /home/synchronous/code/cure53"
 
 stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
@@ -264,7 +266,6 @@ a.sherlock() {
 
   docker run --rm -t sherlock/sherlock "$@"
 }
-
 a.dnsenum() {
   dnsenum "$@"
 }
