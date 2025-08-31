@@ -114,6 +114,7 @@ in {
       # emacs # haha
       ripgrep-all
       element-desktop
+      rustup # for verus rip
 
       # security
       aflplusplus
