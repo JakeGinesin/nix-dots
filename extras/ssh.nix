@@ -10,6 +10,7 @@
   services.openssh.settings.PermitRootLogin = "no";
 
   # Add your authorized key for a specific user
+  programs.zsh.enable = true;
   users.users.synchronous = {
     isNormalUser = true;
     shell = pkgs.zsh;
