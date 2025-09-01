@@ -51,11 +51,13 @@
     # };
   # };
 
-    virtualisation.containerd.settings = {
-      plugins."io.containerd.grpc.v1.cri".registry.configs."100.125.181.75:5000".tls = {
-        insecure_skip_verify = true;
-      };
+  virtualisation.containerd.settings = {
+    plugins."io.containerd.grpc.v1.cri".registry.mirrors."100.125.181.75:5000" = {
+      endpoint = [ "http://100.125.181.75:5000" ];
     };
+
+    plugins."io.containerd.grpc.v1.cri".registry.configs."100.125.181.75:5000".tls.insecure_skip_verify = true;
+  };
 
   programs.nix-ld.enable = true;
 
