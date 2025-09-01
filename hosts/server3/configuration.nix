@@ -6,7 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../system/system.nix
+    ../../system/system-server.nix
     ../meta.nix
     ../../extras/ssh.nix
     ../../extras/gpu.nix
