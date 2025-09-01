@@ -44,12 +44,18 @@
     --insecure-registry 100.125.181.75:5000
   '';
 
-  services.containerd.registryMirrors = {
-    # Replace with your registry's address and port
-    "100.125.181.75:5000" = {
-      endpoint = ["http://100.125.181.75:5000"];
+  # services.containerd.registryMirrors = {
+    # # Replace with your registry's address and port
+    # "100.125.181.75:5000" = {
+      # endpoint = ["http://100.125.181.75:5000"];
+    # };
+  # };
+
+    virtualisation.containerd.settings = {
+      plugins."io.containerd.grpc.v1.cri".registry.configs."100.125.181.75:5000".tls = {
+        insecure_skip_verify = true;
+      };
     };
-  };
 
   programs.nix-ld.enable = true;
 
