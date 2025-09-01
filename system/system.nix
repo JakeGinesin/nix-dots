@@ -104,6 +104,10 @@
     ];
   };
 
+  virtualisation.docker.extraOptions = ''
+    --insecure-registry 100.125.181.75:5000
+  '';
+
   # programs.direnv.enable = true;
 
   nix = {
