@@ -44,6 +44,13 @@
     --insecure-registry 100.125.181.75:5000
   '';
 
+  services.containerd.registryMirrors = {
+    # Replace with your registry's address and port
+    "100.125.181.75:5000" = {
+      endpoint = ["http://100.125.181.75:5000"];
+    };
+  };
+
   programs.nix-ld.enable = true;
 
   virtualisation.libvirtd.enable = true;
