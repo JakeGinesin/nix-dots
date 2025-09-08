@@ -105,6 +105,10 @@ in {
                   name = "nix options";
                   url = "https://search.nixos.org/options";
                 }
+                {
+                  name = "old packages";
+                  url = "https://lazamar.co.uk/nix-versions/";
+                }
               ];
             }
             {

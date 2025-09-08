@@ -4,16 +4,15 @@
   lib,
   ...
 }: {
-
   environment.etc."rancher/k3s/registries.yaml".text = ''
-mirrors:
-  "100.125.181.75:5000":
-    endpoint:
-      - http://100.125.181.75:5000/v2
-configs:
-  "100.125.181.75:5000":
-    tls:
-      insecure_skip_verify: true
+    mirrors:
+      "100.125.181.75:5000":
+        endpoint:
+          - http://100.125.181.75:5000/v2
+    configs:
+      "100.125.181.75:5000":
+        tls:
+          insecure_skip_verify: true
   '';
 
   swapDevices = lib.mkForce [];
