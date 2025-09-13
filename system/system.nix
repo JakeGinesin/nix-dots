@@ -129,11 +129,10 @@
   };
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    # rtl8812au
     rtl88xxau-aircrack
   ];
 
-  boot.kernelModules = ["8812au"];
+  boot.kernelModules = ["rtl8812au"];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
