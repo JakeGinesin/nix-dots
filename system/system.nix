@@ -129,7 +129,8 @@
   };
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    rtl8812au
+    # rtl8812au
+    rtl88xxau-aircrack
   ];
 
   boot.kernelModules = ["8812au"];
