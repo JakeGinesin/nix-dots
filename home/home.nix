@@ -118,6 +118,7 @@ in {
       python313Packages.ipython
       sage
       yq
+      semgrep
 
       # security
       aflplusplus

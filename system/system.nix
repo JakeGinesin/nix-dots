@@ -128,6 +128,12 @@
     };
   };
 
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    rtl8812au
+  ];
+
+  # boot.kernelModules = ["8812au"];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
