@@ -182,6 +182,31 @@ in {
               ];
             }
             {
+              name = "verus";
+              bookmarks = [
+                {
+                  name = "verus playground";
+                  url = "https://play.verus-lang.org/?version=stable&mode=basic&edition=2021";
+                }
+                {
+                  name = "verus docs";
+                  url = "https://verus-lang.github.io/verus/guide/verus_macro_intro.html";
+                }
+                {
+                  name = "verus zulip";
+                  url = "https://verus-lang.zulipchat.com/";
+                }
+                {
+                  name = "vstd docs";
+                  url = "https://verus-lang.github.io/verus/verusdoc/vstd/index.html";
+                }
+                {
+                  name = "core docs";
+                  url = "https://doc.rust-lang.org/1.88.0/core/index.html";
+                }
+              ];
+            }
+            {
               name = "cal";
               url = "https://calendar.google.com/";
             }

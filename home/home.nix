@@ -119,6 +119,7 @@ in {
       sage
       yq
       semgrep
+      # texlive.combined.scheme-full
 
       # security
       aflplusplus
