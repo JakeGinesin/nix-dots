@@ -6,4 +6,5 @@ in {
   "tailscale-rq.age".publicKeys = [key];
   "ssh-pub.age".publicKeys = [key];
   "kube.age".publicKeys = [key];
+  "firefox-bookmarks.age".publicKeys = [key];
 }

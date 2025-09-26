@@ -35,6 +35,11 @@
           owner = "synchronous";
           mode = "0400";
         };
+        firefox-bookmarks = {
+          file = ../secrets/firefox-bookmarks.age;
+          owner = "synchronous";
+          mode = "0400";
+        };
       };
       secretsDir = "/home/synchronous/.agenix/agenix";
       secretsMountPoint = "/home/synchronous/.agenix/agenix.d";

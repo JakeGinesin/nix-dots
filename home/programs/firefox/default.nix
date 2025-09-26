@@ -4,6 +4,7 @@
   osConfig,
   ...
 }: let
+  # secretBookmarks = builtins.fromJSON (builtins.readFile osConfig.age.secrets."firefox-bookmarks".path);
   # osConfig carries config from configuration.nix
   scale =
     if osConfig.res == "1366x768"
@@ -194,7 +195,7 @@ in {
                 }
                 {
                   name = "verus zulip";
-                  url = "https://verus-lang.zulipchat.com/";
+                  url = "https://verus-lang.zulipchat.com/#feed";
                 }
                 {
                   name = "vstd docs";
@@ -203,6 +204,10 @@ in {
                 {
                   name = "core docs";
                   url = "https://doc.rust-lang.org/1.88.0/core/index.html";
+                }
+                {
+                  name = "verus github";
+                  url = "https://github.com/verus-lang/verus";
                 }
               ];
             }
