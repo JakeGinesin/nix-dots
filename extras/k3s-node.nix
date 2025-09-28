@@ -29,6 +29,12 @@ configs:
       "net.bridge.bridge-nf-call-ip6tables" = 1;
     };
   };
+
+  boot.kernelModules = [ "rbd" "nbd" ];
+
+  environment.systemPackages = with pkgs; [
+  ];
+
   networking.firewall.enable = false;
   # networking.firewall.allowedTCPPorts = [
   # 6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
