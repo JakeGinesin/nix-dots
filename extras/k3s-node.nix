@@ -4,16 +4,15 @@
   lib,
   ...
 }: {
-
   environment.etc."rancher/k3s/registries.yaml".text = ''
-mirrors:
-  "100.125.181.75:5000":
-    endpoint:
-      - http://100.125.181.75:5000/v2
-configs:
-  "100.125.181.75:5000":
-    tls:
-      insecure_skip_verify: true
+    mirrors:
+      "100.125.181.75:5000":
+        endpoint:
+          - http://100.125.181.75:5000/v2
+    configs:
+      "100.125.181.75:5000":
+        tls:
+          insecure_skip_verify: true
   '';
 
   swapDevices = lib.mkForce [];
@@ -29,6 +28,13 @@ configs:
       "net.bridge.bridge-nf-call-ip6tables" = 1;
     };
   };
+
+  boot.kernelModules = ["rbd" "nbd" "ceph"];
+
+  # Make Ceph user-space tools available on the system
+  environment.systemPackages = with pkgs; [
+  ];
+
   networking.firewall.enable = false;
   # networking.firewall.allowedTCPPorts = [
   # 6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
