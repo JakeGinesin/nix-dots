@@ -254,6 +254,10 @@ a.sitecopy() {
   wget -k -K -E -r -l 10 -p -N -F -nH $@
 }
 
+a.pdfcopy() {
+  wget -k -r -l 10 -p -A "*.pdf" -N -F -nH $@
+}
+
 a.fo() {
   firefox `pwd`
 }

@@ -115,6 +115,11 @@ in {
       ripgrep-all
       element-desktop
       rustup # for verus rip
+      python313Packages.ipython
+      sage
+      yq
+      semgrep
+      # texlive.combined.scheme-full
 
       # security
       aflplusplus
