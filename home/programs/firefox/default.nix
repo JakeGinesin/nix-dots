@@ -4,7 +4,6 @@
   osConfig,
   ...
 }: let
-  # secretBookmarks = builtins.fromJSON (builtins.readFile osConfig.age.secrets."firefox-bookmarks".path);
   # osConfig carries config from configuration.nix
   scale =
     if osConfig.res == "1366x768"
@@ -215,7 +214,6 @@ in {
               name = "cal";
               url = "https://calendar.google.com/";
             }
-
             {
               name = "performance";
               url = "about:processes";
