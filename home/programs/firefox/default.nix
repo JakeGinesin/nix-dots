@@ -105,6 +105,10 @@ in {
                   name = "nix options";
                   url = "https://search.nixos.org/options";
                 }
+                {
+                  name = "old packages";
+                  url = "https://lazamar.co.uk/nix-versions/";
+                }
               ];
             }
             {
@@ -178,10 +182,38 @@ in {
               ];
             }
             {
+              name = "verus";
+              bookmarks = [
+                {
+                  name = "verus playground";
+                  url = "https://play.verus-lang.org/?version=stable&mode=basic&edition=2021";
+                }
+                {
+                  name = "verus docs";
+                  url = "https://verus-lang.github.io/verus/guide/verus_macro_intro.html";
+                }
+                {
+                  name = "verus zulip";
+                  url = "https://verus-lang.zulipchat.com/#feed";
+                }
+                {
+                  name = "vstd docs";
+                  url = "https://verus-lang.github.io/verus/verusdoc/vstd/index.html";
+                }
+                {
+                  name = "core docs";
+                  url = "https://doc.rust-lang.org/1.88.0/core/index.html";
+                }
+                {
+                  name = "verus github";
+                  url = "https://github.com/verus-lang/verus";
+                }
+              ];
+            }
+            {
               name = "cal";
               url = "https://calendar.google.com/";
             }
-
             {
               name = "performance";
               url = "about:processes";

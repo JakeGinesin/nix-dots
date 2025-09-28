@@ -32,10 +32,10 @@ Some subtleties about my setup:
 - my firefox setup is decked out with all my preferred addons, css, and settings [declared](https://github.com/JakeGinesin/nix-dots/blob/master/home/programs/firefox/default.nix). i also have a nice startpage [declared](https://github.com/JakeGinesin/nix-dots/tree/master/home/programs/firefox/startpage)
 - i use dnsmasq as opposed to systemd-resolved to manage local dns. I configured nmcli to automatically set dnsmasq to resolve dns queries to [certain websites](https://github.com/JakeGinesin/nix-dots/blob/master/system/networking/blockers.sh) (i.e. instagram.com) to 0.0.0.0 if i'm connected to certain wifi ESSID's (i.e. my university's wifi, "NUWave")
 - both neovim+emacs used
+- my many helpful [scripts](https://github.com/JakeGinesin/nix-dots/tree/master/home/scripts) are autopackaged using writeScriptBin
 - custom font ttfs for polybar are [directly included](https://github.com/JakeGinesin/nix-dots/blob/master/home/fonts/default.nix) in my config because certain icons are no longer supported
 - i have a stacked [rebuild script](https://github.com/JakeGinesin/nix-dots/blob/master/home/scripts/rebuild.sh)
 - my zsh is [stacked](https://github.com/JakeGinesin/nix-dots/blob/master/home/programs/zsh/default.nix) with many nice [aliases](https://github.com/JakeGinesin/nix-dots/blob/master/home/programs/zsh/zshrc) for automation. secret aliases with hard-coded IPs whatever are stored under an agenix secret
 - bspwm on x is used, with sxhkd used for most hotkeys
 - papers automatically saved with zotero are [automatically searchable](https://github.com/JakeGinesin/nix-dots/tree/master/home/scripts/document-scripts)
 - there is an option for resolution in the [configuration.nix file](https://github.com/JakeGinesin/nix-dots/tree/master/hosts/rq)
-- my [scripts](https://github.com/JakeGinesin/nix-dots/tree/master/home/scripts) are autopackaged using writeScriptBin
