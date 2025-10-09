@@ -40,9 +40,17 @@
       plenary-nvim
       nvim-web-devicons
       {
-        plugin = mini-animate;
-        config = toLuaFile ./plugins/mini-animate.lua;
+        plugin = smear-cursor-nvim;
+        config = toLuaFile ./plugins/smear.lua;
       }
+      # {
+      # plugin = neovide;
+      # config = toLuaFile ./plugins/neovide.lua;
+      # }
+      # { worthless plugin don't use
+      # plugin = mini-animate;
+      # config = toLuaFile ./plugins/mini-animate.lua;
+      # }
       {
         plugin = telescope-nvim;
         config = toLuaFile ./plugins/telescope.lua;
