@@ -1,6 +1,6 @@
 require('smear_cursor').setup({
   -- Main options
-  stiffness = 0.6,                    -- [0, 1] - cursor follow speed
+  stiffness = 0.4,                    -- [0, 1] - cursor follow speed
   trailing_stiffness = 0.45,          -- [0, 1] - trail follow speed
   distance_stop_animating = 0.1,      -- stop when close enough
   
