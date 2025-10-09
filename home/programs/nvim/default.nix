@@ -40,6 +40,10 @@
       plenary-nvim
       nvim-web-devicons
       {
+        plugin = mini-animate;
+        config = toLuaFile ./plugins/mini-animate.lua;
+      }
+      {
         plugin = telescope-nvim;
         config = toLuaFile ./plugins/telescope.lua;
       }
