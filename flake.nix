@@ -16,7 +16,7 @@
     };
 
     nixpkgs-clisp.url = "github:NixOS/nixpkgs/da320e5472f021b96a883f71fc525ca0e4815273";
-    nixpkgs-signal.url = "github:NixOS/nixpkgs/e6f23dc08d3624daab7094b701aa3954923c6bbb";
+    nixpkgs-signal.url = "github:NixOS/nixpkgs/4684fd6b0c01e4b7d99027a34c93c2e09ecafee2";
 
     verus-flake.url = "github:JakeGinesin/verus-flake";
   };
