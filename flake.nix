@@ -16,6 +16,7 @@
     };
 
     nixpkgs-clisp.url = "github:NixOS/nixpkgs/da320e5472f021b96a883f71fc525ca0e4815273";
+    nixpkgs-signal.url = "github:NixOS/nixpkgs/e6f23dc08d3624daab7094b701aa3954923c6bbb";
 
     verus-flake.url = "github:JakeGinesin/verus-flake";
   };
@@ -26,6 +27,7 @@
     agenix,
     emacs-overlay,
     nixpkgs-clisp,
+    nixpkgs-signal,
     verus-flake,
   } @ inputs: let
     system = "x86_64-linux";
@@ -43,6 +45,7 @@
         emacs-overlay.overlay
         (final: _prev: {
           clisp = nixpkgs-clisp.legacyPackages.${system}.clisp;
+          signal-desktop = nixpkgs-signal.legacyPackages.${system}.signal-desktop;
         })
       ];
       environment.systemPackages = [
