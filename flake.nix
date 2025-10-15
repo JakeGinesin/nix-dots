@@ -16,7 +16,10 @@
     };
 
     nixpkgs-clisp.url = "github:NixOS/nixpkgs/da320e5472f021b96a883f71fc525ca0e4815273";
-    nixpkgs-signal.url = "github:NixOS/nixpkgs/4684fd6b0c01e4b7d99027a34c93c2e09ecafee2";
+
+    # pin only signal versions jake likes
+    # this ver includes triple ratchet
+    nixpkgs-signal.url = "github:NixOS/nixpkgs/cf3f5c4def3c7b5f1fc012b3d839575dbe552d43";
 
     verus-flake.url = "github:JakeGinesin/verus-flake";
   };

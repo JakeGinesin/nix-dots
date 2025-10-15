@@ -142,6 +142,7 @@ in {
       postman
       nuclei
       subfinder
+      hcxtools
     ]
     ++ (
       with lib; let
