@@ -6,6 +6,7 @@
   printer = "SCS-public";
 in {
   services.printing.drivers = with pkgs; [foomatic-db-ppds];
+  # print with lp
   hardware.printers = {
     ensureDefaultPrinter = printer;
     # https://computing.cs.cmu.edu/desktop/printing-linux-private

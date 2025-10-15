@@ -31,6 +31,8 @@
       black
       nodejs_22
       latexrun
+      tectonic
+      texpresso
       # gh
     ];
 

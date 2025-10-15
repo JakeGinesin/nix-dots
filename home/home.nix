@@ -119,6 +119,7 @@ in {
       sage
       yq
       semgrep
+      tectonic
       # texlive.combined.scheme-full
 
       # security
