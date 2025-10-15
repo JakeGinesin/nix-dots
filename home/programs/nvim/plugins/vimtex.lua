@@ -3,9 +3,9 @@ vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")
 
 -- Viewer options: either with a built-in viewer method or with a generic interface.
--- vim.g.vimtex_view_method = 'zathura'
--- vim.g.vimtex_view_general_viewer = 'zathura'
--- vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_view_general_viewer = 'zathura'
+vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
 
 
 -- Set the TeX flavor and quickfix mode.
