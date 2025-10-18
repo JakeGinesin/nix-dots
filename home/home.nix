@@ -119,6 +119,7 @@ in {
       sage
       yq
       semgrep
+      tectonic
       # texlive.combined.scheme-full
 
       # security
@@ -142,6 +143,7 @@ in {
       postman
       nuclei
       subfinder
+      hcxtools
     ]
     ++ (
       with lib; let
