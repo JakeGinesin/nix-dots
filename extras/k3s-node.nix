@@ -50,5 +50,13 @@
     # token = "jakeginesin12345678910";
     tokenFile = config.age.secrets.kube.path;
     serverAddr = "https://172.24.233.22:6443";
+    extraFlags = toString [
+      # "--bind-address=0.0.0.0" # API server listens on all interfaces
+      # "--advertise-address=100.125.181.75" # Advertise this IP to cluster members
+      # "--node-ip=100.125.181.75" # Primary IP for this node
+      # "--node-external-ip=100.125.181.75" # External IP for services
+      # "--tls-san=100.125.181.75" # Add IP to TLS certificate
+      "--kubelet-arg=root-dir=/var/lib/kubelet"
+    ];
   };
 }

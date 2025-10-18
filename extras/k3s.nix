@@ -58,6 +58,7 @@
       # "--node-ip=100.125.181.75" # Primary IP for this node
       # "--node-external-ip=100.125.181.75" # External IP for services
       # "--tls-san=100.125.181.75" # Add IP to TLS certificate
+      "--kubelet-arg=root-dir=/var/lib/kubelet"
     ];
   };
 }
