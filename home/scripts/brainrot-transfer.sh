@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # --- CONFIGURATION ---
 ip=$(cat /home/synchronous/.agenix/agenix/ip-master-k3s)
 SSH_TARGET="synchronous@$ip"
