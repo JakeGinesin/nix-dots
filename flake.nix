@@ -36,7 +36,7 @@
     system = "x86_64-linux";
 
     # hostnames
-    hosts = ["thonkpad" "rq" "yoga" "server1" "server2" "server3"];
+    hosts = ["thonkpad" "rq" "yoga" "server1" "server2" "server3" "store"];
 
     baseModule = {lib, ...}: {
       imports = [
