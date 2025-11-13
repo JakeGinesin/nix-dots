@@ -120,6 +120,8 @@ in {
       yq
       semgrep
       tectonic
+      electrum
+      feather
       # texlive.combined.scheme-full
 
       # security
