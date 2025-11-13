@@ -122,6 +122,7 @@ in {
       tectonic
       electrum
       feather
+      gnupg
       # texlive.combined.scheme-full
 
       # security
