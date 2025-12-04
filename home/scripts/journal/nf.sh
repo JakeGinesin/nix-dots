@@ -44,6 +44,13 @@ open_daily() {
     -c "lua vim.g.goyo_if = 1" &!
 }
 
+open_idk() {
+  alacritty -t "idk.md" -e nvim "$main/rest/idk.md" \
+    -c "Goyo | set wrap | set path+=$main_dir" \
+    -c "execute 'normal G'" \
+    -c "lua vim.g.goyo_if = 1" &!
+}
+
 open_todo() {
   alacritty -t "todo.md" -e nvim "$main/todo.md" \
     -c "execute 'lua vim.g.goyo_if = 1' | set wrap | Goyo | set path+=$main_dir" &!
@@ -157,6 +164,7 @@ run_command() {
     "search") search ;;
     "daily") open_daily ;;
     "todo") open_todo ;;
+    "idk") open_idk ;;
     "find") notes_find ;;
     "tags") search_by_tags ;;
     "title") search_by_title ;;
