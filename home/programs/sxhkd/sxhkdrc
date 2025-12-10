@@ -186,11 +186,11 @@ super + bracket{left,right}
 super + {o}
   sh nf daily
 
-super + {;}
+super + semicolon
   sh nf idk
 
 super + {m}
-  sh nf idk
+  sh nf misc
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
