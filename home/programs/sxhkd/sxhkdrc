@@ -186,7 +186,10 @@ super + bracket{left,right}
 super + {o}
   sh nf daily
 
-super + {i}
+super + {;}
+  sh nf idk
+
+super + {m}
   sh nf idk
 
 # open my notes without goyo and with nvimteee

@@ -159,6 +159,14 @@ search_by_title() {
   fi
 }
 
+open_misc() {
+  tf=$(mktemp --suffix=.md)
+  # sh -c keeps window open for nvim, then deletes file immediately on exit
+  alacritty -t "scratch" -e sh -c "nvim '$tf' \
+    -c 'execute \"lua vim.g.goyo_if = 1\" | Goyo | set wrap | autocmd BufEnter * let b:coc_suggest_disable=1'; \
+    rm '$tf'" &!
+}
+
 run_command() {
   case $1 in
     "search") search ;;
@@ -168,6 +176,7 @@ run_command() {
     "find") notes_find ;;
     "tags") search_by_tags ;;
     "title") search_by_title ;;
+    "misc") open_misc ;;
     *)
   esac
 }
