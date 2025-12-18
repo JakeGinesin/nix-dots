@@ -2,10 +2,10 @@ require('smear_cursor').setup({
   scroll_buffer_space = false,
   smear_between_buffers = false,
   smear_between_neighbor_lines = false,
-  scroll_buffer_space = true,
+  scroll_buffer_space = false,
   stiffness = 0.5,
   trailing_stiffness = 0.5,
   matrix_pixel_threshold = 0.5,
-  damping = 0.95,    
+  damping = 1,  -- how "bouncy" the cursor is
   smear_insert_mode = false,
 })
