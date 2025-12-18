@@ -123,6 +123,7 @@ in {
       electrum
       feather
       gnupg
+      texpresso
       # texlive.combined.scheme-full
 
       # security
