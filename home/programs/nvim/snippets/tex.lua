@@ -171,6 +171,27 @@ ls.add_snippets("tex", {
   }))
 })
 
+ls.add_snippets("tex", {
+  s("beamer", fmta([[
+\documentclass{beamer}
+\usetheme{metropolis}           % Use metropolis theme
+\title{<>}
+\date{\today}
+\author{Jacob Ginesin}
+\institute{<>}
+\begin{document}
+  \maketitle
+  \section{First Section}
+  \begin{frame}{First Frame}
+    Hello, world!
+  \end{frame}
+\end{document}
+
+  ]], {i(1), i(0)}, {
+    indent_string = ""
+  }))
+})
+
 -- ----
 
 

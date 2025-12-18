@@ -47,7 +47,7 @@ vim.g.maplocalleader = ','
 -- vim.g.Tex_IgnoreLevel = 8
 
 -- Delete extra compilation files when a TeX buffer is deleted.
-vim.api.nvim_create_autocmd("BufDelete", {
-  pattern = "*.tex",
-  command = "silent! !latexmk -c > /dev/null 2>&1 %:p",
-})
+-- vim.api.nvim_create_autocmd("BufDelete", {
+  -- pattern = "*.tex",
+  -- command = "silent! !latexmk -c > /dev/null 2>&1 %:p",
+-- })
