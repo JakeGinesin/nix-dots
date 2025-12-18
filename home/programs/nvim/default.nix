@@ -41,6 +41,7 @@
       vim-airline-themes
       plenary-nvim
       nvim-web-devicons
+      texpresso-vim
       {
         plugin = smear-cursor-nvim;
         config = toLuaFile ./plugins/smear.lua;
