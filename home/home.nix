@@ -124,6 +124,7 @@ in {
       feather
       gnupg
       texpresso
+      python313Packages.pygments
       # texlive.combined.scheme-full
 
       # security
