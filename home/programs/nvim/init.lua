@@ -165,6 +165,8 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "setlocal wrap"
 })
 
+vim.api.nvim_create_augroup("vimrc", { clear = true })
+
 vim.api.nvim_create_autocmd("FileType", {
     desc = "texpresso compile",
     group = "vimrc",
