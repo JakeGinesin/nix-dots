@@ -87,6 +87,10 @@
       #   config = toLuaFile ./plugins/airline.lua;
       # }
       {
+        plugin = markdown-preview-nvim;
+        config = toLuaFile ./plugins/markdown-preview-nvim.lua;
+      }
+      {
         plugin = barbar-nvim;
         config = toLuaFile ./plugins/barbar.lua;
       }
