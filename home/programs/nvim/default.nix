@@ -42,10 +42,10 @@
       plenary-nvim
       nvim-web-devicons
       texpresso-vim
-      {
-        plugin = smear-cursor-nvim;
-        config = toLuaFile ./plugins/smear.lua;
-      }
+      # {
+      # plugin = smear-cursor-nvim;
+      # config = toLuaFile ./plugins/smear.lua;
+      # }
       # {
       # plugin = neovide;
       # config = toLuaFile ./plugins/neovide.lua;
