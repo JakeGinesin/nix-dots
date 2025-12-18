@@ -6,6 +6,6 @@ require('smear_cursor').setup({
   stiffness = 0.5,
   trailing_stiffness = 0.5,
   matrix_pixel_threshold = 0.5,
-  damping = 1,  -- how "bouncy" the cursor is
+  damping = 0.9999,  -- how "bouncy" the cursor is. 1 makes the cursor freeze in the top left lmao
   smear_insert_mode = false,
 })
