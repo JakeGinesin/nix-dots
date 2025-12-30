@@ -7,11 +7,10 @@ vim.g.vimtex_view_method = 'zathura'
 vim.g.vimtex_view_general_viewer = 'zathura'
 vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
 
-
 -- Set the TeX flavor and quickfix mode.
 vim.g.tex_flavor = 'latex'
-vim.g.vimtex_quickfix_mode = 0
-vim.g.vimtex_quickfix_enabled = 0
+-- vim.g.vimtex_quickfix_mode = 0
+-- vim.g.vimtex_quickfix_enabled = 0
 
 -- Compiler backend.
 -- vim.g.vimtex_compiler_method = 'latexmk'
@@ -48,7 +47,7 @@ vim.g.maplocalleader = ','
 -- vim.g.Tex_IgnoreLevel = 8
 
 -- Delete extra compilation files when a TeX buffer is deleted.
-vim.api.nvim_create_autocmd("BufDelete", {
-  pattern = "*.tex",
-  command = "silent! !latexmk -c > /dev/null 2>&1 %:p",
-})
+-- vim.api.nvim_create_autocmd("BufDelete", {
+  -- pattern = "*.tex",
+  -- command = "silent! !latexmk -c > /dev/null 2>&1 %:p",
+-- })
