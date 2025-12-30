@@ -59,7 +59,7 @@
     plugins."io.containerd.grpc.v1.cri".registry.configs."100.125.181.75:5000".tls.insecure_skip_verify = true;
   };
 
-  nix.settings.trusted-users = [ "synchronous" "root" ];
+  nix.settings.trusted-users = ["synchronous" "root"];
 
   programs.nix-ld.enable = true;
 

@@ -222,6 +222,7 @@ alias verus-dir="cd /home/synchronous/code/verus"
 alias cure="cd /home/synchronous/code/cure53"
 alias scripts="cd /home/synchronous/nix-cfg/home/scripts"
 alias bookmarks="vim -c '80' /home/synchronous/nix-cfg/home/programs/firefox/default.nix"
+alias startpage="vim /home/synchronous/nix-cfg/home/programs/firefox/startpage/index.html"
 
 stack() {
   find . -type f -exec echo -e "\n--- {} ---\n" \; -exec cat {} \;
