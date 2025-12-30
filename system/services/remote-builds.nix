@@ -18,7 +18,7 @@
       supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
       mandatoryFeatures = [];
       sshUser = "synchronous";
-      sshKey = "/synchronous/.ssh/id_rsa"; # Path to private key on client
+      sshKey = "/home/synchronous/.ssh/id_ed25519"; # Path to private key on client
     }
   ];
 }
