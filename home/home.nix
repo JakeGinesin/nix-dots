@@ -149,6 +149,7 @@ in {
       nuclei
       subfinder
       hcxtools
+      binwalk
     ]
     ++ (
       with lib; let
