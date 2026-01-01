@@ -150,6 +150,7 @@ in {
       subfinder
       hcxtools
       binwalk
+      lz4
     ]
     ++ (
       with lib; let
