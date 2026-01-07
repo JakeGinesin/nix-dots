@@ -18,8 +18,8 @@
     nixpkgs-clisp.url = "github:NixOS/nixpkgs/da320e5472f021b96a883f71fc525ca0e4815273";
 
     # pin only signal versions jake likes. recall, you must back up .config/Signal when changing this
-    # this ver includes triple ratchet
-    nixpkgs-signal.url = "github:NixOS/nixpkgs/e6f23dc08d3624daab7094b701aa3954923c6bbb";
+    # this version includes: triple ratchet iirc
+    nixpkgs-signal.url = "github:NixOS/nixpkgs/9f0c42f8bc7151b8e7e5840fb3bd454ad850d8c5";
 
     verus-flake.url = "github:JakeGinesin/verus-flake";
   };
